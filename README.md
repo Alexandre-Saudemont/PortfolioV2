@@ -5,6 +5,6 @@ I'm a front web developer and like to code with React !
 
 Stack :
 
--   React
--   Axios
--   Scss
+- React
+- Axios
+- Scss
