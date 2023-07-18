@@ -9,13 +9,12 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	color: var(--color-background-medium);
-	background-color: var(--color-background-dark);
+	background-color: var(--color-background-light);
 
 	&-title {
 		margin-bottom: 3rem;
 		font-size: 2.3rem;
-		color: var(--color-text);
+		color: var(--color-background-dark);
 	}
 
 	&-profilePic {
@@ -26,13 +25,40 @@
 		animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 	}
 
+	&-description-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 80%;
+	}
+
 	&-description {
-		position: absolute;
+		height: 3.5rem;
+		color: var(--color-background-dark);
 		font-size: 1.7rem;
-		margin: 5rem;
-		color: var(--color-text);
-		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
+		margin: 5rem 5rem 2rem 5rem;
+	}
+
+	&-links-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 80%;
+		margin: 0 0 3rem 0;
+	}
+
+	&-links-arrow {
+		width: 1.3rem;
+	}
+
+	&-links-text {
+		font-size: 1.2rem;
+	}
+
+	&-links {
+		font-size: 1.2rem;
 	}
 
 	&-description.show {
@@ -98,6 +124,25 @@
 		-webkit-filter: blur(0px);
 		filter: blur(0px);
 		opacity: 1;
+	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: black;
 	}
 }
 

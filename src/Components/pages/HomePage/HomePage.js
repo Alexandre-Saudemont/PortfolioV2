@@ -1,34 +1,68 @@
 import React, {useState, useEffect} from 'react';
+import {NavLink} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
 import linkedin from '../../../assets/img/linkedin.svg';
+import arrow from '../../../assets/img/arrow-right.svg';
 import './HomePage.scss';
 
 function HomePage() {
-	const [textIndex, setTextIndex] = React.useState(0);
-	const texts = ['Je suis Développeur FullStack JavaScript', 'Je suis Développeur Web', 'Je suis Développeur Front-End'];
+	const [textIndex, setTextIndex] = useState(0);
+	const texts = [' FullStack JavaScript', ' Web', ' Front-End'];
+	const [displayText, setDisplayText] = useState('');
+	const [clearing, setClearing] = useState(false);
+	const [isMounted, setIsMounted] = useState(false); // new state
+
+	// set isMounted to true after the component has mounted
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsMounted(true);
+		}, 1300); // delay before starting typing animation
+
+		return () => clearTimeout(timer);
+	}, []);
 
 	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setTextIndex((textIndex) => (textIndex + 1) % texts.length);
-		}, 3000);
+		if (!isMounted) return; // do not start typing animation until component is mounted
 
-		return () => clearInterval(intervalId);
-	}, [texts.length]);
+		const typeText = () => {
+			if (!clearing) {
+				if (displayText.length < texts[textIndex].length) {
+					setDisplayText((prev) => prev + texts[textIndex][displayText.length]);
+				} else {
+					setClearing(true);
+				}
+			} else {
+				if (displayText.length > 0) {
+					setDisplayText((prev) => prev.slice(0, -1));
+				} else {
+					setClearing(false);
+					setTextIndex((prev) => (prev + 1) % texts.length);
+				}
+			}
+		};
+
+		const delay = clearing ? 120 : 180; // adjust timing here
+		const timer = setTimeout(typeText, delay);
+
+		return () => clearTimeout(timer);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [clearing, displayText, textIndex, isMounted]); // add isMounted to dependency array
 
 	return (
 		<>
 			<section className='homePage'>
 				<h1 className='homePage-title'>Alexandre Saudemont</h1>
-
 				<img src={profilePic} alt='profile' className='homePage-profilePic' />
-
-				{texts.map((text, index) => (
-					<p key={index} className={`homePage-description ${textIndex === index ? 'show' : ''}`}>
-						{text}
-					</p>
-				))}
-
+				<div className='homePage-descritpion-container'>
+					<p className='homePage-description'>Je suis Développeur {displayText}</p>
+				</div>
+				<div className='homePage-links-container'>
+					<img src={arrow} alt='arrow-right' className='homePage-links-arrow' />
+					<p className='homePage-links-text'>Compétences</p>
+					<NavLink className='homePage-links-text'>A propos</NavLink>
+					<p className='homePage-links-text'>Contact</p>
+				</div>
 				<ul className='homePage-links'>
 					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
 						<li>
