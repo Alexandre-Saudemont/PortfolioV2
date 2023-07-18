@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import NavBar from '../NavBar/NavBar';
 import menuclose from '../../assets/img/menu-close.svg';
 import menuburger from '../../assets/img/menu-open.svg';
 
@@ -37,8 +36,6 @@ function Header() {
             valeur en true graçe au "!" qui fait l'inverse du toggleMenu (donc l'inverse de false) */}
 			</header>
 			{/* Affichage conditionnel : Si  mon toggleMenu est true alors, j'affiche la NavBar */}
-
-			{toggleMenu && <NavBar setToggleMenu={setToggleMenu} />}
 		</>
 	);
 }
