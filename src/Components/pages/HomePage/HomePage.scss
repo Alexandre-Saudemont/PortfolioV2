@@ -9,12 +9,30 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	background-color: var(--color-background-light);
+
+	&.lightMod {
+		background-color: var(--color-dark); // or the color you want for light mode
+		--text-color: var(--color-light);
+	}
+
+	&.darkMod {
+		background-color: var(--color-light); // or the color you want for dark mode
+		--text-color: var(--color-dark);
+	}
+
+	&-moon {
+		// changed from nightmode to moon
+		width: 2rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0.5rem;
+	}
 
 	&-title {
-		margin-bottom: 3rem;
-		font-size: 2.3rem;
-		color: var(--color-background-dark);
+		margin: 4rem 0 3rem 0;
+		font-size: 2.1rem;
+		color: var(--text-color);
 	}
 
 	&-profilePic {
@@ -35,10 +53,17 @@
 	}
 
 	&-description {
-		height: 3.5rem;
-		color: var(--color-background-dark);
-		font-size: 2rem;
-		margin: 3rem 4rem 2rem 4rem;
+		height: 2rem;
+		color: var(--text-color);
+		font-size: 1.8rem;
+		margin: 3rem 4rem 0rem 4rem;
+	}
+
+	&-description-dynamic {
+		height: 2rem;
+		color: var(--text-color);
+		font-size: 1.8rem;
+		padding-bottom: 3rem;
 	}
 
 	&-links-container {
@@ -47,11 +72,11 @@
 		align-items: center;
 		width: 80%;
 		margin: 0 0 3rem 0;
+		color: var(--text-color);
 	}
 
 	&-links-text {
 		font-size: 1.2rem;
-		color: var(--color-background-dark);
 	}
 
 	&-description.show {
@@ -139,7 +164,7 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
 	.home-description {
 		margin: 3rem auto;
 	}

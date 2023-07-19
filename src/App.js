@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-import HomePage from './Components/pages/HomePage/HomePage';
-import Header from './Components/Header/Header';
+
+import {Outlet} from 'react-router-dom';
 
 function App() {
 	return (
-		<div className='App'>
-			<Header />
-			<div className='App-container'>
-				<HomePage />
-			</div>
+		<div className='App-container'>
+			<Outlet />
 		</div>
 	);
 }
