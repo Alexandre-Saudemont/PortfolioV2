@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
 import githubDark from '../../../assets/img/github-dark.svg';
 import linkedin from '../../../assets/img/linkedin.svg';
 import linkedinDark from '../../../assets/img/linkedin-dark.svg';
-import moonLight from '../../../assets//img//moon-light.svg';
 import moonDark from '../../../assets/img/moon-dark.svg';
+import lightbulb from '../../../assets/img/lightbulb.svg';
 import Skills from './Skills/Skills';
 import './HomePage.scss';
 
@@ -68,7 +68,7 @@ function HomePage() {
 	return (
 		<>
 			<section className={`homePage ${darkMode}`}>
-				<img src={isDarkMode ? moonLight : moonDark} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
+				<img src={isDarkMode ? lightbulb : moonDark} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 
 				<h1 className='homePage-title'>Alexandre Saudemont</h1>
 				<img src={profilePic} alt='profile' className='homePage-profilePic' />
@@ -82,9 +82,9 @@ function HomePage() {
 					</p>
 					{showModalSkills && <Skills darkMode={darkMode} />}
 
-					<NavLink className='homePage-links-text' to='/About'>
+					<Link className='homePage-links-text' to='/About'>
 						About
-					</NavLink>
+					</Link>
 					<p className='homePage-links-text'>Contact</p>
 				</div>
 				<ul className='homePage-icon-social-container'>

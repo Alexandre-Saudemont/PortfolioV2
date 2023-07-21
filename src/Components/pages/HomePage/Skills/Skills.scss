@@ -1,25 +1,28 @@
-.skills {
+.skills-front {
 	border: solid 1px black;
-	border-radius: 10%;
+
 	position: absolute;
 	top: 200%;
 	left: 8%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-
+	width: 83%;
 	&-icon-react {
-		width: 1.5rem;
+		width: 1.6rem;
 		animation: react-spin infinite 20s linear;
 	}
 
 	&-icon-js {
-		width: 1.3rem;
+		width: 1.5rem;
 	}
 
 	&-icon-html {
-		width: 1.5rem;
+		width: 1.4rem;
+	}
+
+	&-icon-css {
+		width: 1.4rem;
 	}
 }
 

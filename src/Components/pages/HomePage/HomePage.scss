@@ -9,14 +9,23 @@
 	justify-content: center;
 	align-items: center;
 	overflow: auto;
+
 	&.lightMod {
 		background-color: var(--color-dark); // or the color you want for light mode
-		--text-color: var(--color-light);
+		color: var(--color-light);
+		text-decoration: none !important;
+		a:-webkit-any-link {
+			color: var(--color-light);
+		}
 	}
 
 	&.darkMod {
 		background-color: var(--color-light); // or the color you want for dark mode
-		--text-color: var(--color-dark);
+		color: var(--color-dark);
+		text-decoration: none !important;
+		a:-webkit-any-link {
+			color: var(--color-dark);
+		}
 	}
 
 	&-moon {
@@ -31,7 +40,6 @@
 	&-title {
 		margin: 30% 0 3rem 0;
 		font-size: 2.1rem;
-		color: var(--text-color);
 	}
 
 	&-profilePic {
