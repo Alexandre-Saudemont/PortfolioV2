@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
+import githubDark from '../../../assets/img/github-dark.svg';
 import linkedin from '../../../assets/img/linkedin.svg';
+import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 import moonLight from '../../../assets//img//moon-light.svg';
 import moonDark from '../../../assets/img/moon-dark.svg';
-
+import Skills from './Skills/Skills';
 import './HomePage.scss';
 
 function HomePage() {
@@ -15,9 +17,14 @@ function HomePage() {
 	const [clearing, setClearing] = useState(false);
 	const [isMounted, setIsMounted] = useState(false); // new state
 	const [isDarkMode, setDarkMode] = useState(false);
+	const [showModalSkills, setShowModalSkills] = useState(false);
 
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
+	}
+
+	function toggleModalSkills() {
+		setShowModalSkills(!showModalSkills);
 	}
 
 	const darkMode = isDarkMode ? 'lightMod' : 'darkMod';
@@ -70,21 +77,25 @@ function HomePage() {
 					<p className='homePage-description-dynamic'>{displayText}</p>
 				</div>
 				<div className='homePage-links-container'>
-					<p className='homePage-links-text'>Skills</p>
+					<p className='homePage-links-text' onClick={toggleModalSkills}>
+						Skills
+					</p>
+					{showModalSkills && <Skills darkMode={darkMode} />}
+
 					<NavLink className='homePage-links-text' to='/About'>
 						About
 					</NavLink>
 					<p className='homePage-links-text'>Contact</p>
 				</div>
-				<ul className='homePage-links'>
+				<ul className='homePage-icon-social-container'>
 					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
 						<li>
-							<img src={github} alt='github icon' className='homePage-github' />
+							<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
 						</li>
 					</a>
 					<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
 						<li>
-							<img src={linkedin} alt='linkedin icon' className='homePage-linkedin' />
+							<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
 						</li>
 					</a>
 				</ul>

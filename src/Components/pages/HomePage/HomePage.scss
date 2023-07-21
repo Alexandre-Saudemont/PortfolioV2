@@ -8,8 +8,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
-
+	overflow: auto;
 	&.lightMod {
 		background-color: var(--color-dark); // or the color you want for light mode
 		--text-color: var(--color-light);
@@ -22,7 +21,7 @@
 
 	&-moon {
 		// changed from nightmode to moon
-		width: 2rem;
+		width: 1.2rem;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -30,7 +29,7 @@
 	}
 
 	&-title {
-		margin: 4rem 0 3rem 0;
+		margin: 30% 0 3rem 0;
 		font-size: 2.1rem;
 		color: var(--text-color);
 	}
@@ -73,10 +72,16 @@
 		width: 80%;
 		margin: 0 0 3rem 0;
 		color: var(--text-color);
+		position: relative;
 	}
 
 	&-links-text {
 		font-size: 1.2rem;
+		text-decoration: none;
+	}
+
+	&-links-text:hover {
+		color: red;
 	}
 
 	&-description.show {
@@ -84,10 +89,11 @@
 		transition: opacity 0.5s ease-in-out;
 	}
 
-	&-links {
+	&-icon-social-container {
 		width: 100%;
 		display: flex;
 		justify-content: center;
+		margin: 5rem 0 2rem 0;
 	}
 
 	&-github {
@@ -161,6 +167,16 @@
 	}
 	50% {
 		border-color: black;
+	}
+}
+
+@media screen and (min-width: 390px) {
+	.homePage {
+		overflow: auto;
+		&-title {
+			height: auto;
+			margin: -15% 0 15%;
+		}
 	}
 }
 

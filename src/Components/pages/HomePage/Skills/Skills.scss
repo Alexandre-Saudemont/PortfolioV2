@@ -1,0 +1,33 @@
+.skills {
+	border: solid 1px black;
+	border-radius: 10%;
+	position: absolute;
+	top: 200%;
+	left: 8%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&-icon-react {
+		width: 1.5rem;
+		animation: react-spin infinite 20s linear;
+	}
+
+	&-icon-js {
+		width: 1.3rem;
+	}
+
+	&-icon-html {
+		width: 1.5rem;
+	}
+}
+
+@keyframes react-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
