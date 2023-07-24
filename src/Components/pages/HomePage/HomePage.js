@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
 import githubDark from '../../../assets/img/github-dark.svg';
@@ -7,7 +7,8 @@ import linkedin from '../../../assets/img/linkedin.svg';
 import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 import moonDark from '../../../assets/img/moon-dark.svg';
 import lightbulb from '../../../assets/img/lightbulb.svg';
-import Skills from './Skills/Skills';
+import Skills from './Skills/Skills.js';
+
 import './HomePage.scss';
 
 function HomePage() {
@@ -18,6 +19,7 @@ function HomePage() {
 	const [isMounted, setIsMounted] = useState(false); // new state
 	const [isDarkMode, setDarkMode] = useState(false);
 	const [showModalSkills, setShowModalSkills] = useState(false);
+	const navigate = useNavigate();
 
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
@@ -27,6 +29,9 @@ function HomePage() {
 		setShowModalSkills(!showModalSkills);
 	}
 
+	function handleAboutDarkMode() {
+		navigate('/About', {state: {darkMode: isDarkMode}});
+	}
 	const darkMode = isDarkMode ? 'lightMod' : 'darkMod';
 
 	// set isMounted to true after the component has mounted
@@ -82,7 +87,7 @@ function HomePage() {
 					</p>
 					{showModalSkills && <Skills darkMode={darkMode} />}
 
-					<Link className='homePage-links-text' to='/About'>
+					<Link className='homePage-links-text' to='/About' onClick={handleAboutDarkMode}>
 						About
 					</Link>
 					<p className='homePage-links-text'>Contact</p>

@@ -1,10 +1,14 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom';
 import './AboutPage.scss';
 
 function AboutPage() {
+	const location = useLocation();
+	const darkMode = location.state?.darkMode === true;
+
 	return (
-		<section className='aboutPage'>
-			<h1 className='aboutPage-title'>Hi ! My name Alexandre Saudemont </h1>
+		<section className={`homePage ${!darkMode ? 'lightMod' : 'darkMod'}`}>
+			<h1 className='aboutPage-title'>Hello ! My name is Alexandre Saudemont </h1>
 			<h2 className='aboutPage-subtitle'>Developer Web FullStack</h2>
 			<section className='aboutPage-section'>
 				<p className='aboutPage-text'>
