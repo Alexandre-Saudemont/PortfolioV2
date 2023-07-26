@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
@@ -8,6 +8,7 @@ import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 import moonDark from '../../../assets/img/moon-dark.svg';
 import lightbulb from '../../../assets/img/lightbulb.svg';
 import Skills from './Skills/Skills.js';
+import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 
 import './HomePage.scss';
 
@@ -17,9 +18,10 @@ function HomePage() {
 	const [displayText, setDisplayText] = useState('');
 	const [clearing, setClearing] = useState(false);
 	const [isMounted, setIsMounted] = useState(false); // new state
-	const [isDarkMode, setDarkMode] = useState(false);
+	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
 	const [showModalSkills, setShowModalSkills] = useState(false);
-	const navigate = useNavigate();
+	// const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
+	// const navigate = useNavigate();
 
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
@@ -29,10 +31,10 @@ function HomePage() {
 		setShowModalSkills(!showModalSkills);
 	}
 
-	function handleAboutDarkMode() {
-		navigate('/About', {state: {darkMode: isDarkMode}});
-	}
-	const darkMode = isDarkMode ? 'lightMod' : 'darkMod';
+	// function handleAboutDarkMode() {
+	// 	navigate('/About', {state: {darkMode: isDarkMode}});
+	// }
+	// const darkMode = isDarkMode ? 'lightMod' : 'darkMod';
 
 	// set isMounted to true after the component has mounted
 	useEffect(() => {
@@ -72,8 +74,8 @@ function HomePage() {
 
 	return (
 		<>
-			<section className={`homePage ${darkMode}`}>
-				<img src={isDarkMode ? lightbulb : moonDark} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
+			<section className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
+				<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 
 				<h1 className='homePage-title'>Alexandre Saudemont</h1>
 				<img src={profilePic} alt='profile' className='homePage-profilePic' />
@@ -85,9 +87,9 @@ function HomePage() {
 					<p className='homePage-links-text' onClick={toggleModalSkills}>
 						Skills
 					</p>
-					{showModalSkills && <Skills darkMode={darkMode} />}
+					{showModalSkills && <Skills />}
 
-					<Link className='homePage-links-text' to='/About' onClick={handleAboutDarkMode}>
+					<Link className='homePage-links-text' to='/About'>
 						About
 					</Link>
 					<p className='homePage-links-text'>Contact</p>

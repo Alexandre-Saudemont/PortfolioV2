@@ -1,10 +1,12 @@
 .aboutPage {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	width: 80%;
+	height: 100vh;
 	margin: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
 	&-title {
 		font-size: 1.9rem;
 		margin: 3rem 0 2rem 0;

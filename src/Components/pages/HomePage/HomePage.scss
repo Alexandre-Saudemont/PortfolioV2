@@ -10,24 +10,6 @@
 	align-items: center;
 	overflow: auto;
 
-	&.lightMod {
-		background-color: var(--color-dark); // or the color you want for light mode
-		color: var(--color-light);
-		text-decoration: none !important;
-		a:-webkit-any-link {
-			color: var(--color-light);
-		}
-	}
-
-	&.darkMod {
-		background-color: var(--color-light); // or the color you want for dark mode
-		color: var(--color-dark);
-		text-decoration: none !important;
-		a:-webkit-any-link {
-			color: var(--color-dark);
-		}
-	}
-
 	&-moon {
 		// changed from nightmode to moon
 		width: 1.2rem;
@@ -86,10 +68,6 @@
 	&-links-text {
 		font-size: 1.2rem;
 		text-decoration: none;
-	}
-
-	&-links-text:hover {
-		color: red;
 	}
 
 	&-description.show {
