@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
 import githubDark from '../../../assets/img/github-dark.svg';
@@ -14,14 +14,14 @@ import './HomePage.scss';
 
 function HomePage() {
 	const [textIndex, setTextIndex] = useState(0);
-	const texts = ['FullStack JavaScript', '  Web', 'Front-End'];
 	const [displayText, setDisplayText] = useState('');
 	const [clearing, setClearing] = useState(false);
-	const [isMounted, setIsMounted] = useState(false); // new state
-	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
+	const [isMounted, setIsMounted] = useState(false);
 	const [showModalSkills, setShowModalSkills] = useState(false);
-	// const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
-	// const navigate = useNavigate();
+	const [changeText, setText] = useState(false);
+	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
+	const texts = ['FullStack JavaScript', '  Web', 'Front-End'];
+	const navigate = useNavigate();
 
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
@@ -29,6 +29,11 @@ function HomePage() {
 
 	function toggleModalSkills() {
 		setShowModalSkills(!showModalSkills);
+		setText(!changeText);
+	}
+
+	function navigateToAbout() {
+		navigate('/About');
 	}
 
 	// function handleAboutDarkMode() {
@@ -84,16 +89,17 @@ function HomePage() {
 					<p className='homePage-description-dynamic'>{displayText}</p>
 				</div>
 				<div className='homePage-links-container'>
-					<p className='homePage-links-text' onClick={toggleModalSkills}>
+					<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
 						Skills
 					</p>
 					{showModalSkills && <Skills />}
 
-					<Link className='homePage-links-text' to='/About'>
+					<p className='homePage-links-text' onClick={navigateToAbout}>
 						About
-					</Link>
+					</p>
 					<p className='homePage-links-text'>Contact</p>
 				</div>
+				<p className='homePage-links-text-project'>Project</p>
 				<ul className='homePage-icon-social-container'>
 					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
 						<li>

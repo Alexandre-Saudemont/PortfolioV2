@@ -4,16 +4,10 @@
 	background-color: var(--color-dark); // or the color you want for light mode
 	color: var(--color-light);
 	text-decoration: none !important;
-	a:-webkit-any-link {
-		color: var(--color-light) !important;
-	}
 }
 
 .darkMode {
 	background-color: var(--color-light); // or the color you want for dark mode
 	color: var(--color-dark);
 	text-decoration: none !important;
-	a:-webkit-any-link {
-		color: var(--color-dark) !important;
-	}
 }

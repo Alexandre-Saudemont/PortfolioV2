@@ -70,6 +70,16 @@
 		text-decoration: none;
 	}
 
+	&-links-text-clicked {
+		font-size: 1.2rem;
+		color: lightcoral;
+	}
+
+	&-links-text-project {
+		font-size: 1.2rem;
+		position: relative;
+		top: 4%;
+	}
 	&-description.show {
 		opacity: 1;
 		transition: opacity 0.5s ease-in-out;
