@@ -9,7 +9,7 @@ function ThemeProvider({children}) {
 	});
 
 	const value = {isDarkMode, setDarkMode};
-	const modeClass = isDarkMode ? 'darkMode' : 'lightMode';
+	const modeClass = isDarkMode ? 'lightMode' : 'darkMode';
 
 	useEffect(() => {
 		window.localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));

@@ -36,6 +36,9 @@ function HomePage() {
 		navigate('/About');
 	}
 
+	function navigateToProjects() {
+		navigate('/Projects');
+	}
 	// function handleAboutDarkMode() {
 	// 	navigate('/About', {state: {darkMode: isDarkMode}});
 	// }
@@ -78,42 +81,41 @@ function HomePage() {
 	}, [clearing, displayText, textIndex, isMounted]); // add isMounted to dependency array
 
 	return (
-		<>
-			<section className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
-				<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
+		<section className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
+			<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 
-				<h1 className='homePage-title'>Alexandre Saudemont</h1>
-				<img src={profilePic} alt='profile' className='homePage-profilePic' />
-				<div className='homePage-descritpion-container'>
-					<p className='homePage-description'>I'm a Developper</p>
-					<p className='homePage-description-dynamic'>{displayText}</p>
-				</div>
-				<div className='homePage-links-container'>
-					<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
-						Skills
-					</p>
-					{showModalSkills && <Skills />}
+			<h1 className='homePage-title'>Alexandre Saudemont</h1>
+			<img src={profilePic} alt='profile' className='homePage-profilePic' />
+			<div className='homePage-descritpion-container'>
+				<p className='homePage-description'>I'm a Developper</p>
+				<p className='homePage-description-dynamic'>{displayText}</p>
+			</div>
+			<div className='homePage-links-container'>
+				<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
+					Skills
+				</p>
+				{showModalSkills && <Skills />}
 
-					<p className='homePage-links-text' onClick={navigateToAbout}>
-						About
+				<p className='homePage-links-text' onClick={navigateToAbout}>
+					About
+				</p>
+				<p className='homePage-links-text'>Contact</p>
+				<div>
+					<p className='homePage-links-text-project' onClick={navigateToProjects}>
+						Project
 					</p>
-					<p className='homePage-links-text'>Contact</p>
 				</div>
-				<p className='homePage-links-text-project'>Project</p>
-				<ul className='homePage-icon-social-container'>
-					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
-						<li>
-							<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
-						</li>
-					</a>
-					<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
-						<li>
-							<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
-						</li>
-					</a>
-				</ul>
-			</section>
-		</>
+			</div>
+
+			<ul className='homePage-icon-social-container'>
+				<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
+					<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
+				</a>
+				<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
+					<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
+				</a>
+			</ul>
+		</section>
 	);
 }
 
