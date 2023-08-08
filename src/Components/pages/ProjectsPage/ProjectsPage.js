@@ -1,16 +1,23 @@
-import React from 'react';
-//{useContext} from 'react';
+import React, {useContext} from 'react';
+import {useNavigate} from 'react-router-dom';
 import taiwan from '../../../assets/img/taiwan.jpg';
 import pokedeck from '../../../assets/img/pokedeck.png';
-//import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+import house from '../../../assets/img/house.svg';
+import houseDark from '../../../assets/img/house-dark.svg';
+import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+
 import './ProjectsPage.scss';
 
 function ProjectsPage() {
-	//const {isDarkMode} = useContext(DarkModeContext);
-	//${isDarkMode ? 'lightMode' : 'darkMode'}`}
+	const {isDarkMode} = useContext(DarkModeContext);
+	const navigate = useNavigate();
 
-	// I made function instead of <a> because I had trouble with syle & darkmode, after several time looking for a solution
-	// with the <a> and no solution. I made something easier for the style.
+	function navigateHome() {
+		navigate('/');
+	}
+
+	// I made function for the button instead of "<a>"" because I had trouble with syle on darkmode, after several times looking for a solution
+	// with the "<a>"" and no sucessfull result. I made myself something easier for the style.
 
 	function onClickTaiwan() {
 		window.open('https://taiwan.alexandre-saudemont.fr/', '_blank');
@@ -29,31 +36,32 @@ function ProjectsPage() {
 	}
 
 	return (
-		<div className='projects'>
-			<div className='projects-taiwan'>
+		<div className='projectPage'>
+			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
+			<div className='projectPage-taiwan'>
 				Taiwan Website
-				<img src={taiwan} alt='' className='projects-taiwan-img' />
+				<img src={taiwan} alt='' className='projectPage-taiwan-img' />
 			</div>
-			<div className='projects-taiwan-button-container'>
-				<button className='projects-github-taiwan' onClick={onClickGitHubTaiwan}>
+			<div className='projectPage-taiwan-button-container'>
+				<button className='projectPage-github-taiwan' onClick={onClickGitHubTaiwan}>
 					GitHub
 				</button>
-				<button className='projects-website-taiwan' onClick={onClickTaiwan}>
+				<button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
 					Website
 				</button>
 			</div>
-			<div className='projects-pokedeck'>
+			<div className='projectPage-pokedeck'>
 				Pokedeck Website
-				<img src={pokedeck} alt='' className='projects-pokedeck-img' />
+				<img src={pokedeck} alt='' className='projectPage-pokedeck-img' />
 			</div>
-			<div className='projects-pokedeck-button-container'>
-				<button className='projects-github-pokedeck' onClick={onClickGitHubPokedeckFront}>
+			<div className='projectPage-pokedeck-button-container'>
+				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckFront}>
 					GitHub Front
 				</button>
-				<button className='projects-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
+				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
 					GitHub Back
 				</button>
-				<button href='google.com' target='_blank' rel='noopener noreferrer' className='projects-website-pokedeck'>
+				<button href='google.com' target='_blank' rel='noopener noreferrer' className='projectPage-website-pokedeck'>
 					Demonstration
 				</button>
 			</div>

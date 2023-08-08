@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
+import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import house from '../../../assets/img/house.svg';
 import houseDark from '../../../assets/img/house-dark.svg';
-import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import './AboutPage.scss';
 
 function AboutPage() {
@@ -16,7 +16,7 @@ function AboutPage() {
 	return (
 		<div className={`aboutPage ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
 			<section className='aboutPage'>
-				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='aboutPage-icon' onClick={navigateHome} />
+				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='aboutPage-iconHome' onClick={navigateHome} />
 				<h1 className='aboutPage-title'>Hello ! My name is Alexandre Saudemont </h1>
 				<h2 className='aboutPage-subtitle'>Developer Web FullStack</h2>
 				<section className='aboutPage-text-container'>

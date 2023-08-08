@@ -1,5 +1,4 @@
 .aboutPage {
-	height: 100vh;
 	margin: auto;
 	text-align: center;
 	display: flex;
@@ -7,16 +6,22 @@
 	justify-content: center;
 	align-items: center;
 	width: 90%;
+
+	&-iconHome {
+		margin: 1rem 0 1rem 0;
+	}
+
 	&-title {
-		font-size: 1.9rem;
-		margin: 3rem 0 2rem 0;
+		font-size: 1.7rem;
+		margin: 2rem 0 2rem 0;
 	}
 	&-subtitle {
-		font-size: 1.4rem;
-		margin: 0 0 2rem 0;
+		font-size: 1.3rem;
+		margin: 0 0 1.5rem 0;
 	}
 
 	&-text {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
+		padding: 0.5rem 0 0 0;
 	}
 }

@@ -1,16 +1,19 @@
-.projects {
+.projectPage {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	flex-direction: column;
 
+	&-iconHome {
+		margin: 1rem 0 0 0;
+	}
 	&-taiwan {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		font-size: 1.8rem;
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
 
 	&-taiwan-img {
@@ -34,7 +37,7 @@
 	&-website-taiwan {
 		font-size: 1.3rem;
 		text-decoration: none;
-		margin: 0 0 2rem 0;
+		margin: 0 0 2rem 1rem;
 		border: 1px solid black;
 		padding: 2px;
 	}
@@ -70,7 +73,7 @@
 	&-website-pokedeck {
 		font-size: 1.3rem;
 		text-decoration: none;
-		margin: 0 0 2rem 0;
+		margin: 0 0 1rem 0;
 		border: 1px solid black;
 		padding: 2px;
 	}
