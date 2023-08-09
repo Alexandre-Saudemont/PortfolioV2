@@ -39,6 +39,10 @@ function HomePage() {
 	function navigateToProjects() {
 		navigate('/Projects');
 	}
+
+	function navigateToContact() {
+		navigate('/Contact');
+	}
 	// function handleAboutDarkMode() {
 	// 	navigate('/About', {state: {darkMode: isDarkMode}});
 	// }
@@ -99,7 +103,9 @@ function HomePage() {
 				<p className='homePage-links-text' onClick={navigateToAbout}>
 					About
 				</p>
-				<p className='homePage-links-text'>Contact</p>
+				<p className='homePage-links-text' onClick={navigateToContact}>
+					Contact
+				</p>
 				<div>
 					<p className='homePage-links-text-project' onClick={navigateToProjects}>
 						Project

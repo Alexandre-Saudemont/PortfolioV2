@@ -1,0 +1,20 @@
+.contactPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	&-iconHome {
+		margin: 1rem 0 1rem 0;
+	}
+	&-weather-icon {
+		filter: invert(1);
+		font-size: 2rem;
+	}
+
+	&-weather-icon-dark {
+		filter: invert(0);
+		font-size: 2rem;
+	}
+}

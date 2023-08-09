@@ -5,6 +5,7 @@ import HomePage from '../Components/pages/HomePage/HomePage.js';
 import AboutPage from '../Components/pages/AboutPage/AboutPage.js';
 import ProjectsPage from '../Components/pages/ProjectsPage/ProjectsPage.js';
 import CVPage from '../Components/pages/CVPage/CVPage.js';
+import ContactPage from '../Components/pages/ContactPage/ContactPage';
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 			{
 				path: 'CV',
 				element: <CVPage />,
+			},
+			{
+				path: 'Contact',
+				element: <ContactPage />,
 			},
 		],
 	},
