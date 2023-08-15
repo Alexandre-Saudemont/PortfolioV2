@@ -2,7 +2,8 @@ import React, {useState, useEffect, useContext} from 'react';
 import {getWeatherData} from '../../request';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useNavigate} from 'react-router-dom';
-import {emailjs, sendForm} from '@emailjs/browser';
+import {sendForm} from '@emailjs/browser';
+import {GoogleMap, LoadScript} from '@react-google-maps/api';
 import house from '../../../assets/img/house.svg';
 import houseDark from '../../../assets/img/house-dark.svg';
 import './ContactPage.scss';
@@ -31,11 +32,15 @@ function ContactPage() {
 			});
 	};
 
+	const Reims = {
+		lat: 49.258329,
+		lng: 4.031696,
+	};
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const response = await getWeatherData(49.258329, 4.031696);
-				console.log('la reponse', response.data);
 				setWeatherData(response.data);
 			} catch (error) {
 				setError(error);
@@ -44,7 +49,6 @@ function ContactPage() {
 		fetchData();
 	}, []);
 
-	console.log(weatherData);
 	return (
 		<div className='contactPage'>
 			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
@@ -66,6 +70,9 @@ function ContactPage() {
 					className={!isDarkMode ? 'contactPage-weather-icon' : 'contactPage-weather-icon-dark'}
 				/>
 			</div>
+			<LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+				<GoogleMap mapContainerClassName='contactPage-map' center={Reims} zoom={15}></GoogleMap>
+			</LoadScript>
 		</div>
 	);
 }
