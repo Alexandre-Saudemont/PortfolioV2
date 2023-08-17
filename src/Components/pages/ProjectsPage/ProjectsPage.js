@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
-import taiwan from '../../../assets/img/taiwan.jpg';
-import pokedeck from '../../../assets/img/pokedeck.png';
+import taiwan from '../../../assets/img/taiwan.gif';
+import pokedeck from '../../../assets/img/pokemon.gif';
 import house from '../../../assets/img/house.svg';
 import houseDark from '../../../assets/img/house-dark.svg';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
@@ -35,6 +35,9 @@ function ProjectsPage() {
 		window.open('https://github.com/Alexandre-Saudemont/pokedeck-back', '_blank');
 	}
 
+	function onClickPokedeck() {
+		window.open('https://www.youtube.com/watch?v=4XWyxDCUS4A', '_blank');
+	}
 	return (
 		<div className='projectPage'>
 			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
@@ -61,7 +64,12 @@ function ProjectsPage() {
 				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
 					GitHub Back
 				</button>
-				<button href='google.com' target='_blank' rel='noopener noreferrer' className='projectPage-website-pokedeck'>
+				<button
+					href='google.com'
+					target='_blank'
+					rel='noopener noreferrer'
+					className='projectPage-website-pokedeck'
+					onClick={onClickPokedeck}>
 					Demonstration
 				</button>
 			</div>

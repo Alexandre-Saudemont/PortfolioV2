@@ -27,11 +27,20 @@
 		}
 	}
 
-	&-container-weather {
+	&-weather {
 		justify-content: space-around;
 		display: flex;
+
 		align-items: center;
-		width: 80%;
+		width: 90%;
+
+		&-city {
+			font-size: 1.2rem;
+		}
+
+		&-description {
+			font-size: 1.1rem;
+		}
 	}
 
 	&-map {
