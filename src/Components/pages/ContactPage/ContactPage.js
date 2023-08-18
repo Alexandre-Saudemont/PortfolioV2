@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
+import Swal from 'sweetalert2';
 import {getWeatherData} from '../../request';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useNavigate} from 'react-router-dom';
@@ -16,14 +17,6 @@ function ContactPage() {
 	const {isDarkMode} = useContext(DarkModeContext);
 	const navigate = useNavigate();
 
-	function navigateHome() {
-		navigate('/');
-	}
-
-	function onClickToggleModalSuccess() {
-		setToggleModalSucces(!toggleModalSuccess);
-	}
-
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
@@ -31,6 +24,12 @@ function ContactPage() {
 		sendForm('contact_service', 'template_l2nwp6s', event.target, 'Z3rh0mNjILy5GvJ3-')
 			.then(() => {
 				setToggleModalSucces(true);
+				Swal.fire({
+					title: 'Message envoyé !',
+					text: 'Je vous répondrai dès que possible.',
+					icon: 'success',
+					confirmButtonText: 'OK',
+				});
 			})
 			.catch((error) => {
 				alert('Une erreur est survenue:', error);
@@ -41,6 +40,20 @@ function ContactPage() {
 		lat: 49.258329,
 		lng: 4.031696,
 	};
+
+	function navigateHome() {
+		navigate('/');
+	}
+
+	function onClickToggleModalSuccess(e) {
+		e.preventDefault();
+		Swal.fire({
+			title: 'Message envoyé !',
+			text: 'Je vous répondrai dès que possible.',
+			icon: 'success',
+			confirmButtonText: 'OK',
+		});
+	}
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -64,16 +77,7 @@ function ContactPage() {
 				<textarea name='message' placeholder='Message' required className='contactPage-form-message'></textarea>
 				<input type='submit' value='Send' className='contactPage-form-button' />
 			</form>
-			{toggleModalSuccess && (
-				<div className='contactPage-modal'>
-					<div className='contactPage-modal-content'>
-						<p className='contactPage-modal-content-text'>Your message has been sent successfully</p>
-						<button className='contactPage-modal-content-button' onClick={onClickToggleModalSuccess}>
-							OK
-						</button>
-					</div>
-				</div>
-			)}
+
 			<div className='contactPage-weather'>
 				{/* We make sure that weatherData is not null and after that we search the name of the city related to the lat & lon we setup above*/}
 				<p className='contactPage-weather-city'>{weatherData && weatherData.name}</p>
