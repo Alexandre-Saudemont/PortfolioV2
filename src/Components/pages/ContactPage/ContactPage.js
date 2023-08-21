@@ -7,12 +7,12 @@ import {sendForm} from '@emailjs/browser';
 import {GoogleMap, LoadScript} from '@react-google-maps/api';
 import house from '../../../assets/img/house.svg';
 import houseDark from '../../../assets/img/house-dark.svg';
+import chicken from '../../../assets/img/chicken.gif';
 import './ContactPage.scss';
 
 function ContactPage() {
 	const [weatherData, setWeatherData] = useState(null);
 	const [error, setError] = useState(null);
-	const [toggleModalSuccess, setToggleModalSucces] = useState(null);
 
 	const {isDarkMode} = useContext(DarkModeContext);
 	const navigate = useNavigate();
@@ -23,16 +23,26 @@ function ContactPage() {
 		// Envoie l'e-mail via emailJS
 		sendForm('contact_service', 'template_l2nwp6s', event.target, 'Z3rh0mNjILy5GvJ3-')
 			.then(() => {
-				setToggleModalSucces(true);
 				Swal.fire({
-					title: 'Message envoyé !',
-					text: 'Je vous répondrai dès que possible.',
-					icon: 'success',
-					confirmButtonText: 'OK',
+					title: 'Message Sent !',
+					text: `I'll get back to you as soon as possible`,
+					imageUrl: `${chicken}`,
+					position: 'center',
+					timer: 5500,
+					showConfirmButton: false,
+					timerProgressBar: true,
+					customClass: {
+						swalContainer: 'contactPage-swal-container',
+					},
 				});
 			})
 			.catch((error) => {
-				alert('Une erreur est survenue:', error);
+				console.error(error);
+				Swal.fire({
+					icon: 'error',
+					title: 'Message not sent !',
+					text: `Please try again later`,
+				});
 			});
 	};
 
@@ -43,16 +53,6 @@ function ContactPage() {
 
 	function navigateHome() {
 		navigate('/');
-	}
-
-	function onClickToggleModalSuccess(e) {
-		e.preventDefault();
-		Swal.fire({
-			title: 'Message envoyé !',
-			text: 'Je vous répondrai dès que possible.',
-			icon: 'success',
-			confirmButtonText: 'OK',
-		});
 	}
 
 	useEffect(() => {
@@ -71,6 +71,7 @@ function ContactPage() {
 		<div className='contactPage'>
 			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
 			<p> {error && error.message}</p>
+			<p className='contactPage-title'>Stay in touch ! </p>
 			<form onSubmit={handleSubmit} className='contactPage-form'>
 				<input type='text' name='user_name' placeholder='Name' required className='contactPage-form-name' />
 				<input type='email' name='user_email' placeholder='E-mail' required className='contactPage-form-email' />
