@@ -25,6 +25,27 @@
 	}
 }
 
+.skills-back {
+	position: absolute;
+	top: 450%;
+	left: 25%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+
+	&-icon-nodejs {
+		width: 1.6rem;
+	}
+
+	&-icon-expressjs {
+		width: 1.6rem;
+	}
+
+	&-icon-psql {
+		width: 1.6rem;
+	}
+}
 @keyframes react-spin {
 	from {
 		transform: rotate(0deg);
