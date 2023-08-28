@@ -90,7 +90,7 @@ function HomePage() {
 
 			<h1 className='homePage-title'>Alexandre Saudemont</h1>
 			<img src={profilePic} alt='profile' className='homePage-profilePic' />
-			<div className='homePage-descritpion-container'>
+			<div className='homePage-description-container'>
 				<p className='homePage-description'>I'm a Developper</p>
 				<p className='homePage-description-dynamic'>{displayText}</p>
 			</div>
