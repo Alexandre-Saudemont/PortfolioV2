@@ -38,6 +38,7 @@ function ProjectsPage() {
 	function onClickPokedeck() {
 		window.open('https://www.youtube.com/watch?v=4XWyxDCUS4A', '_blank');
 	}
+
 	return (
 		<div className='projectPage'>
 			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
