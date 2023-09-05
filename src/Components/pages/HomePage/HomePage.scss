@@ -65,9 +65,21 @@
 		position: relative;
 	}
 
+	&-links-container:hover {
+		cursor: pointer;
+	}
+
 	&-links-text {
 		font-size: 1.2rem;
 		text-decoration: none;
+	}
+
+	&-links-text:hover {
+		color: lightcoral;
+	}
+
+	&-links-text-project:hover {
+		color: lightcoral;
 	}
 
 	&-links-text-clicked {
