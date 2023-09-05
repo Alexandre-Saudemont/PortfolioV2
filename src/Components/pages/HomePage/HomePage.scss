@@ -10,15 +10,6 @@
 	align-items: center;
 	overflow: auto;
 
-	&-news {
-		width: 70%;
-		color: coral;
-		margin-bottom: 1rem;
-		font-size: 1.3rem;
-		font-weight: bolder;
-		-webkit-animation: heartbeat 2s ease-in-out infinite both;
-		animation: heartbeat 3s ease-in-out infinite both;
-	}
 	&-moon {
 		// changed from nightmode to moon
 		width: 1.2rem;
@@ -54,7 +45,7 @@
 		height: 2rem;
 		color: var(--text-color);
 		font-size: 1.8rem;
-		margin: 3rem 4rem 0rem 4rem;
+		margin: 3rem 0 0 0;
 	}
 
 	&-description-dynamic {
@@ -123,74 +114,6 @@
  * animation puff-in-center
  * ----------------------------------------
  */
-@-webkit-keyframes heartbeat {
-	from {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		-webkit-transform-origin: center center;
-		transform-origin: center center;
-		-webkit-animation-timing-function: ease-out;
-		animation-timing-function: ease-out;
-	}
-	10% {
-		-webkit-transform: scale(0.91);
-		transform: scale(0.91);
-		-webkit-animation-timing-function: ease-in;
-		animation-timing-function: ease-in;
-	}
-	17% {
-		-webkit-transform: scale(0.98);
-		transform: scale(0.98);
-		-webkit-animation-timing-function: ease-out;
-		animation-timing-function: ease-out;
-	}
-	33% {
-		-webkit-transform: scale(0.87);
-		transform: scale(0.87);
-		-webkit-animation-timing-function: ease-in;
-		animation-timing-function: ease-in;
-	}
-	45% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		-webkit-animation-timing-function: ease-out;
-		animation-timing-function: ease-out;
-	}
-}
-@keyframes heartbeat {
-	from {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		-webkit-transform-origin: center center;
-		transform-origin: center center;
-		-webkit-animation-timing-function: ease-out;
-		animation-timing-function: ease-out;
-	}
-	10% {
-		-webkit-transform: scale(0.91);
-		transform: scale(0.91);
-		-webkit-animation-timing-function: ease-in;
-		animation-timing-function: ease-in;
-	}
-	17% {
-		-webkit-transform: scale(0.98);
-		transform: scale(0.98);
-		-webkit-animation-timing-function: ease-out;
-		animation-timing-function: ease-out;
-	}
-	33% {
-		-webkit-transform: scale(0.87);
-		transform: scale(0.87);
-		-webkit-animation-timing-function: ease-in;
-		animation-timing-function: ease-in;
-	}
-	45% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		-webkit-animation-timing-function: ease-out;
-		animation-timing-function: ease-out;
-	}
-}
 
 @-webkit-keyframes puff-in-center {
 	0% {
@@ -249,7 +172,7 @@
 		overflow: auto;
 		&-title {
 			height: auto;
-			margin: -15% 0 15%;
+			margin: 2rem 0 3rem 0;
 		}
 	}
 }
@@ -262,6 +185,35 @@
 		&-title {
 			font-size: 3rem;
 			margin-top: 5rem;
+		}
+		&-description {
+			font-size: 2.4rem;
+		}
+		&-description-dynamic {
+			font-size: 2.4rem;
+		}
+
+		&-links-text-clicked {
+			font-size: 1.7rem;
+		}
+		&-links-text {
+			font-size: 1.7rem;
+		}
+
+		&-links-text-project {
+			font-size: 1.7rem;
+		}
+
+		&-icon-social-container {
+			margin-top: 10rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.homePage {
+		&-title {
+			font-size: 4rem;
 		}
 		&-description {
 			font-size: 2.4rem;

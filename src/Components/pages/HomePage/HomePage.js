@@ -121,7 +121,6 @@ function HomePage() {
 					<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
 				</a>
 			</ul>
-			<div className='homePage-news'>Work in Progress !</div>
 		</section>
 	);
 }
