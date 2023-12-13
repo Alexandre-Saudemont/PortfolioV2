@@ -33,12 +33,21 @@
 		padding: 2px;
 	}
 
+	&-github-taiwan:hover {
+		cursor: pointer;
+		background-color: aquamarine;
+	}
+
 	&-website-taiwan {
 		font-size: 1.3rem;
 		text-decoration: none;
 		margin: 0 0 2rem 1rem;
 		border: 1px solid black;
 		padding: 2px;
+	}
+	&-website-taiwan:hover {
+		cursor: pointer;
+		background-color: aquamarine;
 	}
 
 	&-pokedeck {
@@ -69,12 +78,20 @@
 		border: 1px solid black;
 		padding: 2px;
 	}
+	&-github-pokedeck:hover {
+		cursor: pointer;
+		background-color: aquamarine;
+	}
 	&-website-pokedeck {
 		font-size: 1.3rem;
 		text-decoration: none;
 		margin: 0 0 1rem 0;
 		border: 1px solid black;
 		padding: 2px;
+	}
+	&-website-pokedeck:hover {
+		cursor: pointer;
+		background-color: aquamarine;
 	}
 }
 

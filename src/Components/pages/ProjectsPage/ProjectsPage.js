@@ -36,7 +36,7 @@ function ProjectsPage() {
 	}
 
 	function onClickPokedeck() {
-		window.open('https://www.youtube.com/watch?v=4XWyxDCUS4A', '_blank');
+		window.open('https://pokedeck.alexandre-saudemont.fr/', '_blank');
 	}
 
 	return (
@@ -71,7 +71,7 @@ function ProjectsPage() {
 					rel='noopener noreferrer'
 					className='projectPage-website-pokedeck'
 					onClick={onClickPokedeck}>
-					Demonstration
+					Website
 				</button>
 			</div>
 		</div>
