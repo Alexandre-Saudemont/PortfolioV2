@@ -1,4 +1,8 @@
 {
+	"homePage": {
+		"about": "A propos",
+		"project": "Projets"
+	},
 	"aboutPage": {
 		"title": "Salut! Je m'appelle Alexandre Saudemont",
 		"subtitle": "Développeur Web FullStack",
