@@ -1,55 +1,47 @@
 import React, {useState, useEffect, useContext} from 'react';
-import Swal from 'sweetalert2';
 import {getWeatherData} from '../../request';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useNavigate} from 'react-router-dom';
-import {sendForm} from '@emailjs/browser';
-import {GoogleMap, LoadScript} from '@react-google-maps/api';
 import house from '../../../assets/img/house.svg';
 import houseDark from '../../../assets/img/house-dark.svg';
-import chicken from '../../../assets/img/chicken.gif';
+import {useTranslation} from 'react-i18next';
 import './ContactPage.scss';
 
 function ContactPage() {
 	const [weatherData, setWeatherData] = useState(null);
 	const [error, setError] = useState(null);
-
 	const {isDarkMode} = useContext(DarkModeContext);
 	const navigate = useNavigate();
+	const {t} = useTranslation();
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
+	// const handleSubmit = (event) => {
+	// 	event.preventDefault();
 
-		// Envoie l'e-mail via emailJS
-		sendForm('contact_service', 'template_l2nwp6s', event.target, 'Z3rh0mNjILy5GvJ3-')
-			.then(() => {
-				Swal.fire({
-					title: 'Message Sent !',
-					text: `I'll get back to you as soon as possible`,
-					imageUrl: `${chicken}`,
-					position: 'center',
-					timer: 5500,
-					showConfirmButton: false,
-					timerProgressBar: true,
-					customClass: {
-						swalContainer: 'contactPage-swal-container',
-					},
-				});
-			})
-			.catch((error) => {
-				console.error(error);
-				Swal.fire({
-					icon: 'error',
-					title: 'Message not sent !',
-					text: `Please try again later`,
-				});
-			});
-	};
-
-	const Reims = {
-		lat: 49.258329,
-		lng: 4.031696,
-	};
+	// 	// Envoie l'e-mail via emailJS
+	// 	sendForm('contact_service', 'template_l2nwp6s', event.target, 'Z3rh0mNjILy5GvJ3-')
+	// 		.then(() => {
+	// 			Swal.fire({
+	// 				title: 'Message Sent !',
+	// 				text: `I'll get back to you as soon as possible`,
+	// 				imageUrl: `${chicken}`,
+	// 				position: 'center',
+	// 				timer: 5500,
+	// 				showConfirmButton: false,
+	// 				timerProgressBar: true,
+	// 				customClass: {
+	// 					swalContainer: 'contactPage-swal-container',
+	// 				},
+	// 			});
+	// 		})
+	// 		.catch((error) => {
+	// 			console.error(error);
+	// 			Swal.fire({
+	// 				icon: 'error',
+	// 				title: 'Message not sent !',
+	// 				text: `Please try again later`,
+	// 			});
+	// 		});
+	// };
 
 	function navigateHome() {
 		navigate('/');
@@ -71,14 +63,15 @@ function ContactPage() {
 		<div className='contactPage'>
 			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
 			<p> {error && error.message}</p>
-			<p className='contactPage-title'>Stay in touch ! </p>
-			<form onSubmit={handleSubmit} className='contactPage-form'>
-				<input type='text' name='user_name' placeholder='Name' required className='contactPage-form-name' />
-				<input type='email' name='user_email' placeholder='E-mail' required className='contactPage-form-email' />
-				<textarea name='message' placeholder='Message' required className='contactPage-form-message'></textarea>
-				<input type='submit' value='Send' className='contactPage-form-button' />
-			</form>
-
+			<h1 className='contactPage-title'>{t(`contactPage.title`)}</h1>
+			<p className='contactPage-text'>{t(`contactPage.text`)}</p>
+			<a
+				className='contactPage-cv'
+				href='https://drive.google.com/file/d/1is708_lJybA_BtGTnXvvGdSbYiyexQxw/view?usp=sharing'
+				rel='noreferrer'
+				target='_blank'>
+				{t(`contactPage.CV`)}
+			</a>
 			<div className='contactPage-weather'>
 				{/* We make sure that weatherData is not null and after that we search the name of the city related to the lat & lon we setup above*/}
 				<p className='contactPage-weather-city'>{weatherData && weatherData.name}</p>
@@ -90,9 +83,6 @@ function ContactPage() {
 					className={!isDarkMode ? 'contactPage-weather-icon' : 'contactPage-weather-icon-dark'}
 				/>
 			</div>
-			<LoadScript async googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-				<GoogleMap mapContainerClassName='contactPage-map' center={Reims} zoom={15}></GoogleMap>
-			</LoadScript>
 		</div>
 	);
 }

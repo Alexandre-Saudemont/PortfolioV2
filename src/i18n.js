@@ -7,14 +7,14 @@ i18n.use(HttpApi)
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
-		supportedLngs: ['en', 'fr'],
+		supportedLngs: ['en', 'fr', 'CN'],
 		fallbackLng: 'fr',
 		debug: true,
 		interpolation: {
 			escapeValue: false,
 		},
 		backend: {
-			loadPath: '/locales/{{lng}}/{{ns}}.json', // Chemin vers les fichiers de traduction
+			loadPath: '/locales/{{lng}}/{{lng}}.json', // Chemin vers les fichiers de traduction
 		},
 	});
 

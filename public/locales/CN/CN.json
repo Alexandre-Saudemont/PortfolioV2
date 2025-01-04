@@ -1,0 +1,34 @@
+{
+	"homePage": {
+		"title": "我是开发者",
+		"typingTexts": ["全栈 JavaScript", "网页", "前端"],
+		"skills": "技能",
+		"about": "关于",
+		"contact": "接触",
+		"project": "项目"
+	},
+	"aboutPage": {
+		"title": "你好！我叫 Alexandre Saudemont",
+		"subtitle": "全栈网页开发者",
+		"paragraphs": [
+			"从小对计算机充满热情，在行政部门工作多年后，我决定转行从事网页开发。",
+			"我先是自学，然后寻找培训以提高我的技能，就这样我进入了 100% 远程学校 O'Clock。",
+			"我从 2022 年 1 月 17 日到 2022 年 7 月 2 日在 O'Clock 学习。",
+			"该课程包括 3 个月的“基础”学习 JavaScript 开发的基础知识，1 个月的 React 专业化和 1 个月的专业项目。",
+			"我是该项目的前端开发人员。"
+		]
+	},
+	"contactPage": {
+		"title": "保持联系！",
+		"text": "如果您想联系我，请随时给我发邮件或打电话！",
+		"CV": "下载我的简历"
+	},
+	"projectsPage": {
+		"title1": "台湾网站",
+		"title2": "Pokedeck 网站",
+		"github": "GitHub",
+		"githubFront": "前端",
+		"githubBack": "后端",
+		"website": "网站"
+	}
+}

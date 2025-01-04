@@ -5,15 +5,19 @@ import './LanguageSwitch.scss';
 function LanguageSwitch() {
 	const {i18n} = useTranslation();
 
-	function switchLanguage() {
-		const newLanguage = i18n.language === 'fr' ? 'en' : 'fr';
-		i18n.changeLanguage(newLanguage);
+	function switchLanguage(event) {
+		const selectedLanguage = event.target.value;
+		i18n.changeLanguage(selectedLanguage);
 	}
 
 	return (
-		<button className='LanguageSwitch-button' onClick={switchLanguage}>
-			{i18n.language === 'fr' ? 'English' : 'Français'}
-		</button>
+		<div className='LanguageSwitch-container'>
+			<select onChange={switchLanguage} value={i18n.language}>
+				<option value='fr'>Français</option>
+				<option value='en'>English</option>
+				<option value='CN'>中文</option>
+			</select>
+		</div>
 	);
 }
 

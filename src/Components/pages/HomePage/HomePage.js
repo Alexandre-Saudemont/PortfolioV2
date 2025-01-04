@@ -14,6 +14,7 @@ import LanguageSwitch from '../../LanguageSwitch/LanguageSwitch.js';
 import './HomePage.scss';
 
 function HomePage() {
+	const {t, i18n} = useTranslation();
 	const [textIndex, setTextIndex] = useState(0);
 	const [displayText, setDisplayText] = useState('');
 	const [clearing, setClearing] = useState(false);
@@ -21,9 +22,8 @@ function HomePage() {
 	const [showModalSkills, setShowModalSkills] = useState(false);
 	const [changeText, setText] = useState(false);
 	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
-	const texts = ['FullStack JavaScript', '  Web', 'Front-End'];
+	const texts = t('homePage.typingTexts', {returnObjects: true});
 	const navigate = useNavigate();
-	const {t} = useTranslation();
 
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
@@ -58,6 +58,10 @@ function HomePage() {
 
 		return () => clearTimeout(timer);
 	}, []);
+	useEffect(() => {
+		setTextIndex(0);
+		setDisplayText('');
+	}, [i18n.language]);
 
 	useEffect(() => {
 		if (!isMounted) return; // do not start typing animation until component is mounted
@@ -79,27 +83,27 @@ function HomePage() {
 			}
 		};
 
-		const delay = clearing ? 120 : 180; // adjust timing here
+		const delay = clearing ? 120 : 180;
 		const timer = setTimeout(typeText, delay);
 
 		return () => clearTimeout(timer);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [clearing, displayText, textIndex, isMounted]); // add isMounted to dependency array
+	}, [clearing, displayText, textIndex, isMounted]);
 
 	return (
-		<section className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
+		<section className={`homePage ${!isDarkMode ? 'darkMode' : 'liqghtMode'}`}>
 			<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 			<LanguageSwitch />
 
 			<h1 className='homePage-title'>Alexandre Saudemont</h1>
 			<img src={profilePic} alt='profile' className='homePage-profilePic' />
 			<div className='homePage-description-container'>
-				<p className='homePage-description'>I'm a Developper</p>
+				<p className='homePage-description'>{t(`homePage.title`)}</p>
 				<p className='homePage-description-dynamic'>{displayText}</p>
 			</div>
 			<div className='homePage-links-container'>
 				<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
-					Skills
+					{t(`homePage.skills`)}
 				</p>
 				{showModalSkills && <Skills />}
 
@@ -107,11 +111,11 @@ function HomePage() {
 					{t(`homePage.about`)}
 				</p>
 				<p className='homePage-links-text' onClick={navigateToContact}>
-					Contact
+					{t(`homePage.contact`)}
 				</p>
 				<div>
 					<p className='homePage-links-text-project' onClick={navigateToProjects}>
-						Project
+						{t(`homePage.project`)}
 					</p>
 				</div>
 			</div>

@@ -5,12 +5,13 @@ import pokedeck from '../../../assets/img/pokemon.gif';
 import house from '../../../assets/img/house.svg';
 import houseDark from '../../../assets/img/house-dark.svg';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
-
+import {useTranslation} from 'react-i18next';
 import './ProjectsPage.scss';
 
 function ProjectsPage() {
 	const {isDarkMode} = useContext(DarkModeContext);
 	const navigate = useNavigate();
+	const {t} = useTranslation();
 
 	function navigateHome() {
 		navigate('/');
@@ -43,27 +44,27 @@ function ProjectsPage() {
 		<div className='projectPage'>
 			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
 			<div className='projectPage-taiwan'>
-				Taiwan Website
+				{t('projectsPage.title1')}
 				<img src={taiwan} alt='' className='projectPage-taiwan-img' />
 			</div>
 			<div className='projectPage-taiwan-button-container'>
 				<button className='projectPage-github-taiwan' onClick={onClickGitHubTaiwan}>
-					GitHub
+					{t('projectsPage.github')}
 				</button>
 				<button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
-					Website
+					{t('projectsPage.website')}
 				</button>
 			</div>
 			<div className='projectPage-pokedeck'>
-				Pokedeck Website
+				{t('projectsPage.title2')}
 				<img src={pokedeck} alt='' className='projectPage-pokedeck-img' />
 			</div>
 			<div className='projectPage-pokedeck-button-container'>
 				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckFront}>
-					GitHub Front
+					{t('projectsPage.githubFront')}
 				</button>
 				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
-					GitHub Back
+					{t('projectsPage.githubBack')}
 				</button>
 				<button
 					href='google.com'
@@ -71,7 +72,7 @@ function ProjectsPage() {
 					rel='noopener noreferrer'
 					className='projectPage-website-pokedeck'
 					onClick={onClickPokedeck}>
-					Website
+					{t('projectsPage.website')}
 				</button>
 			</div>
 		</div>

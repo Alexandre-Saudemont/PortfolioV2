@@ -1,6 +1,10 @@
 {
 	"homePage": {
+		"title": "I'm a Developper",
+		"typingTexts": ["FullStack JavaScript", "Web", "Front-End"],
+		"skills": "Skills",
 		"about": "About",
+		"contact": "Contact",
 		"project": "Projects"
 	},
 	"aboutPage": {
@@ -13,5 +17,18 @@
 			"The program consisted of 3 months of 'Basic' to learn the basics of development in JavaScript, 1 month of specialization on React and 1 month for a professional project.",
 			"I was Front-End developer on the project."
 		]
+	},
+	"contactPage": {
+		"title": "Stay in Touch !",
+		"text": "If you want to contact me, don't hesistate to send me a mail or give me a phone call !",
+		"CV": "Download my CV"
+	},
+	"projectsPage": {
+		"title1": "Taiwan Website",
+		"title2": "Pokedeck Website",
+		"github": "GitHub",
+		"githubFront": "Front-End",
+		"githubBack": "Back-End",
+		"lwebsite": "Website"
 	}
 }

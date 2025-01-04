@@ -13,6 +13,7 @@
 		flex-direction: column;
 		align-items: center;
 		font-size: 1.8rem;
+
 		margin-top: 1rem;
 		&-img {
 			width: 12rem;
@@ -154,17 +155,24 @@
 
 @media screen and (min-width: 1024px) {
 	.projectPage {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: column;
+
 		&-iconHome {
 			margin: 1.5rem 0 0 0;
-			width: 2rem;
+
+			cursor: pointer;
 		}
 		&-taiwan {
 			margin-top: 5rem;
-			font-size: 2.5rem;
+			font-size: 2rem;
 
 			&-img {
-				width: 15rem;
-				height: 12rem;
+				width: 12rem;
+				height: 7rem;
 			}
 			&-button-container {
 				margin: 1rem 0 1rem 0;
@@ -173,21 +181,21 @@
 
 		&-github-taiwan {
 			border-radius: 5px;
-			width: 5rem;
-			height: 2rem;
+			width: 6rem;
+			height: 2.7rem;
 		}
 		&-website-taiwan {
 			border-radius: 5px;
 			width: 6rem;
-			height: 2rem;
+			height: 2.7rem;
 		}
 
 		&-pokedeck {
-			margin-top: 1.5rem;
-			font-size: 2.5rem;
+			margin-top: 1rem;
+			font-size: 2rem;
 			&-img {
-				width: 15rem;
-				height: 12rem;
+				width: 12rem;
+				height: 7rem;
 			}
 			&-button-container {
 				margin: 1rem 0 1rem 0;

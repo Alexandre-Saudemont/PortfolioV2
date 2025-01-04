@@ -1,7 +1,20 @@
-.LanguageSwitch-button {
-	background-color: red;
+.LanguageSwitch-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 2rem 1rem 1rem 0;
 }
 
-.LanguageSwitch-button:hover {
-	background-color: blue;
+.LanguageSwitch-container select {
+	margin: 1rem 0 1rem 0;
+	padding: 5px;
+	font-size: 1rem;
+	border-radius: 8px; /* Coins arrondis */
+}
+
+@media screen and (min-width: 1024px) {
+	.LanguageSwitch-container {
+		margin: 3.5rem 1rem 1rem 0;
+		cursor: pointer; /* Curseur en forme de main */
+	}
 }

@@ -76,6 +76,10 @@
 	.aboutPage {
 		width: 70%;
 
+		&-iconHome {
+			cursor: pointer;
+		}
+
 		&-title {
 			font-size: 3rem;
 		}
