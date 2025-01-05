@@ -2,7 +2,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 2rem 1rem 1rem 0;
+	padding-right: 13%;
 }
 
 .LanguageSwitch-container select {
@@ -14,7 +14,8 @@
 
 @media screen and (min-width: 1024px) {
 	.LanguageSwitch-container {
-		margin: 3.5rem 1rem 1rem 0;
-		cursor: pointer; /* Curseur en forme de main */
+		cursor: pointer;
+		padding-right: 4%;
+		padding-top: 2px;
 	}
 }

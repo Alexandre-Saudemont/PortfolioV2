@@ -4,7 +4,7 @@
 		"typingTexts": ["FullStack JavaScript ", "Web", "Front-End"],
 		"skills": "Compétences",
 		"about": "A propos",
-		"contact": "Me contacter",
+		"contact": "Contact",
 		"project": "Projets"
 	},
 	"aboutPage": {
@@ -24,7 +24,7 @@
 		"CV": "Télécharger mon CV"
 	},
 	"projectsPage": {
-		"title": "Site Taiwan",
+		"title1": "Site Taiwan",
 		"title2": "Site Pokedeck",
 		"github": "GitHub",
 		"githubFront": "Front-End",

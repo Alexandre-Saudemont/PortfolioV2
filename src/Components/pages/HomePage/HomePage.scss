@@ -71,10 +71,12 @@
 	}
 
 	&-links-text {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		text-decoration: none;
 	}
-
+	&-links-text-clicked {
+		text-decoration: none;
+	}
 	&-links-text:hover {
 		color: lightcoral;
 	}
@@ -221,7 +223,6 @@
 @media screen and (min-width: 1024px) {
 	.homePage {
 		&-title {
-			padding-top: 10%;
 			font-size: 3.5rem;
 		}
 		&-description {

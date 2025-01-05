@@ -8,13 +8,14 @@
 	&-iconHome {
 		margin: 1rem 0 0 0;
 	}
+
 	&-taiwan {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		font-size: 1.8rem;
-
 		margin-top: 1rem;
+
 		&-img {
 			width: 12rem;
 			height: 10rem;
@@ -32,6 +33,9 @@
 		margin: 0 1rem 2rem 0;
 		border: 1px solid black;
 		padding: 2px;
+		border-radius: 5px;
+		width: 5rem;
+		height: 2.5rem;
 	}
 
 	&-github-taiwan:hover {
@@ -45,7 +49,11 @@
 		margin: 0 0 2rem 1rem;
 		border: 1px solid black;
 		padding: 2px;
+		border-radius: 5px;
+		width: 6rem;
+		height: 2.5rem;
 	}
+
 	&-website-taiwan:hover {
 		cursor: pointer;
 		background-color: aquamarine;
@@ -78,17 +86,25 @@
 		margin: 0 1rem 1.5rem 1rem;
 		border: 1px solid black;
 		padding: 2px;
+		border-radius: 5px;
+		width: 6.5rem;
+		height: 2.5rem;
 	}
+
 	&-github-pokedeck:hover {
 		cursor: pointer;
 		background-color: aquamarine;
 	}
+
 	&-website-pokedeck {
 		font-size: 1.3rem;
 		text-decoration: none;
 		margin: 0 0 1rem 0;
 		border: 1px solid black;
 		padding: 2px;
+		border-radius: 5px;
+		width: 6rem;
+		height: 2.5rem;
 	}
 	&-website-pokedeck:hover {
 		cursor: pointer;
