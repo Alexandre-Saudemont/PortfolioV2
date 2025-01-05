@@ -64,19 +64,17 @@
 
 		&-title {
 			font-size: 3rem;
+			width: auto !important;
 		}
 
-		&-form {
-			width: 80%;
-			margin-top: 2rem;
-			&-message {
-				width: 20rem;
-				height: 7rem;
-			}
-			&-button {
-				font-size: 1.5rem;
-				border-radius: 10px;
-			}
+		&-text {
+			font-size: 1.9rem;
+			margin-bottom: 4rem;
+			width: auto;
+		}
+
+		&-cv {
+			font-size: 1.8rem;
 		}
 
 		&-weather {
