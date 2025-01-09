@@ -1,5 +1,8 @@
 @import url('../src/assets/css/var.scss');
 
+html {
+	scroll-behavior: smooth;
+}
 .App-container {
 	height: 100vh;
 

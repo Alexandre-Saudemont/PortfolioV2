@@ -7,10 +7,10 @@ import linkedin from '../../../assets/img/linkedin.svg';
 import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 import moonDark from '../../../assets/img/moon-dark.svg';
 import lightbulb from '../../../assets/img/lightbulb.svg';
-import Skills from './Skills/Skills.js';
+import Skills from '../Skills/Skills.js';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useTranslation} from 'react-i18next';
-import LanguageSwitch from '../../LanguageSwitch/LanguageSwitch.js';
+
 import './HomePage.scss';
 
 function HomePage() {
@@ -93,7 +93,6 @@ function HomePage() {
 	return (
 		<section className={`homePage ${!isDarkMode ? 'darkMode' : 'liqghtMode'}`}>
 			<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
-			<LanguageSwitch />
 
 			<h1 className='homePage-title'>Alexandre Saudemont</h1>
 			<img src={profilePic} alt='profile' className='homePage-profilePic' />

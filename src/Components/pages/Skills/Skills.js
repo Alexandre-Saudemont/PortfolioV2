@@ -1,19 +1,19 @@
 import React, {useContext} from 'react';
-import {DarkModeContext} from '../../../DarkMode/DarkModeContext/DarkModeContext';
-import reactIcon from '../../../../assets/img/react.svg';
-import reactIconDark from '../../../../assets/img/react-dark.svg';
-import javascriptIcon from '../../../../assets/img/js.svg';
-import javascriptIconDark from '../../../../assets/img/js-dark.svg';
-import htmlIcon from '../../../../assets/img/html5.svg';
-import htmlIconDark from '../../../../assets/img/html5-dark.svg';
-import cssIcon from '../../../../assets/img/css3.svg';
-import cssIconDark from '../../../../assets/img/css3-dark.svg';
-import nodejs from '../../../../assets/img/node-js-dark.svg';
-import nodejsDark from '../../../../assets/img/node-js.svg';
-import expressJs from '../../../../assets/img/expressjs.svg';
-import expressjsDark from '../../../../assets/img/expressjs-dark.svg';
-import psql from '../../../../assets/img/psql.svg';
-import psqlDark from '../../../../assets/img/psql-dark.svg';
+import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+import reactIcon from '../../../assets/img/react.svg';
+import reactIconDark from '../../../assets/img/react-dark.svg';
+import javascriptIcon from '../../../assets/img/js.svg';
+import javascriptIconDark from '../../../assets/img/js-dark.svg';
+import htmlIcon from '../../../assets/img/html5.svg';
+import htmlIconDark from '../../../assets/img/html5-dark.svg';
+import cssIcon from '../../../assets/img/css3.svg';
+import cssIconDark from '../../../assets/img/css3-dark.svg';
+import nodejs from '../../../assets/img/node-js-dark.svg';
+import nodejsDark from '../../../assets/img/node-js.svg';
+import expressJs from '../../../assets/img/expressjs.svg';
+import expressjsDark from '../../../assets/img/expressjs-dark.svg';
+import psql from '../../../assets/img/psql.svg';
+import psqlDark from '../../../assets/img/psql-dark.svg';
 
 import './Skills.scss';
 
