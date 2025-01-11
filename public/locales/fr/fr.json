@@ -1,5 +1,6 @@
 {
 	"homePage": {
+		"home": "Accueil",
 		"title": "Je suis développeur",
 		"typingTexts": ["FullStack JavaScript ", "Web", "Front-End"],
 		"skills": "Compétences",

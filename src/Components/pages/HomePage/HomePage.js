@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from 'react';
-import {useNavigate} from 'react-router-dom';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
 import githubDark from '../../../assets/img/github-dark.svg';
@@ -7,7 +6,7 @@ import linkedin from '../../../assets/img/linkedin.svg';
 import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 import moonDark from '../../../assets/img/moon-dark.svg';
 import lightbulb from '../../../assets/img/lightbulb.svg';
-import Skills from '../Skills/Skills.js';
+// import Skills from '../Skills/Skills.js';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useTranslation} from 'react-i18next';
 
@@ -19,52 +18,35 @@ function HomePage() {
 	const [displayText, setDisplayText] = useState('');
 	const [clearing, setClearing] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
-	const [showModalSkills, setShowModalSkills] = useState(false);
-	const [changeText, setText] = useState(false);
+	// const [showModalSkills, setShowModalSkills] = useState(false);
+	// const [changeText, setText] = useState(false);
 	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
 	const texts = t('homePage.typingTexts', {returnObjects: true});
-	const navigate = useNavigate();
 
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
 	}
 
-	function toggleModalSkills() {
-		setShowModalSkills(!showModalSkills);
-		setText(!changeText);
-	}
-
-	function navigateToAbout() {
-		navigate('/About');
-	}
-
-	function navigateToProjects() {
-		navigate('/Projects');
-	}
-
-	function navigateToContact() {
-		navigate('/Contact');
-	}
-	// function handleAboutDarkMode() {
-	// 	navigate('/About', {state: {darkMode: isDarkMode}});
+	// function toggleModalSkills() {
+	// 	setShowModalSkills(!showModalSkills);
+	// 	setText(!changeText);
 	// }
-	// const darkMode = isDarkMode ? 'lightMod' : 'darkMod';
 
-	// set isMounted to true after the component has mounted
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setIsMounted(true);
-		}, 1300); // delay before starting typing animation
+		}, 1300);
 
 		return () => clearTimeout(timer);
 	}, []);
+
 	useEffect(() => {
 		setTextIndex(0);
 		setDisplayText('');
 	}, [i18n.language]);
 
 	useEffect(() => {
-		if (!isMounted) return; // do not start typing animation until component is mounted
+		if (!isMounted) return;
 
 		const typeText = () => {
 			if (!clearing) {
@@ -91,43 +73,39 @@ function HomePage() {
 	}, [clearing, displayText, textIndex, isMounted]);
 
 	return (
-		<section className={`homePage ${!isDarkMode ? 'darkMode' : 'liqghtMode'}`}>
-			<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
+		<div className={`homePage ${!isDarkMode ? 'darkMode' : 'liqghtMode'}`}>
+			<section id='Home' className='homePage'>
+				<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 
-			<h1 className='homePage-title'>Alexandre Saudemont</h1>
-			<img src={profilePic} alt='profile' className='homePage-profilePic' />
-			<div className='homePage-description-container'>
-				<p className='homePage-description'>{t(`homePage.title`)}</p>
-				<p className='homePage-description-dynamic'>{displayText}</p>
-			</div>
-			<div className='homePage-links-container'>
-				<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
-					{t(`homePage.skills`)}
-				</p>
-				{showModalSkills && <Skills />}
-
-				<p className='homePage-links-text' onClick={navigateToAbout}>
-					{t(`homePage.about`)}
-				</p>
-				<p className='homePage-links-text' onClick={navigateToContact}>
-					{t(`homePage.contact`)}
-				</p>
-				<div>
-					<p className='homePage-links-text-project' onClick={navigateToProjects}>
-						{t(`homePage.project`)}
-					</p>
+				<h1 className='homePage-title'>Alexandre Saudemont</h1>
+				<img src={profilePic} alt='profile' className='homePage-profilePic' />
+				<div className='homePage-description-container'>
+					<p className='homePage-description'>{t(`homePage.title`)}</p>
+					<p className='homePage-description-dynamic'>{displayText}</p>
 				</div>
-			</div>
+				{/* <div className='homePage-links-container'>
+					<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
+						{t(`homePage.skills`)}
+					</p>
+					{showModalSkills && <Skills />}
 
-			<ul className='homePage-icon-social-container'>
-				<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
-					<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
-				</a>
-				<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
-					<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
-				</a>
-			</ul>
-		</section>
+					<p className='homePage-links-text'>{t(`homePage.about`)}</p>
+					<p className='homePage-links-text'>{t(`homePage.contact`)}</p>
+					<div>
+						<p className='homePage-links-text-project'>{t(`homePage.project`)}</p>
+					</div>
+				</div> */}
+
+				<ul className='homePage-icon-social-container'>
+					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
+						<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
+					</a>
+					<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
+						<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
+					</a>
+				</ul>
+			</section>
+		</div>
 	);
 }
 

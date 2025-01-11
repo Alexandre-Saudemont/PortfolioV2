@@ -42,39 +42,41 @@ function ProjectsPage() {
 
 	return (
 		<div className='projectPage'>
-			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
-			<div className='projectPage-taiwan'>
-				{t('projectsPage.title1')}
-				<img src={taiwan} alt='' className='projectPage-taiwan-img' />
-			</div>
-			<div className='projectPage-taiwan-button-container'>
-				<button className='projectPage-github-taiwan' onClick={onClickGitHubTaiwan}>
-					{t('projectsPage.github')}
-				</button>
-				<button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
-					{t('projectsPage.website')}
-				</button>
-			</div>
-			<div className='projectPage-pokedeck'>
-				{t('projectsPage.title2')}
-				<img src={pokedeck} alt='' className='projectPage-pokedeck-img' />
-			</div>
-			<div className='projectPage-pokedeck-button-container'>
-				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckFront}>
-					{t('projectsPage.githubFront')}
-				</button>
-				<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
-					{t('projectsPage.githubBack')}
-				</button>
-				<button
-					href='google.com'
-					target='_blank'
-					rel='noopener noreferrer'
-					className='projectPage-website-pokedeck'
-					onClick={onClickPokedeck}>
-					{t('projectsPage.website')}
-				</button>
-			</div>
+			<section id='Projects' className='projectPage'>
+				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
+				<div className='projectPage-taiwan'>
+					{t('projectsPage.title1')}
+					<img src={taiwan} alt='' className='projectPage-taiwan-img' />
+				</div>
+				<div className='projectPage-taiwan-button-container'>
+					<button className='projectPage-github-taiwan' onClick={onClickGitHubTaiwan}>
+						{t('projectsPage.github')}
+					</button>
+					<button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
+						{t('projectsPage.website')}
+					</button>
+				</div>
+				<div className='projectPage-pokedeck'>
+					{t('projectsPage.title2')}
+					<img src={pokedeck} alt='' className='projectPage-pokedeck-img' />
+				</div>
+				<div className='projectPage-pokedeck-button-container'>
+					<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckFront}>
+						{t('projectsPage.githubFront')}
+					</button>
+					<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
+						{t('projectsPage.githubBack')}
+					</button>
+					<button
+						href='google.com'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='projectPage-website-pokedeck'
+						onClick={onClickPokedeck}>
+						{t('projectsPage.website')}
+					</button>
+				</div>
+			</section>
 		</div>
 	);
 }

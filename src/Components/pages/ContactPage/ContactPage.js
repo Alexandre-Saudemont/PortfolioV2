@@ -61,28 +61,30 @@ function ContactPage() {
 
 	return (
 		<div className='contactPage'>
-			<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
-			<p> {error && error.message}</p>
-			<h1 className='contactPage-title'>{t(`contactPage.title`)}</h1>
-			<p className='contactPage-text'>{t(`contactPage.text`)}</p>
-			<a
-				className='contactPage-cv'
-				href='https://drive.google.com/file/d/1is708_lJybA_BtGTnXvvGdSbYiyexQxw/view?usp=sharing'
-				rel='noreferrer'
-				target='_blank'>
-				{t(`contactPage.CV`)}
-			</a>
-			<div className='contactPage-weather'>
-				{/* We make sure that weatherData is not null and after that we search the name of the city related to the lat & lon we setup above*/}
-				<p className='contactPage-weather-city'>{weatherData && weatherData.name}</p>
-				<p className='contactPage-weather-description'>{weatherData && weatherData.weather[0].description}</p>
-				<p className='contactPage-weather-temp'>{weatherData && weatherData.main.temp}°C</p>
-				<img
-					src={weatherData && `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-					alt='icon for current city'
-					className={!isDarkMode ? 'contactPage-weather-icon' : 'contactPage-weather-icon-dark'}
-				/>
-			</div>
+			<section id='Contact' className='contactPage'>
+				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
+				<p> {error && error.message}</p>
+				<h1 className='contactPage-title'>{t(`contactPage.title`)}</h1>
+				<p className='contactPage-text'>{t(`contactPage.text`)}</p>
+				<a
+					className='contactPage-cv'
+					href='https://drive.google.com/file/d/1is708_lJybA_BtGTnXvvGdSbYiyexQxw/view?usp=sharing'
+					rel='noreferrer'
+					target='_blank'>
+					{t(`contactPage.CV`)}
+				</a>
+				<div className='contactPage-weather'>
+					{/* We make sure that weatherData is not null and after that we search the name of the city related to the lat & lon we setup above*/}
+					<p className='contactPage-weather-city'>{weatherData && weatherData.name}</p>
+					<p className='contactPage-weather-description'>{weatherData && weatherData.weather[0].description}</p>
+					<p className='contactPage-weather-temp'>{weatherData && weatherData.main.temp}°C</p>
+					<img
+						src={weatherData && `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+						alt='icon for current city'
+						className={!isDarkMode ? 'contactPage-weather-icon' : 'contactPage-weather-icon-dark'}
+					/>
+				</div>
+			</section>
 		</div>
 	);
 }

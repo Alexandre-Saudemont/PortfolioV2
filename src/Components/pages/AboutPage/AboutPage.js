@@ -20,7 +20,7 @@ function AboutPage() {
 
 	return (
 		<div className={`aboutPage ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
-			<section className='aboutPage'>
+			<section id='About' className='aboutPage'>
 				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='aboutPage-iconHome' onClick={navigateHome} />
 				<h1 className='aboutPage-title'>{t(`aboutPage.title`)}</h1>
 				<h2 className='aboutPage-subtitle'>{t(`aboutPage.subtitle`)}</h2>

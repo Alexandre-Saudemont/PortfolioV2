@@ -1,5 +1,6 @@
 {
 	"homePage": {
+		"home": "家",
 		"title": "我是开发者",
 		"typingTexts": ["全栈 JavaScript", "网页", "前端"],
 		"skills": "技能",
