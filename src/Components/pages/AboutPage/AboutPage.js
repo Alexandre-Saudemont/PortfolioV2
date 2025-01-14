@@ -1,27 +1,27 @@
-import React, {useContext} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, {useContext, forwardRef} from 'react';
+// import {useNavigate} from 'react-router-dom';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
-import house from '../../../assets/img/house.svg';
-import houseDark from '../../../assets/img/house-dark.svg';
+// import house from '../../../assets/img/house.svg';
+// import houseDark from '../../../assets/img/house-dark.svg';
 import {useTranslation} from 'react-i18next';
 
 import './AboutPage.scss';
 
-function AboutPage() {
+const AboutPage = forwardRef((props, ref) => {
 	const {isDarkMode} = useContext(DarkModeContext);
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const {t} = useTranslation();
 
-	function navigateHome() {
-		navigate('/');
-	}
+	// function navigateHome() {
+	// 	navigate('/');
+	// }
 
 	const paragraphs = t(`aboutPage.paragraphs`, {returnObjects: true});
 
 	return (
 		<div className={`aboutPage ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
-			<section id='About' className='aboutPage'>
-				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='aboutPage-iconHome' onClick={navigateHome} />
+			<section ref={ref} className='aboutPage'>
+				{/* <img src={!isDarkMode ? house : houseDark} alt='icon house' className='aboutPage-iconHome' onClick={navigateHome} /> */}
 				<h1 className='aboutPage-title'>{t(`aboutPage.title`)}</h1>
 				<h2 className='aboutPage-subtitle'>{t(`aboutPage.subtitle`)}</h2>
 				<section className='aboutPage-text-container'>
@@ -34,6 +34,6 @@ function AboutPage() {
 			</section>
 		</div>
 	);
-}
+});
 
 export default AboutPage;

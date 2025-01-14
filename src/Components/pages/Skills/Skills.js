@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, forwardRef} from 'react';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import reactIcon from '../../../assets/img/react.svg';
 import reactIconDark from '../../../assets/img/react-dark.svg';
@@ -17,24 +17,31 @@ import psqlDark from '../../../assets/img/psql-dark.svg';
 
 import './Skills.scss';
 
-function Skills() {
+const Skills = forwardRef((orops, ref) => {
 	const {isDarkMode} = useContext(DarkModeContext);
 
 	return (
 		<React.Fragment>
-			<div className='skills-front'>
+			<div className='skills-front' ref={ref}>
 				<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-icon-react' />
+				<span>ReactJs</span>
 				<img src={isDarkMode ? javascriptIconDark : javascriptIcon} alt='icon javaScript' className='skills-front-icon-js' />
+				<span>JavaScript</span>
 				<img src={isDarkMode ? htmlIconDark : htmlIcon} alt='icon html' className='skills-front-icon-html' />
+				<span>HTML 5</span>
 				<img src={isDarkMode ? cssIconDark : cssIcon} alt='' className='skills-front-icon-css' />
-			</div>
-			<div className='skills-back'>
+				<span>CSS 3</span>
+
 				<img src={isDarkMode ? nodejsDark : nodejs} alt='' className='skills-back-icon-nodejs' />
+				<span>NodeJs</span>
 				<img src={isDarkMode ? expressjsDark : expressJs} alt='' className='skills-back-icon-expressjs' />
+				<span>ExpressJs</span>
 				<img src={isDarkMode ? psqlDark : psql} alt='' className='skills-back-icon-psql' />
+				<span>PostgreSQL</span>
 			</div>
+			<div className='skills-back' ref={ref}></div>
 		</React.Fragment>
 	);
-}
+});
 
 export default Skills;

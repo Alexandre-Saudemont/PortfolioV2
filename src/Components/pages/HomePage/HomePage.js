@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect, useContext, forwardRef} from 'react';
 import profilePic from '../../../assets/img/profile-picV2.jpg';
 import github from '../../../assets/img/github.svg';
 import githubDark from '../../../assets/img/github-dark.svg';
@@ -12,7 +12,7 @@ import {useTranslation} from 'react-i18next';
 
 import './HomePage.scss';
 
-function HomePage() {
+const HomePage = forwardRef((props, ref) => {
 	const {t, i18n} = useTranslation();
 	const [textIndex, setTextIndex] = useState(0);
 	const [displayText, setDisplayText] = useState('');
@@ -73,8 +73,8 @@ function HomePage() {
 	}, [clearing, displayText, textIndex, isMounted]);
 
 	return (
-		<div className={`homePage ${!isDarkMode ? 'darkMode' : 'liqghtMode'}`}>
-			<section id='Home' className='homePage'>
+		<div className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
+			<section ref={ref} className='homePage'>
 				<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 
 				<h1 className='homePage-title'>Alexandre Saudemont</h1>
@@ -107,6 +107,6 @@ function HomePage() {
 			</section>
 		</div>
 	);
-}
+});
 
 export default HomePage;

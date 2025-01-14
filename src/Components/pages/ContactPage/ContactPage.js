@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect, useContext, forwardRef} from 'react';
 import {getWeatherData} from '../../request';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useNavigate} from 'react-router-dom';
@@ -7,41 +7,12 @@ import houseDark from '../../../assets/img/house-dark.svg';
 import {useTranslation} from 'react-i18next';
 import './ContactPage.scss';
 
-function ContactPage() {
+const ContactPage = forwardRef((props, ref) => {
 	const [weatherData, setWeatherData] = useState(null);
 	const [error, setError] = useState(null);
 	const {isDarkMode} = useContext(DarkModeContext);
 	const navigate = useNavigate();
 	const {t} = useTranslation();
-
-	// const handleSubmit = (event) => {
-	// 	event.preventDefault();
-
-	// 	// Envoie l'e-mail via emailJS
-	// 	sendForm('contact_service', 'template_l2nwp6s', event.target, 'Z3rh0mNjILy5GvJ3-')
-	// 		.then(() => {
-	// 			Swal.fire({
-	// 				title: 'Message Sent !',
-	// 				text: `I'll get back to you as soon as possible`,
-	// 				imageUrl: `${chicken}`,
-	// 				position: 'center',
-	// 				timer: 5500,
-	// 				showConfirmButton: false,
-	// 				timerProgressBar: true,
-	// 				customClass: {
-	// 					swalContainer: 'contactPage-swal-container',
-	// 				},
-	// 			});
-	// 		})
-	// 		.catch((error) => {
-	// 			console.error(error);
-	// 			Swal.fire({
-	// 				icon: 'error',
-	// 				title: 'Message not sent !',
-	// 				text: `Please try again later`,
-	// 			});
-	// 		});
-	// };
 
 	function navigateHome() {
 		navigate('/');
@@ -61,7 +32,7 @@ function ContactPage() {
 
 	return (
 		<div className='contactPage'>
-			<section id='Contact' className='contactPage'>
+			<section ref={ref} className='contactPage'>
 				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
 				<p> {error && error.message}</p>
 				<h1 className='contactPage-title'>{t(`contactPage.title`)}</h1>
@@ -87,6 +58,6 @@ function ContactPage() {
 			</section>
 		</div>
 	);
-}
+});
 
 export default ContactPage;

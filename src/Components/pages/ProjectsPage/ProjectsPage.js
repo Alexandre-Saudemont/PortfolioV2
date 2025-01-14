@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, forwardRef} from 'react';
 import {useNavigate} from 'react-router-dom';
 import taiwan from '../../../assets/img/taiwan.gif';
 import pokedeck from '../../../assets/img/pokemon.gif';
@@ -8,7 +8,7 @@ import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useTranslation} from 'react-i18next';
 import './ProjectsPage.scss';
 
-function ProjectsPage() {
+const ProjectsPage = forwardRef((props, ref) => {
 	const {isDarkMode} = useContext(DarkModeContext);
 	const navigate = useNavigate();
 	const {t} = useTranslation();
@@ -42,7 +42,7 @@ function ProjectsPage() {
 
 	return (
 		<div className='projectPage'>
-			<section id='Projects' className='projectPage'>
+			<section ref={ref} className='projectPage'>
 				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='projectPage-iconHome' onClick={navigateHome} />
 				<div className='projectPage-taiwan'>
 					{t('projectsPage.title1')}
@@ -79,6 +79,6 @@ function ProjectsPage() {
 			</section>
 		</div>
 	);
-}
+});
 
 export default ProjectsPage;

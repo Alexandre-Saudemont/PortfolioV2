@@ -1,4 +1,5 @@
 import React, {useRef} from 'react';
+
 import ThemeProvider from './Components/DarkMode/ThemeProvider/ThemeProvider';
 import Navbar from './Components/Navbar/Navbar.js';
 import HomePage from './Components/pages/HomePage/HomePage.js';
@@ -19,7 +20,7 @@ function App() {
 	return (
 		<ThemeProvider>
 			<div className={`App-container`}>
-				<Navbar homeRef={homeRef} skillsRef={skillsRef} aboutRef={aboutRef} projectsRef={projectsRef} />
+				<Navbar homeRef={homeRef} skillsRef={skillsRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
 				<HomePage ref={homeRef} />
 				<Skills ref={skillsRef} />
 				<AboutPage ref={aboutRef} />

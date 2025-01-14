@@ -74,8 +74,8 @@
 // Pour les écrans de bureau
 @media screen and (min-width: 1024px) {
 	.aboutPage {
-		width: 70%;
-
+		width: auto;
+		height: 100%;
 		&-iconHome {
 			cursor: pointer;
 		}
@@ -88,6 +88,11 @@
 			font-size: 2.2rem;
 		}
 
+		&-text-container {
+			max-width: 80%;
+			width: 100%;
+			margin: 0 0 3rem 0;
+		}
 		&-text {
 			font-size: 1.8rem;
 			padding: 3rem 0 0;

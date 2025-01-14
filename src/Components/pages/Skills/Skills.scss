@@ -1,12 +1,4 @@
 .skills-front {
-	position: absolute;
-	top: 200%;
-	left: 8%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 83%;
-
 	&-icon-react {
 		width: 1.6rem;
 		animation: react-spin infinite 20s linear;
@@ -26,14 +18,6 @@
 }
 
 .skills-back {
-	position: absolute;
-	top: 450%;
-	left: 25%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 50%;
-
 	&-icon-nodejs {
 		width: 1.6rem;
 	}
@@ -57,30 +41,30 @@
 }
 
 @media screen and (min-width: 768px) {
-	.skills-front {
-		&-icon-react {
-			width: 2rem;
-		}
-		&-icon-js {
-			width: 2rem;
-		}
-		&-icon-html {
-			width: 2rem;
-		}
-		&-icon-css {
-			width: 2rem;
-		}
-	}
+	// .skills-front {
+	// 	&-icon-react {
+	// 		width: 2rem;
+	// 	}
+	// 	&-icon-js {
+	// 		width: 2rem;
+	// 	}
+	// 	&-icon-html {
+	// 		width: 2rem;
+	// 	}
+	// 	&-icon-css {
+	// 		width: 2rem;
+	// 	}
+	// }
 
-	.skills-back {
-		&-icon-nodejs {
-			width: 2rem;
-		}
-		&-icon-expressjs {
-			width: 2rem;
-		}
-		&-icon-psql {
-			width: 2rem;
-		}
-	}
+	// .skills-back {
+	// 	&-icon-nodejs {
+	// 		width: 2rem;
+	// 	}
+	// 	&-icon-expressjs {
+	// 		width: 2rem;
+	// 	}
+	// 	&-icon-psql {
+	// 		width: 2rem;
+	// 	}
+	// }
 }

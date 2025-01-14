@@ -1,3 +1,5 @@
+@import url('../../../assets/css/var.scss');
+
 .contactPage {
 	display: flex;
 	justify-content: center;
@@ -111,7 +113,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 		flex-direction: column;
-
+		height: 100%;
 		&-iconHome {
 			width: 2rem;
 			margin: 1.5rem 0 4rem 0;
