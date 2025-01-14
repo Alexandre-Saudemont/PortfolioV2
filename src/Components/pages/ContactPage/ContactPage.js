@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext, forwardRef} from 'react';
 import {getWeatherData} from '../../request';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
-import {useNavigate} from 'react-router-dom';
-import house from '../../../assets/img/house.svg';
-import houseDark from '../../../assets/img/house-dark.svg';
+// import {useNavigate} from 'react-router-dom';
+// import house from '../../../assets/img/house.svg';
+// import houseDark from '../../../assets/img/house-dark.svg';
 import {useTranslation} from 'react-i18next';
 import './ContactPage.scss';
 
@@ -11,12 +11,12 @@ const ContactPage = forwardRef((props, ref) => {
 	const [weatherData, setWeatherData] = useState(null);
 	const [error, setError] = useState(null);
 	const {isDarkMode} = useContext(DarkModeContext);
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const {t} = useTranslation();
 
-	function navigateHome() {
-		navigate('/');
-	}
+	// function navigateHome() {
+	// 	navigate('/');
+	// }
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -33,7 +33,7 @@ const ContactPage = forwardRef((props, ref) => {
 	return (
 		<div className='contactPage'>
 			<section ref={ref} className='contactPage'>
-				<img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} />
+				{/* <img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} /> */}
 				<p> {error && error.message}</p>
 				<h1 className='contactPage-title'>{t(`contactPage.title`)}</h1>
 				<p className='contactPage-text'>{t(`contactPage.text`)}</p>

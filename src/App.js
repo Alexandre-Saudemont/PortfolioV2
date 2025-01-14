@@ -20,7 +20,7 @@ function App() {
 	return (
 		<ThemeProvider>
 			<div className={`App-container`}>
-				<Navbar homeRef={homeRef} skillsRef={skillsRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
+				<Navbar homeRef={homeRef} skillsRef={skillsRef} aboutRef={aboutRef} contactRef={contactRef} projectsRef={projectsRef} />
 				<HomePage ref={homeRef} />
 				<Skills ref={skillsRef} />
 				<AboutPage ref={aboutRef} />

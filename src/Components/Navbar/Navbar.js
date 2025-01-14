@@ -2,7 +2,7 @@
 import {useTranslation} from 'react-i18next';
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch.js';
 
-function Navbar({homeRef, skillsRef, aboutRef, projectsRef}) {
+function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	const {t} = useTranslation();
 
 	const handleScroll = (ref) => {
@@ -27,24 +27,24 @@ function Navbar({homeRef, skillsRef, aboutRef, projectsRef}) {
 				<div className='collapse navbar-collapse ' id='navbarNav'>
 					<ul className='navbar-nav me-auto'>
 						<li className='nav-item'>
-							<a className='nav-link' href='#Home' onClick={(e) => handleScroll(homeRef)}>
+							<span className='nav-link' href='#Home' onClick={(e) => handleScroll(homeRef)}>
 								{t(`homePage.home`)}
-							</a>
+							</span>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='#Skills' onClick={(e) => handleScroll(skillsRef)}>
+							<span className='nav-link' href='#Skills' onClick={(e) => handleScroll(skillsRef)}>
 								{t(`homePage.skills`)}
-							</a>
+							</span>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='#About' onClick={(e) => handleScroll(aboutRef)}>
+							<button className='nav-link' href='#About' onClick={(e) => handleScroll(aboutRef)}>
 								{t(`homePage.about`)}
-							</a>
+							</button>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='#Contact' onClick={(e) => handleScroll(aboutRef)}>
+							<button className='nav-link' href='#Contact' onClick={(e) => handleScroll(contactRef)}>
 								{t(`homePage.contact`)}
-							</a>
+							</button>
 						</li>
 						<li className='nav-item'>
 							<a className='nav-link' href='#Projects' onClick={(e) => handleScroll(projectsRef)}>
