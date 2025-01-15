@@ -1,7 +1,9 @@
 // Components/Navbar/Navbar.js
 import {useTranslation} from 'react-i18next';
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch.js';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './Navbar.scss';
 function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	const {t} = useTranslation();
 
@@ -13,7 +15,10 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 
 	return (
 		<nav className='navbar navbar-expand-lg bg-body-tertiary fixed-top '>
-			<div className='container-fluid '>
+			<div className='container-fluid'>
+				<div className='position-fixed end-0 top-0 p-custom me-1 me-sm-0'>
+					<LanguageSwitch />
+				</div>
 				<button
 					className='navbar-toggler'
 					type='button'
@@ -24,7 +29,7 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 					aria-label='Toggle navigation'>
 					<span className='navbar-toggler-icon'></span>
 				</button>
-				<div className='collapse navbar-collapse ' id='navbarNav'>
+				<div className='collapse navbar-collapse' id='navbarNav'>
 					<ul className='navbar-nav me-auto'>
 						<li className='nav-item'>
 							<span className='nav-link' href='#Home' onClick={(e) => handleScroll(homeRef)}>
@@ -53,7 +58,6 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 						</li>
 					</ul>
 				</div>
-				<LanguageSwitch />
 			</div>
 		</nav>
 	);
