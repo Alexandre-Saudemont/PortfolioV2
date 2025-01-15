@@ -4,8 +4,8 @@ import github from '../../../assets/img/github.svg';
 import githubDark from '../../../assets/img/github-dark.svg';
 import linkedin from '../../../assets/img/linkedin.svg';
 import linkedinDark from '../../../assets/img/linkedin-dark.svg';
-import moonDark from '../../../assets/img/moon-dark.svg';
-import lightbulb from '../../../assets/img/lightbulb.svg';
+// import moonDark from '../../../assets/img/moon-dark.svg';
+// import lightbulb from '../../../assets/img/lightbulb.svg';
 // import Skills from '../Skills/Skills.js';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useTranslation} from 'react-i18next';
@@ -20,12 +20,12 @@ const HomePage = forwardRef((props, ref) => {
 	const [isMounted, setIsMounted] = useState(false);
 	// const [showModalSkills, setShowModalSkills] = useState(false);
 	// const [changeText, setText] = useState(false);
-	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
+	const {isDarkMode} = useContext(DarkModeContext);
 	const texts = t('homePage.typingTexts', {returnObjects: true});
 
-	function toggleDarkMode() {
-		setDarkMode(!isDarkMode);
-	}
+	// function toggleDarkMode() {
+	// 	setDarkMode(!isDarkMode);
+	// }
 
 	// function toggleModalSkills() {
 	// 	setShowModalSkills(!showModalSkills);
@@ -75,7 +75,7 @@ const HomePage = forwardRef((props, ref) => {
 	return (
 		<div className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
 			<section ref={ref} className='homePage'>
-				<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
+				{/* <img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} /> */}
 
 				<h1 className='homePage-title'>Alexandre Saudemont</h1>
 				<img src={profilePic} alt='profile' className='homePage-profilePic' />
