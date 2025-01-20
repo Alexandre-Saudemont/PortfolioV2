@@ -17,14 +17,36 @@ import psqlDark from '../../../assets/img/psql-dark.svg';
 
 import './Skills.scss';
 
-const Skills = forwardRef((orops, ref) => {
+const Skills = forwardRef((props, ref) => {
 	const {isDarkMode} = useContext(DarkModeContext);
 
 	return (
 		<React.Fragment>
 			<div className='skills-front' ref={ref}>
+				<div class='container text-center'>
+					<div class='row row-cols-2 row-cols-lg-5 g-2 g-lg-3 d-flex'>
+						<div class={`col ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
+							<div class='col flex-column'>
+								<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-icon-react' />
+								<span>ReactJs</span>
+							</div>
+							<div class='p-3'>Row column</div>
+						</div>
+						<div class='col'>
+							<div class='p-3'>Row column</div>
+						</div>
+						<div class='col'>
+							<div class='p-3'>Row column</div>
+						</div>
+						<div class='col'>
+							<div class='p-3'>Row column</div>
+						</div>
+						<div class='col'>
+							<div class='p-3'>Row column</div>
+						</div>
+					</div>
+				</div>
 				<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-icon-react' />
-				<span>ReactJs</span>
 				<img src={isDarkMode ? javascriptIconDark : javascriptIcon} alt='icon javaScript' className='skills-front-icon-js' />
 				<span>JavaScript</span>
 				<img src={isDarkMode ? htmlIconDark : htmlIcon} alt='icon html' className='skills-front-icon-html' />

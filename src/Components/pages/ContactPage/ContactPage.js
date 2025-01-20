@@ -31,7 +31,7 @@ const ContactPage = forwardRef((props, ref) => {
 	}, []);
 
 	return (
-		<div className='contactPage'>
+		<div className={`contactPage ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
 			<section ref={ref} className='contactPage'>
 				{/* <img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} /> */}
 				<p> {error && error.message}</p>

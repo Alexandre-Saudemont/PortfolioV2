@@ -21,7 +21,7 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	};
 
 	return (
-		<nav className='navbar navbar-expand-lg bg-body-tertiary fixed-top '>
+		<nav className={`navbar navbar-expand-lg fixed-top ${isDarkMode ? 'bg-dark navbar-dark' : 'bg-light navbar-light'}`}>
 			<div className='container-fluid'>
 				<div className='position-fixed end-0 top-0 p-custom me-1 me-sm-0'>
 					<LanguageSwitch />
