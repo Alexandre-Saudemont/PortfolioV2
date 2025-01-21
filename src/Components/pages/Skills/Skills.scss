@@ -1,28 +1,59 @@
 .skills-front {
-	&-icon-react {
-		width: 1.6rem;
+	&-react {
+		width: 5rem;
 		animation: react-spin infinite 20s linear;
+		&-text {
+			font-size: 2rem;
+		}
 	}
 
-	&-icon-js {
-		width: 1.5rem;
+	&-js {
+		width: 5rem;
+		&-text {
+			font-size: 2rem;
+		}
 	}
 
-	&-icon-html {
-		width: 1.4rem;
+	&-html {
+		width: 5rem;
+		&-text {
+			font-size: 2rem;
+		}
 	}
 
-	&-icon-css {
+	&-css {
+		width: 5rem;
+		&-text {
+			font-size: 2rem;
+		}
+	}
+}
+
+.skills-back {
+	&-nodejs {
+		width: 5rem;
+		&-text {
+			font-size: 2rem;
+		}
+	}
+
+	&-expressjs {
+		width: 5rem;
+		&-text {
+			font-size: 2rem;
+		}
+	}
+
+	&-icon-psql {
 		width: 1.4rem;
 	}
 }
 
 /* Conteneur de la carte */
 .flip-card {
-	perspective: 1000px; /* Effet de perspective 3D */
-	width: 5rem; /* Ajustez la largeur selon vos besoins */
-	height: 5rem; /* Ajustez la hauteur selon vos besoins */
-	cursor: pointer; /* Change le curseur pour indiquer que la carte est cliquable */
+	width: 10rem;
+	height: 5rem;
+	cursor: pointer;
 }
 
 /* Conteneur intérieur pour l'animation */
@@ -40,27 +71,21 @@
 .flip-card-front,
 .flip-card-back {
 	position: absolute;
-
 	backface-visibility: hidden; /* Cache la face arrière pendant l'animation */
+}
+
+.flip-card-back .card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0; /* Réinitialiser le padding par défaut de Bootstrap */
+	margin: 0; /* Réinitialiser la marge par défaut de Bootstrap */
 }
 
 /* Face arrière */
 .flip-card-back {
 	transform: rotateY(180deg); /* Retourne la face arrière initialement */
-}
-
-.skills-back {
-	&-icon-nodejs {
-		width: 1.4rem;
-	}
-
-	&-icon-expressjs {
-		width: 1.4rem;
-	}
-
-	&-icon-psql {
-		width: 1.4rem;
-	}
 }
 
 @keyframes react-spin {

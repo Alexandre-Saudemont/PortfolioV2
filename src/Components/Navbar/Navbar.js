@@ -23,10 +23,10 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	return (
 		<nav className={`navbar navbar-expand-lg fixed-top ${isDarkMode ? 'bg-dark navbar-dark' : 'bg-light navbar-light'}`}>
 			<div className='container-fluid'>
-				<div className='position-fixed end-0 top-0 p-custom me-1 me-sm-0'>
+				<div className='position-absolute end-0 top-0 p-custom me-1 me-sm-0'>
 					<LanguageSwitch />
 				</div>
-				<div className='position-fixed end-0 top-0 '>
+				<div className='position-absolute end-0 top-0 '>
 					<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
 				</div>
 				<button

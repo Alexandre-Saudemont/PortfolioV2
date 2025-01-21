@@ -1,7 +1,10 @@
 .p-custom {
 	padding: 0.8rem;
 }
-
+.navbar {
+	z-index: 1000;
+	overflow: auto;
+}
 @media (min-width: 768px) {
 	.p-custom {
 		padding: 0.5rem;
