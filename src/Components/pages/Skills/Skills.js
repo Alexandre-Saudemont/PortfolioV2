@@ -1,4 +1,4 @@
-import React, {useContext, forwardRef} from 'react';
+import React, {useState, useContext, forwardRef} from 'react';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import reactIcon from '../../../assets/img/react.svg';
 import reactIconDark from '../../../assets/img/react-dark.svg';
@@ -20,48 +20,82 @@ import './Skills.scss';
 const Skills = forwardRef((props, ref) => {
 	const {isDarkMode} = useContext(DarkModeContext);
 
+	const [isFlipped, setIsFlipped] = useState(false);
+
+	const handleFlip = () => {
+		setIsFlipped(!isFlipped);
+	};
+
 	return (
 		<React.Fragment>
-			<div className='skills-front' ref={ref}>
-				<div class='container text-center'>
-					<div class='row row-cols-2 row-cols-lg-5 g-2 g-lg-3 d-flex'>
-						<div class={`col ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
-							<div class='col flex-column'>
-								<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-icon-react' />
-								<span>ReactJs</span>
+			<section ref={ref}>
+				<div class='container text-center align-items-center justify-content-center mt-5 h-100'>
+					<div class='row w-a d-flex flex-wrap flip-card' onClick={handleFlip}>
+						<div
+							class={`col d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+								isFlipped ? 'flipped' : ''
+							} ${isDarkMode ? 'lightMode' : 'darkMode'} `}>
+							{/* Carte qui se retourne */}
+							<div class='p-3 d-flex flex-column align-items-center flip-card-front '>
+								<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' class='skills-front-icon-react' />
 							</div>
-							<div class='p-3'>Row column</div>
-						</div>
-						<div class='col'>
-							<div class='p-3'>Row column</div>
-						</div>
-						<div class='col'>
-							<div class='p-3'>Row column</div>
-						</div>
-						<div class='col'>
-							<div class='p-3'>Row column</div>
-						</div>
-						<div class='col'>
-							<div class='p-3'>Row column</div>
+							{/* Face arrière de la carte */}
+							<div class='p-3 d-flex flex-column align-items-center flip-card-back'>
+								<div class='card-body'>
+									<span>ReactJs</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-icon-react' />
-				<img src={isDarkMode ? javascriptIconDark : javascriptIcon} alt='icon javaScript' className='skills-front-icon-js' />
-				<span>JavaScript</span>
-				<img src={isDarkMode ? htmlIconDark : htmlIcon} alt='icon html' className='skills-front-icon-html' />
-				<span>HTML 5</span>
-				<img src={isDarkMode ? cssIconDark : cssIcon} alt='' className='skills-front-icon-css' />
-				<span>CSS 3</span>
-
-				<img src={isDarkMode ? nodejsDark : nodejs} alt='' className='skills-back-icon-nodejs' />
-				<span>NodeJs</span>
-				<img src={isDarkMode ? expressjsDark : expressJs} alt='' className='skills-back-icon-expressjs' />
-				<span>ExpressJs</span>
-				<img src={isDarkMode ? psqlDark : psql} alt='' className='skills-back-icon-psql' />
-				<span>PostgreSQL</span>
-			</div>
-			<div className='skills-back' ref={ref}></div>
+				<div class='row w-a d-flex flex-wrap flip-card' onClick={handleFlip}>
+					{/* <div
+						class={`col d-flex flex-wrap justify-content-center flip-card-inner ${isFlipped ? 'flipped' : ''} ${
+							isDarkMode ? 'text-bg-dark' : 'text-bg-light'
+						}`}>
+						<img src={isDarkMode ? javascriptIconDark : javascriptIcon} alt='icon javaScript' class='skills-front-icon-js card-img-top' />
+						<div class={`p-3 d-flex flex-column align-items-center card  }`}>
+							<span>JavaScript</span>
+						</div>
+						<div class='p-3 d-flex flex-column align-items-center'>
+							<img src={isDarkMode ? htmlIconDark : htmlIcon} alt='icon html' class='skills-front-icon-html' />
+							<span>HTML 5</span>
+						</div>
+						<div class='p-3 d-flex flex-column align-items-center'>
+							<img src={isDarkMode ? cssIconDark : cssIcon} alt='icon css' class='skills-front-icon-css' />
+							<span>CSS 3</span>
+						</div>
+						<div class='p-3 d-flex flex-column align-items-center'>
+							<img src={isDarkMode ? nodejsDark : nodejs} alt='icon nodejs' class='skills-back-icon-nodejs' />
+							<span>NodeJs</span>
+						</div>
+						<div class='p-3 d-flex flex-column align-items-center'>
+							<img src={isDarkMode ? expressjsDark : expressJs} alt='icon expressjs' class='skills-back-icon-expressjs' />
+							<span>ExpressJs</span>
+						</div>
+						<div class='p-3 d-flex flex-column align-items-center'>
+							<img src={isDarkMode ? psqlDark : psql} alt='icon psql' class='skills-back-icon-psql' />
+							<span>PostgreSQL</span>
+						</div>
+					</div> */}
+					{/* <div class='row w-a d-flex flex-wrap'>
+						<div class='flip-card d-flex flex-wrap m-3 ' onClick={handleFlip}>
+							<div class={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+							
+								<div class='flip-card-front p-3'>
+									<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' class='skills-back-icon-react' />
+								</div>
+							
+								<div class='flip-card-back'>
+									<div class='card-body'>
+										<span>ReactJs</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> */}
+				</div>
+			</section>
 		</React.Fragment>
 	);
 });

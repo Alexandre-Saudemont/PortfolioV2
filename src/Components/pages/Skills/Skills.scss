@@ -17,17 +17,49 @@
 	}
 }
 
+/* Conteneur de la carte */
+.flip-card {
+	perspective: 1000px; /* Effet de perspective 3D */
+	width: 5rem; /* Ajustez la largeur selon vos besoins */
+	height: 5rem; /* Ajustez la hauteur selon vos besoins */
+	cursor: pointer; /* Change le curseur pour indiquer que la carte est cliquable */
+}
+
+/* Conteneur intérieur pour l'animation */
+.flip-card-inner {
+	transition: transform 0.6s; /* Animation de transition */
+	transform-style: preserve-3d; /* Conserve la 3D pendant l'animation */
+}
+
+/* Classe pour retourner la carte */
+.flip-card-inner.flipped {
+	transform: rotateY(180deg); /* Retourne la carte à 180 degrés */
+}
+
+/* Styles pour les faces avant et arrière */
+.flip-card-front,
+.flip-card-back {
+	position: absolute;
+
+	backface-visibility: hidden; /* Cache la face arrière pendant l'animation */
+}
+
+/* Face arrière */
+.flip-card-back {
+	transform: rotateY(180deg); /* Retourne la face arrière initialement */
+}
+
 .skills-back {
 	&-icon-nodejs {
-		width: 1.6rem;
+		width: 1.4rem;
 	}
 
 	&-icon-expressjs {
-		width: 1.6rem;
+		width: 1.4rem;
 	}
 
 	&-icon-psql {
-		width: 1.6rem;
+		width: 1.4rem;
 	}
 }
 
