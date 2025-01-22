@@ -32,101 +32,118 @@ const Skills = forwardRef((props, ref) => {
 	return (
 		<div className='skills'>
 			<section ref={ref}>
-				<div class={`row text-center align-items-center justify-content-center w-a ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
-					<div class='row d-flex flex-wrap flip-card' onClick={() => handleFlip(1)}>
+				<div
+					className='d-flex flex-wrap justify-content-center align-items-center my-3 mx-auto pt-4 '
+					style={{width: '80%', backgroundColor: 'var(--color-light)', borderRadius: '7%'}}>
+					<div className=' d-flex flex-wrap flip-card' onClick={() => handleFlip(1)}>
 						<div
-							class={` d-flex flex-wrap justify-content-center align-item-center flip-card-inner rounded-4 ${
+							className={` raw d-flex flex-wrap justify-content-center align-item-center flip-card-inner  ${
 								isFlipped[1] ? 'flipped' : ''
 							}  `}>
 							{/* Carte qui se retourne */}
-							<div class='p-3 d-flex flex-column align-items-center flip-card-front '>
-								<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' class='skills-front-react' />
+							<div className='d-flex flex-column align-items-center flip-card-front '>
+								<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-react' />
 							</div>
 							{/* Face arrière de la carte */}
-							<div class='p-3 d-flex flex-column align-items-center flip-card-back'>
-								<div class='card-body'>
+							<div className=' d-flex flex-column align-items-center flip-card-back'>
+								<div className='card-body'>
 									<span className='skills-front-react-text'>ReactJs</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class=' w-a d-flex flex-wrap flip-card' onClick={() => handleFlip(2)}>
+					<div className='  d-flex flex-wrap flip-card' onClick={() => handleFlip(2)}>
 						<div
-							class={`col d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+							className={`raw d-flex flex-wrap justify-content-center align-item-center  flip-card-inner ${
 								isFlipped[2] ? 'flipped' : ''
-							} ${isDarkMode ? 'lightMode' : 'darkMode'} `}>
-							<div class='p-3 d-flex align-items-center flip-card-front'>
-								<img src={isDarkMode ? javascriptIconDark : javascriptIcon} alt='icon js' class='skills-front-js' />
+							} `}>
+							<div className=' d-flex align-items-center flip-card-front'>
+								<img src={isDarkMode ? javascriptIconDark : javascriptIcon} alt='icon js' className='skills-front-js' />
 							</div>
-							<div class='p-3 d-flex  align-items-center flip-card-back'>
-								<div class='card-body'>
+							<div className=' d-flex  align-items-center flip-card-back'>
+								<div className='card-body'>
 									<span className='skills-front-js-text'>JavaScript</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class=' w-a d-flex flex-wrap flip-card' onClick={() => handleFlip(3)}>
+					<div className='  d-flex flex-wrap flip-card' onClick={() => handleFlip(3)}>
 						<div
-							class={`col d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+							className={`raw d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
 								isFlipped[3] ? 'flipped' : ''
-							} ${isDarkMode ? 'lightMode' : 'darkMode'} `}>
-							<div class='p-3 d-flex align-items-center flip-card-front'>
-								<img src={isDarkMode ? htmlIconDark : htmlIcon} alt='icon html' class='skills-front-html' />
+							} `}>
+							<div className=' d-flex align-items-center flip-card-front'>
+								<img src={isDarkMode ? htmlIconDark : htmlIcon} alt='icon html' className='skills-front-html' />
 							</div>
-							<div class='p-3 d-flex  align-items-center flip-card-back'>
-								<div class='card-body'>
+							<div className=' d-flex  align-items-center flip-card-back'>
+								<div className='card-body'>
 									<span className='skills-front-html-text'>HTML 5</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class=' w-a d-flex flex-wrap flip-card' onClick={() => handleFlip(4)}>
+					<div className='  d-flex flex-wrap flip-card' onClick={() => handleFlip(4)}>
 						<div
-							class={`col d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+							className={`raw d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
 								isFlipped[4] ? 'flipped' : ''
-							} ${isDarkMode ? 'lightMode' : 'darkMode'} `}>
-							<div class='p-3 d-flex align-items-center flip-card-front'>
-								<img src={isDarkMode ? cssIconDark : cssIcon} alt='icon css' class='skills-front-css' />
+							} `}>
+							<div className=' d-flex align-items-center flip-card-front'>
+								<img src={isDarkMode ? cssIconDark : cssIcon} alt='icon css' className='skills-front-css' />
 							</div>
-							<div class='p-3 d-flex  align-items-center flip-card-back'>
-								<div class='card-body'>
+							<div className=' d-flex  align-items-center flip-card-back'>
+								<div className='card-body'>
 									<span className='skills-front-css-text'>CSS 3</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class=' w-a d-flex flex-wrap flip-card' onClick={() => handleFlip(5)}>
+					<div className='  d-flex flex-wrap flip-card' onClick={() => handleFlip(5)}>
 						<div
-							class={`col d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+							className={`raw d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
 								isFlipped[5] ? 'flipped' : ''
-							} ${isDarkMode ? 'lightMode' : 'darkMode'} `}>
-							<div class='p-3 d-flex align-items-center flip-card-front'>
-								<img src={isDarkMode ? nodejsDark : nodejs} alt='icon nodejs' class='skills-back-nodejs' />
+							} `}>
+							<div className=' d-flex align-items-center flip-card-front'>
+								<img src={isDarkMode ? nodejsDark : nodejs} alt='icon nodejs' className='skills-back-nodejs' />
 							</div>
-							<div class='p-3 d-flex  align-items-center flip-card-back'>
-								<div class='card-body'>
+							<div className=' d-flex  align-items-center flip-card-back'>
+								<div className='card-body'>
 									<span className='skills-back-nodejs-text'>NodeJs</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class=' w-a d-flex flex-wrap flip-card' onClick={() => handleFlip(6)}>
+					<div className='  d-flex flex-wrap flip-card' onClick={() => handleFlip(6)}>
 						<div
-							class={`col d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+							className={`raw d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
 								isFlipped[6] ? 'flipped' : ''
-							} ${isDarkMode ? 'lightMode' : 'darkMode'} `}>
-							<div class='p-3 d-flex align-items-center flip-card-front'>
-								<img src={isDarkMode ? expressjsDark : expressJs} alt='icon expressJs' class='skills-back-expressjs' />
+							} `}>
+							<div className=' d-flex align-items-center flip-card-front'>
+								<img src={isDarkMode ? expressjsDark : expressJs} alt='icon expressJs' className='skills-back-expressjs' />
 							</div>
-							<div class='p-3 d-flex  align-items-center flip-card-back'>
-								<div class='card-body'>
+							<div className=' d-flex  align-items-center flip-card-back'>
+								<div className='card-body'>
 									<span className='skills-back-expressjs-text'>ExpressJs</span>
 								</div>
 							</div>
 						</div>
 					</div>
+					<div className='  d-flex flex-wrap flip-card' onClick={() => handleFlip(7)}>
+						<div
+							className={`raw d-flex flex-wrap justify-content-center align-item-center rounded-5 flip-card-inner ${
+								isFlipped[7] ? 'flipped' : ''
+							} `}>
+							<div className=' d-flex align-items-center flip-card-front'>
+								<img src={isDarkMode ? psqlDark : psql} alt='icon expressJs' className='skills-back-psql' />
+							</div>
+							<div className=' d-flex  align-items-center flip-card-back'>
+								<div className='card-body'>
+									<span className='skills-back-psql-text'>PostgreSQL</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				{/* <div class='row w-a d-flex flex-wrap flip-card' onClick={handleFlip}> */}
+				{/* <div class='row  d-flex flex-wrap flip-card' onClick={handleFlip}> */}
 				{/* <div
 						class={`col d-flex flex-wrap justify-content-center flip-card-inner ${isFlipped ? 'flipped' : ''} ${
 							isDarkMode ? 'text-bg-dark' : 'text-bg-light'

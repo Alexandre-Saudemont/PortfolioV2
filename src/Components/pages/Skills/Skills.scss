@@ -1,3 +1,5 @@
+@import url('../../../assets/css/var.scss');
+
 .skills-front {
 	&-react {
 		width: 5rem;
@@ -8,21 +10,21 @@
 	}
 
 	&-js {
-		width: 5rem;
+		width: 4rem;
 		&-text {
 			font-size: 2rem;
 		}
 	}
 
 	&-html {
-		width: 5rem;
+		width: 4rem;
 		&-text {
 			font-size: 2rem;
 		}
 	}
 
 	&-css {
-		width: 5rem;
+		width: 4rem;
 		&-text {
 			font-size: 2rem;
 		}
@@ -31,29 +33,34 @@
 
 .skills-back {
 	&-nodejs {
-		width: 5rem;
+		width: 4rem;
 		&-text {
 			font-size: 2rem;
 		}
 	}
 
 	&-expressjs {
-		width: 5rem;
+		width: 4rem;
 		&-text {
 			font-size: 2rem;
 		}
 	}
 
-	&-icon-psql {
-		width: 1.4rem;
+	&-psql {
+		width: 4rem;
+		&-text {
+			font-size: 2rem;
+		}
 	}
 }
 
 /* Conteneur de la carte */
 .flip-card {
-	width: 10rem;
+	width: calc(85% / 2);
 	height: 5rem;
 	cursor: pointer;
+	justify-content: center;
+	margin: 1rem 0 1rem 0;
 }
 
 /* Conteneur intérieur pour l'animation */
