@@ -33,19 +33,21 @@ const Skills = forwardRef((props, ref) => {
 		<div className='skills'>
 			<section ref={ref}>
 				<div
-					className='d-flex flex-wrap justify-content-center align-items-center my-3 mx-auto pt-4 '
-					style={{width: '90%', backgroundColor: 'var(--color-light)', borderRadius: '1rem'}}>
+					className={`d-flex flex-wrap justify-content-center align-items-center my-3 mx-auto pt-4 ${
+						isDarkMode ? 'darkMode' : 'lightMode'
+					}`}
+					style={{width: '90%', borderRadius: '1rem'}}>
 					<div className=' d-flex flex-wrap flip-card' onClick={() => handleFlip(1)}>
 						<div
 							className={` raw d-flex flex-wrap justify-content-center align-item-center flip-card-inner  ${
 								isFlipped[1] ? 'flipped' : ''
 							}  `}>
 							{/* Carte qui se retourne */}
-							<div className='d-flex flex-column align-items-center flip-card-front '>
+							<div className={'d-flex flex-column align-items-center flip-card-front '}>
 								<img src={isDarkMode ? reactIconDark : reactIcon} alt='icon react' className='skills-front-react' />
 							</div>
 							{/* Face arrière de la carte */}
-							<div className=' d-flex flex-column align-items-center flip-card-back'>
+							<div className={`d-flex flex-column align-items-center flip-card-back`}>
 								<div className='card-body'>
 									<span className='skills-front-react-text'>ReactJs</span>
 								</div>
