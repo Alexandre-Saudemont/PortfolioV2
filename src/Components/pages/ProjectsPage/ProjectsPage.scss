@@ -4,7 +4,14 @@
 	align-items: center;
 	flex-wrap: wrap;
 	flex-direction: column;
-
+	width: 90%;
+	margin: auto;
+	border-radius: 1rem;
+	.projectPage::after {
+		content: '';
+		display: block;
+		height: 50px; /* Hauteur de l'espace en bas */
+	}
 	&-iconHome {
 		margin: 1rem 0 0 0;
 	}
@@ -110,6 +117,9 @@
 		cursor: pointer;
 		background-color: aquamarine;
 	}
+}
+.projectPage-container {
+	padding-bottom: 1rem; /* Espace en bas */
 }
 
 @media (min-width: 768px) {

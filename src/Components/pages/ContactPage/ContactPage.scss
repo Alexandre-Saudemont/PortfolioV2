@@ -6,20 +6,27 @@
 	align-items: center;
 	flex-wrap: wrap;
 	flex-direction: column;
+	height: auto;
+	width: 90%;
+	border-radius: 1rem;
+	margin: auto;
+	padding: 3rem 0 3rem 0;
+	margin-bottom: 1rem;
 
 	&-title {
-		font-size: 1.5rem;
+		font-size: 2rem;
 		margin-bottom: 2rem;
 	}
 
 	&-text {
-		font-size: 1.3rem;
-		margin-bottom: 1rem;
+		font-size: 1.5rem;
+		margin-bottom: 3rem;
 		width: 75%;
 	}
 
 	&-cv {
 		margin-bottom: 2rem;
+		font-size: 1.5rem;
 	}
 
 	&-weather {
@@ -27,13 +34,20 @@
 		display: flex;
 		align-items: center;
 		width: 90%;
+		flex-wrap: wrap;
 
 		&-city {
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 		}
 
 		&-description {
-			font-size: 1.1rem;
+			font-size: 1.5rem;
+		}
+		&-temp {
+			font-size: 1.5rem;
+		}
+		&-weather-icon {
+			font-size: 1.5rem;
 		}
 	}
 

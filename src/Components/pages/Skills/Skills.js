@@ -34,7 +34,7 @@ const Skills = forwardRef((props, ref) => {
 			<section ref={ref}>
 				<div
 					className='d-flex flex-wrap justify-content-center align-items-center my-3 mx-auto pt-4 '
-					style={{width: '80%', backgroundColor: 'var(--color-light)', borderRadius: '7%'}}>
+					style={{width: '90%', backgroundColor: 'var(--color-light)', borderRadius: '1rem'}}>
 					<div className=' d-flex flex-wrap flip-card' onClick={() => handleFlip(1)}>
 						<div
 							className={` raw d-flex flex-wrap justify-content-center align-item-center flip-card-inner  ${

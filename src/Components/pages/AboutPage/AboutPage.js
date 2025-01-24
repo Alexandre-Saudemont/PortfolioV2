@@ -19,11 +19,11 @@ const AboutPage = forwardRef((props, ref) => {
 	const paragraphs = t(`aboutPage.paragraphs`, {returnObjects: true});
 
 	return (
-		<div className={`aboutPage ${isDarkMode ? 'lightMode' : 'darkMode'}`}>
+		<div className={`aboutPage ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
 			<section ref={ref} className='aboutPage'>
 				{/* <img src={!isDarkMode ? house : houseDark} alt='icon house' className='aboutPage-iconHome' onClick={navigateHome} /> */}
 				<h1 className='aboutPage-title'>{t(`aboutPage.title`)}</h1>
-				<h2 className='aboutPage-subtitle'>{t(`aboutPage.subtitle`)}</h2>
+
 				<section className='aboutPage-text-container'>
 					{paragraphs.map((paragraph, index) => (
 						<p key={index} className='aboutPage-text'>

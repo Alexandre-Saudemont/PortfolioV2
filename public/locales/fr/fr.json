@@ -9,14 +9,12 @@
 		"project": "Projets"
 	},
 	"aboutPage": {
-		"title": "Salut! Je m'appelle Alexandre Saudemont",
-		"subtitle": "Développeur Web FullStack",
+		"title": "Mon parcours",
 		"paragraphs": [
-			"Passionné par l'informatique depuis mon plus jeune âge et après plusieurs années dans l'administration sans réel avancement dans ma carrière, j'ai décidé de me reconvertir dans le développement web.",
-			"J'ai commencé par me former en autodidacte, puis j'ai recherché une formation afin d'améliorer mes compétences et c'est ainsi que je me suis retrouvé sur le chemin de l'école 100% à distance O'Clock.",
-			"J'ai étudié à O'Clock du 17 janvier 2022 au 2 juillet 2022.",
-			"Le programme comprenait 3 mois de 'Base' pour apprendre les fondamentaux du développement en JavaScript, 1 mois de spécialisation sur React et 1 mois pour un projet professionnel.",
-			"J'étais développeur Front-End sur le projet."
+			"Passionné par l'informatique depuis mon plus jeune âge, et après plusieurs années dans l'administration sans réelle progression dans ma carrière, je me suis reconverti dans le développement web.",
+			"J'ai commencé par apprendre en autodidacte, puis j'ai rejoint l'école O'Clock pour approfondir et enrichir mes compétences. Le programme s'est déroulé en trois parties.",
+			"Les trois premiers mois étaient consacrés à l'apprentissage des fondamentaux du développement en JavaScript, suivis d'un mois de spécialisation sur React.",
+			"Le dernier mois était dédié à l'élaboration d'un projet professionnel, au sein duquel j'ai été développeur Front-End."
 		]
 	},
 	"contactPage": {

@@ -73,17 +73,18 @@ const HomePage = forwardRef((props, ref) => {
 	}, [clearing, displayText, textIndex, isMounted]);
 
 	return (
-		<div className={`homePage ${!isDarkMode ? 'darkMode' : 'lightMode'}`}>
-			<section ref={ref} className='homePage'>
-				{/* <img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} /> */}
+		<div className='homePage-container'>
+			<div className='homePage'>
+				<section ref={ref} className='homePage'>
+					{/* <img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} /> */}
 
-				<h1 className='homePage-title'>Alexandre Saudemont</h1>
-				<img src={profilePic} alt='profile' className='homePage-profilePic' />
-				<div className='homePage-description-container'>
-					<p className='homePage-description'>{t(`homePage.title`)}</p>
-					<p className='homePage-description-dynamic'>{displayText}</p>
-				</div>
-				{/* <div className='homePage-links-container'>
+					<h1 className='homePage-title'>Alexandre Saudemont</h1>
+					<img src={profilePic} alt='profile' className='homePage-profilePic' />
+					<div className='homePage-description-container'>
+						<p className='homePage-description'>{t(`homePage.title`)}</p>
+						<p className='homePage-description-dynamic'>{displayText}</p>
+					</div>
+					{/* <div className='homePage-links-container'>
 					<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
 						{t(`homePage.skills`)}
 					</p>
@@ -96,15 +97,16 @@ const HomePage = forwardRef((props, ref) => {
 					</div>
 				</div> */}
 
-				<ul className='homePage-icon-social-container'>
-					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
-						<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
-					</a>
-					<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
-						<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
-					</a>
-				</ul>
-			</section>
+					<ul className='homePage-icon-social-container'>
+						<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
+							<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
+						</a>
+						<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
+							<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
+						</a>
+					</ul>
+				</section>
+			</div>
 		</div>
 	);
 });

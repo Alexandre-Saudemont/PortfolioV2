@@ -1,7 +1,8 @@
 @import url('../../../assets/css/var.scss');
 .lightMode {
-	background-color: var(--color-dark);
-	color: var(--color-light);
+	background-color: var(--color-light);
+	color: var(--color-dark);
+	width: 100%;
 }
 
 // .lightMode a {
@@ -10,8 +11,8 @@
 // }
 
 .darkMode {
-	background-color: var(--color-light);
-	color: var(--color-dark);
+	background-color: var(--color-dark);
+	color: var(--color-light);
 }
 
 // .darkMode a {
