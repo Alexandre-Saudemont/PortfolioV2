@@ -12,14 +12,13 @@
 		"title": "Mon parcours",
 		"paragraphs": [
 			"Passionné par l'informatique depuis mon plus jeune âge, et après plusieurs années dans l'administration sans réelle progression dans ma carrière, je me suis reconverti dans le développement web.",
-			"J'ai commencé par apprendre en autodidacte, puis j'ai rejoint l'école O'Clock pour approfondir et enrichir mes compétences. Le programme s'est déroulé en trois parties.",
-			"Les trois premiers mois étaient consacrés à l'apprentissage des fondamentaux du développement en JavaScript, suivis d'un mois de spécialisation sur React.",
+			"J’ai d’abord appris en autodidacte avant de rejoindre l’école O’Clock pour approfondir mes compétences. La formation s’est déroulée en trois parties : trois mois dédiés aux fondamentaux du développement en JavaScript, suivis d’un mois de spécialisation en React.",
 			"Le dernier mois était dédié à l'élaboration d'un projet professionnel, au sein duquel j'ai été développeur Front-End."
 		]
 	},
 	"contactPage": {
-		"title": "Restez en contact !",
-		"text": "Si vous souhaitez me contacter, n'hésitez pas à m'envoyer un mail ou à m'appeler !",
+		"title": "Restons en contact !",
+		"text": "Envie d’échanger ? N’hésitez pas à me joindre par mail ou par téléphone !",
 		"CV": "Télécharger mon CV"
 	},
 	"projectsPage": {

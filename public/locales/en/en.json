@@ -11,15 +11,14 @@
 	"aboutPage": {
 		"title": "Career journey",
 		"paragraphs": [
-			"Passionate about IT from a young age, and after several years in administration with no real career progression, I retrained in web development.",
-			"I started by self-teaching, then joined the O'Clock school to deepen and expand my skills. The program was divided into three parts.",
-			"The first three months were dedicated to learning the fundamentals of development in JavaScript, followed by a month of specialization in React.",
-			"The final month was devoted to the development of a professional project, in which I was a Front-End developer."
+			"Passionate about computers from a young age, and after several years in administration without real career progression, I decided to transition into web development.",
+			"I first learned on my own before joining O’Clock school to deepen my skills. The training was divided into three parts: three months dedicated to learning the fundamentals of JavaScript development, followed by one month specializing in React.",
+			"The final month was dedicated to the creation of a professional project, in which I worked as a Front-End Developer."
 		]
 	},
 	"contactPage": {
 		"title": "Stay in Touch !",
-		"text": "If you want to contact me, don't hesistate to send me a mail or give me a phone call !",
+		"text": "Want to chat? Feel free to reach out to me by email or phone!",
 		"CV": "Download my CV"
 	},
 	"projectsPage": {

@@ -19,14 +19,19 @@
 	}
 
 	&-text {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		margin-bottom: 3rem;
-		width: 75%;
+		width: 85%;
 	}
 
 	&-cv {
 		margin-bottom: 2rem;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
+		text-decoration: none;
+		color: var(--text-color);
+		&:hover {
+			color: lightcoral;
+		}
 	}
 
 	&-weather {
@@ -37,14 +42,14 @@
 		flex-wrap: wrap;
 
 		&-city {
-			font-size: 1.5rem;
+			font-size: 1.4rem;
 		}
 
 		&-description {
-			font-size: 1.5rem;
+			font-size: 1.4rem;
 		}
 		&-temp {
-			font-size: 1.5rem;
+			font-size: 1.4rem;
 		}
 		&-weather-icon {
 			font-size: 1.5rem;
