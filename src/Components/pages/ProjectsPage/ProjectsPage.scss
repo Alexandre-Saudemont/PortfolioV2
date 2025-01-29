@@ -1,3 +1,92 @@
+/* Taiwan website button */
+.lightMode .projectPage-website-taiwan {
+	background-color: #ececed;
+	color: #333335;
+	border: 1px solid #333335;
+	&:hover {
+		cursor: pointer;
+		background-color: #47474a;
+		color: #ececed;
+	}
+}
+.darkMode .projectPage-website-taiwan {
+	background-color: #47474a;
+	color: #ededed;
+	border: 1px solid #9f9f9f;
+
+	&:hover {
+		cursor: pointer;
+		background-color: #ececed;
+		color: #333335;
+	}
+}
+
+/* Taiwan github button */
+.lightMode .projectPage-github-taiwan {
+	background-color: #ececed;
+	color: #333335;
+	border: 1px solid #333335;
+	&:hover {
+		cursor: pointer;
+		background-color: #47474a;
+		color: #ececed;
+	}
+}
+.darkMode .projectPage-github-taiwan {
+	background-color: #47474a;
+	color: #ededed;
+	border: 1px solid #9f9f9f;
+	&:hover {
+		cursor: pointer;
+		background-color: #ececed;
+		color: #333335;
+	}
+}
+
+/* Pokedeck github button */
+.lightMode .projectPage-github-pokedeck {
+	background-color: white;
+	color: #333335;
+	border: 1px solid #333335;
+	&:hover {
+		cursor: pointer;
+		background-color: #47474a;
+		color: #ececed;
+	}
+}
+.darkMode .projectPage-github-pokedeck {
+	background-color: #47474a;
+	color: #ededed;
+	border: 1px solid #9f9f9f;
+	&:hover {
+		cursor: pointer;
+		background-color: #ececed;
+		color: #333335 !important;
+	}
+}
+
+/* Pokedeck website button */
+.lightMode .projectPage-website-pokedeck {
+	background-color: #ececed;
+	color: #333335;
+	border: 1px solid #333335;
+	&:hover {
+		cursor: pointer;
+		background-color: #47474a;
+		color: #ececed;
+	}
+}
+.darkMode .projectPage-website-pokedeck {
+	background-color: #47474a;
+	color: #ededed;
+	border: 1px solid #9f9f9f;
+	&:hover {
+		cursor: pointer;
+		background-color: #ececed;
+		color: #333335;
+	}
+}
+
 .projectPage {
 	display: flex;
 	justify-content: center;
@@ -7,11 +96,13 @@
 	width: 90%;
 	margin: auto;
 	border-radius: 1rem;
+
 	.projectPage::after {
 		content: '';
 		display: block;
 		height: 50px; /* Hauteur de l'espace en bas */
 	}
+
 	&-iconHome {
 		margin: 1rem 0 0 0;
 	}
@@ -45,11 +136,6 @@
 		height: 2.5rem;
 	}
 
-	&-github-taiwan:hover {
-		cursor: pointer;
-		background-color: aquamarine;
-	}
-
 	&-website-taiwan {
 		font-size: 1.3rem;
 		text-decoration: none;
@@ -59,11 +145,6 @@
 		border-radius: 5px;
 		width: 6rem;
 		height: 2.5rem;
-	}
-
-	&-website-taiwan:hover {
-		cursor: pointer;
-		background-color: aquamarine;
 	}
 
 	&-pokedeck {
@@ -82,7 +163,6 @@
 	&-pokedeck-button-container {
 		display: flex;
 		flex-wrap: wrap;
-		width: 80%;
 		justify-content: center;
 		align-items: center;
 	}
@@ -91,33 +171,24 @@
 		font-size: 1.2rem;
 		text-decoration: none;
 		margin: 0 1rem 1.5rem 1rem;
-		border: 1px solid black;
 		padding: 2px;
 		border-radius: 5px;
 		width: 6.5rem;
 		height: 2.5rem;
 	}
 
-	&-github-pokedeck:hover {
-		cursor: pointer;
-		background-color: aquamarine;
-	}
-
 	&-website-pokedeck {
 		font-size: 1.3rem;
 		text-decoration: none;
 		margin: 0 0 1rem 0;
-		border: 1px solid black;
+
 		padding: 2px;
 		border-radius: 5px;
 		width: 6rem;
 		height: 2.5rem;
 	}
-	&-website-pokedeck:hover {
-		cursor: pointer;
-		background-color: aquamarine;
-	}
 }
+
 .projectPage-container {
 	padding-bottom: 1rem; /* Espace en bas */
 }

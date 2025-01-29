@@ -18,5 +18,4 @@ i18n.use(HttpApi)
 		},
 	});
 
-console.log('i18n options:', i18n.options);
 export default i18n;

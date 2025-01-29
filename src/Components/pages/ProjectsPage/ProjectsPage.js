@@ -1,5 +1,4 @@
 import React, {useContext, forwardRef} from 'react';
-
 import taiwan from '../../../assets/img/taiwan.gif';
 import pokedeck from '../../../assets/img/pokemon.gif';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
@@ -62,10 +61,10 @@ const ProjectsPage = forwardRef((props, ref) => {
 							{t('projectsPage.githubBack')}
 						</button>
 						<button
+							className='projectPage-website-pokedeck'
 							href='google.com'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='projectPage-website-pokedeck'
 							onClick={onClickPokedeck}>
 							{t('projectsPage.website')}
 						</button>
