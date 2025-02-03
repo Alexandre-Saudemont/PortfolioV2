@@ -8,3 +8,8 @@ Stack :
 -   React
 -   Axios
 -   Sass
+-   Bootstrap
+
+Edit :
+
+Added Bootstrap for some components and made the website SPA.
