@@ -45,7 +45,7 @@
 
 /* Pokedeck github button */
 .lightMode .projectPage-github-pokedeck {
-	background-color: white;
+	background-color: #ececed;
 	color: #333335;
 	border: 1px solid #333335;
 	&:hover {
@@ -190,7 +190,64 @@
 }
 
 .projectPage-container {
-	padding-bottom: 1rem; /* Espace en bas */
+	padding-bottom: 1rem;
+}
+
+@media (min-width: 540px) {
+	.projectPage {
+		&-iconHome {
+			margin: 1.5rem 0 0 0;
+			width: 2rem;
+		}
+		&-taiwan {
+			margin-top: 5rem;
+			font-size: 2.5rem;
+
+			&-img {
+				width: 15rem;
+				height: 12rem;
+			}
+			&-button-container {
+				margin: 2rem 0 2rem 0;
+			}
+		}
+
+		&-github-taiwan {
+			border-radius: 5px;
+			width: 5rem;
+			height: 2rem;
+		}
+		&-website-taiwan {
+			border-radius: 5px;
+			width: 6rem;
+			height: 2rem;
+		}
+
+		&-pokedeck {
+			margin-top: 2rem;
+			font-size: 2.5rem;
+			&-img {
+				width: 15rem;
+				height: 12rem;
+			}
+			&-button-container {
+				margin: 2rem 0 2rem 0;
+				display: flex;
+				flex-wrap: wrap;
+				width: 60%;
+			}
+		}
+		&-github-pokedeck {
+			border-radius: 5px;
+			width: 6rem;
+			height: 3rem;
+		}
+		&-website-pokedeck {
+			border-radius: 5px;
+			width: 10rem;
+			height: 3rem;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -234,7 +291,7 @@
 				margin: 2rem 0 2rem 0;
 				display: flex;
 				flex-wrap: wrap;
-				width: 40%;
+				width: 60%;
 			}
 		}
 		&-github-pokedeck {
@@ -251,16 +308,21 @@
 }
 
 @media screen and (min-width: 1024px) {
+	.projectPage-container {
+		padding-bottom: 0;
+	}
 	.projectPage {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
 		flex-direction: column;
-
+		width: 100%;
+		padding-top: 1rem;
+		border-radius: 0%;
+		padding-bottom: 0;
 		&-iconHome {
 			margin: 1.5rem 0 0 0;
-
 			cursor: pointer;
 		}
 		&-taiwan {

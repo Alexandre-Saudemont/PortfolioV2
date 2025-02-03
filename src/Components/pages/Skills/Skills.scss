@@ -107,31 +107,18 @@
 	}
 }
 
-@media screen and (min-width: 768px) {
-	// .skills-front {
-	// 	&-icon-react {
-	// 		width: 2rem;
-	// 	}
-	// 	&-icon-js {
-	// 		width: 2rem;
-	// 	}
-	// 	&-icon-html {
-	// 		width: 2rem;
-	// 	}
-	// 	&-icon-css {
-	// 		width: 2rem;
-	// 	}
-	// }
+@media screen and (min-width: 1024px) {
+	.skills-container {
+		width: 100% !important;
+		margin: 0 0 0 0 !important;
+		height: 40vh !important;
+		border-radius: 0% !important;
+	}
 
-	// .skills-back {
-	// 	&-icon-nodejs {
-	// 		width: 2rem;
-	// 	}
-	// 	&-icon-expressjs {
-	// 		width: 2rem;
-	// 	}
-	// 	&-icon-psql {
-	// 		width: 2rem;
-	// 	}
-	// }
+	.flip-card {
+		width: calc(90% / 4);
+		height: 5rem;
+		cursor: pointer;
+		justify-content: center;
+	}
 }

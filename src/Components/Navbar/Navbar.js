@@ -10,6 +10,7 @@ import './Navbar.scss';
 function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	const {t} = useTranslation();
 	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
+
 	function toggleDarkMode() {
 		setDarkMode(!isDarkMode);
 	}
@@ -42,27 +43,52 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 				<div className='collapse navbar-collapse' id='navbarNav'>
 					<ul className='navbar-nav me-auto'>
 						<li className='nav-item'>
-							<span className='nav-link' href='#Home' onClick={(e) => handleScroll(homeRef)}>
+							<span
+								className='nav-link'
+								href='#Home'
+								data-bs-toggle='collapse'
+								data-bs-target='#navbarNav'
+								onClick={(e) => handleScroll(homeRef)}>
 								{t(`homePage.home`)}
 							</span>
 						</li>
 						<li className='nav-item'>
-							<span className='nav-link' href='#Skills' onClick={(e) => handleScroll(skillsRef)}>
+							<span
+								className='nav-link'
+								href='#Skills'
+								data-bs-toggle='collapse'
+								data-bs-target='#navbarNav'
+								onClick={(e) => handleScroll(skillsRef)}>
 								{t(`homePage.skills`)}
 							</span>
 						</li>
 						<li className='nav-item'>
-							<button className='nav-link' href='#About' onClick={(e) => handleScroll(aboutRef)}>
+							<span
+								className='nav-link'
+								href='#About'
+								data-bs-toggle='collapse'
+								data-bs-target='#navbarNav'
+								onClick={(e) => handleScroll(aboutRef)}>
 								{t(`homePage.about`)}
-							</button>
+							</span>
 						</li>
 						<li className='nav-item'>
-							<button className='nav-link' href='#Contact' onClick={(e) => handleScroll(contactRef)}>
+							<span
+								className='nav-link'
+								href='#Contact'
+								data-bs-toggle='collapse'
+								data-bs-target='#navbarNav'
+								onClick={(e) => handleScroll(contactRef)}>
 								{t(`homePage.contact`)}
-							</button>
+							</span>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='#Projects' onClick={(e) => handleScroll(projectsRef)}>
+							<a
+								className='nav-link'
+								href='#Projects'
+								data-bs-toggle='collapse'
+								data-bs-target='#navbarNav'
+								onClick={(e) => handleScroll(projectsRef)}>
 								{t(`homePage.project`)}
 							</a>
 						</li>

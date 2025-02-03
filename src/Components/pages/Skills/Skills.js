@@ -33,7 +33,7 @@ const Skills = forwardRef((props, ref) => {
 		<div className='skills'>
 			<section ref={ref}>
 				<div
-					className={`d-flex flex-wrap justify-content-center align-items-center my-3 mx-auto pt-4 ${
+					className={`skills-container d-flex flex-wrap justify-content-center align-items-center my-3 mx-auto pt-4 ${
 						isDarkMode ? 'darkMode' : 'lightMode'
 					}`}
 					style={{width: '90%', borderRadius: '1rem'}}>

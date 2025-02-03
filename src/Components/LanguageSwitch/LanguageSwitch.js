@@ -11,8 +11,8 @@ function LanguageSwitch() {
 	}
 
 	return (
-		<div className='LanguageSwitch-container'>
-			<select onChange={switchLanguage} value={i18n.language}>
+		<div className='languageSwitch-container'>
+			<select className='languageSwitch-select' onChange={switchLanguage} value={i18n.language}>
 				<option value='fr'>FR</option>
 				<option value='en'>EN</option>
 				<option value='CN'>中文</option>
