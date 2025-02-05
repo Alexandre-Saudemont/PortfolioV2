@@ -24,7 +24,7 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	return (
 		<nav className={`navbar navbar-expand-lg fixed-top ${isDarkMode ? 'bg-dark navbar-dark' : 'bg-light navbar-light'}`}>
 			<div className='container-fluid'>
-				<div className='position-absolute end-0 top-0 p-custom me-1 me-sm-0'>
+				<div className='position-absolute end-0 top-0 p-custom me-1 me-sm-0 '>
 					<LanguageSwitch />
 				</div>
 				<div className='position-absolute end-0 top-0 '>
@@ -40,7 +40,7 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 					aria-label='Toggle navigation'>
 					<span className='navbar-toggler-icon'></span>
 				</button>
-				<div className='collapse navbar-collapse' id='navbarNav'>
+				<div className='collapse navbar-collapse enable-button-pointers' id='navbarNav'>
 					<ul className='navbar-nav me-auto'>
 						<li className='nav-item'>
 							<span
@@ -83,14 +83,14 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 							</span>
 						</li>
 						<li className='nav-item'>
-							<a
+							<span
 								className='nav-link'
 								href='#Projects'
 								data-bs-toggle='collapse'
 								data-bs-target='#navbarNav'
 								onClick={(e) => handleScroll(projectsRef)}>
 								{t(`homePage.project`)}
-							</a>
+							</span>
 						</li>
 					</ul>
 				</div>

@@ -5,6 +5,10 @@ import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 // import house from '../../../assets/img/house.svg';
 // import houseDark from '../../../assets/img/house-dark.svg';
 import {useTranslation} from 'react-i18next';
+import github from '../../../assets/img/github.svg';
+import githubDark from '../../../assets/img/github-dark.svg';
+import linkedin from '../../../assets/img/linkedin.svg';
+import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 import './ContactPage.scss';
 
 const ContactPage = forwardRef((props, ref) => {
@@ -44,6 +48,15 @@ const ContactPage = forwardRef((props, ref) => {
 					target='_blank'>
 					{t(`contactPage.CV`)}
 				</a>
+				<div className='contactPage-social'>
+					<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
+						<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
+					</a>
+					<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
+						<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
+					</a>
+				</div>
+
 				<div className='contactPage-weather'>
 					{/* We make sure that weatherData is not null and after that we search the name of the city related to the lat & lon we setup above*/}
 					<p className='contactPage-weather-city'>{weatherData && weatherData.name}</p>
