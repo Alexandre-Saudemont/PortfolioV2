@@ -22,80 +22,36 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 	};
 
 	return (
-		<nav className={`navbar navbar-expand-lg fixed-top ${isDarkMode ? 'bg-dark navbar-dark' : 'bg-light navbar-light'}`}>
-			<div className='container-fluid'>
-				<div className='position-absolute end-0 top-0 p-custom me-1 me-sm-0 '>
+		<>
+			{/* Header (langue + dark mode) */}
+			<div className='navbar-top'>
+				<div className='navbar-settings'>
 					<LanguageSwitch />
-				</div>
-				<div className='position-absolute end-0 top-0 '>
-					<img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} />
-				</div>
-				<button
-					className='navbar-toggler'
-					type='button'
-					data-bs-toggle='collapse'
-					data-bs-target='#navbarNav'
-					aria-controls='navbarNav'
-					aria-expanded='false'
-					aria-label='Toggle navigation'>
-					<span className='navbar-toggler-icon'></span>
-				</button>
-				<div className='collapse navbar-collapse enable-button-pointers' id='navbarNav'>
-					<ul className='navbar-nav me-auto'>
-						<li className='nav-item'>
-							<span
-								className='nav-link'
-								href='#Home'
-								data-bs-toggle='collapse'
-								data-bs-target='#navbarNav'
-								onClick={(e) => handleScroll(homeRef)}>
-								{t(`homePage.home`)}
-							</span>
-						</li>
-						<li className='nav-item'>
-							<span
-								className='nav-link'
-								href='#Skills'
-								data-bs-toggle='collapse'
-								data-bs-target='#navbarNav'
-								onClick={(e) => handleScroll(skillsRef)}>
-								{t(`homePage.skills`)}
-							</span>
-						</li>
-						<li className='nav-item'>
-							<span
-								className='nav-link'
-								href='#About'
-								data-bs-toggle='collapse'
-								data-bs-target='#navbarNav'
-								onClick={(e) => handleScroll(aboutRef)}>
-								{t(`homePage.about`)}
-							</span>
-						</li>
-						<li className='nav-item'>
-							<span
-								className='nav-link'
-								href='#Contact'
-								data-bs-toggle='collapse'
-								data-bs-target='#navbarNav'
-								onClick={(e) => handleScroll(contactRef)}>
-								{t(`homePage.contact`)}
-							</span>
-						</li>
-						<li className='nav-item'>
-							<span
-								className='nav-link'
-								href='#Projects'
-								data-bs-toggle='collapse'
-								data-bs-target='#navbarNav'
-								onClick={(e) => handleScroll(projectsRef)}>
-								{t(`homePage.project`)}
-							</span>
-						</li>
-					</ul>
+					<img src={!isDarkMode ? moonDark : lightbulb} alt='Toggle dark mode' className='dark-mode-toggle' onClick={toggleDarkMode} />
 				</div>
 			</div>
-		</nav>
+
+			{/* Menu sticky en bas (mobile-first) */}
+			<nav className={`navbar-sticky ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
+				<ul className='nav-list'>
+					<li className='nav-item' onClick={() => handleScroll(homeRef)}>
+						<span className='nav-link'>{t('homePage.home')}</span>
+					</li>
+					<li className='nav-item' onClick={() => handleScroll(skillsRef)}>
+						<span className='nav-link'>{t('homePage.skills')}</span>
+					</li>
+					<li className='nav-item' onClick={() => handleScroll(aboutRef)}>
+						<span className='nav-link'>{t('homePage.about')}</span>
+					</li>
+					<li className='nav-item' onClick={() => handleScroll(projectsRef)}>
+						<span className='nav-link'>{t('homePage.project')}</span>
+					</li>
+					<li className='nav-item' onClick={() => handleScroll(contactRef)}>
+						<span className='nav-link'>{t('homePage.contact')}</span>
+					</li>
+				</ul>
+			</nav>
+		</>
 	);
 }
 

@@ -4,6 +4,18 @@ html {
 	scroll-behavior: smooth;
 }
 .App-container {
-	height: 100vh;
+	min-height: 100vh;
+	position: relative;
+	z-index: 0;
 	font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+#tsparticles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1; /* Doit être derrière tout le contenu */
+	pointer-events: none;
 }

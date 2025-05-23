@@ -73,7 +73,7 @@ const HomePage = forwardRef((props, ref) => {
 	}, [clearing, displayText, textIndex, isMounted]);
 
 	return (
-		<div className='homePage-container'>
+		<div className={`homePage-container`}>
 			<div className='homePage'>
 				<section ref={ref} className='homePage'>
 					{/* <img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} /> */}

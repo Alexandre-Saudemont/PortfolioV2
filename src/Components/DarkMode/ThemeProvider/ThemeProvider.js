@@ -8,7 +8,12 @@ function ThemeProvider({children}) {
 		return saveMode !== null ? JSON.parse(saveMode) : false;
 	});
 
-	const value = {isDarkMode, setDarkMode};
+	const value = {
+		isDarkMode,
+		setDarkMode,
+		backgroundColor: isDarkMode ? '#323234' : '#ededed',
+		particlesColor: isDarkMode ? '#e5e5e5' : '#323234',
+	};
 	const modeClass = isDarkMode ? 'darkMode' : 'lightMode';
 
 	useEffect(() => {

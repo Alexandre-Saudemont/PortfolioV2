@@ -13,9 +13,9 @@ const ProjectsPage = forwardRef((props, ref) => {
 	// I made function for the button instead of "<a>"" because I had trouble with syle on darkmode, after several times looking for a solution
 	// with the "<a>"" and no sucessfull result. I made myself something easier for the style.
 
-	function onClickTaiwan() {
-		window.open('https://taiwan.alexandre-saudemont.fr/', '_blank');
-	}
+	// function onClickTaiwan() {
+	// 	window.open('https://taiwan.alexandre-saudemont.fr/', '_blank');
+	// }
 
 	function onClickGitHubTaiwan() {
 		window.open('https://github.com/Alexandre-Saudemont/Taiwan', '_blank');
@@ -30,12 +30,12 @@ const ProjectsPage = forwardRef((props, ref) => {
 	}
 
 	function onClickPokedeck() {
-		window.open('https://pokedeck.alexandre-saudemont.fr/', '_blank');
+		window.open('https://pokedeckv2.alexandre-saudemont.fr/', '_blank');
 	}
 
 	return (
 		<div className='projectPage-container'>
-			<div className={`projectPage ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
+			<div className={`projectPage`}>
 				<section ref={ref} className='projectPage'>
 					<div className='projectPage-projects'>
 						<div className='projectPage-project'>
@@ -46,9 +46,9 @@ const ProjectsPage = forwardRef((props, ref) => {
 									<button className='projectPage-github-taiwan' onClick={onClickGitHubTaiwan}>
 										{t('projectsPage.github')}
 									</button>
-									<button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
+									{/* <button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
 										{t('projectsPage.website')}
-									</button>
+									</button> */}
 								</div>
 							</div>
 						</div>

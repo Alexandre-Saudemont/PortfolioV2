@@ -15,6 +15,8 @@
 .lightMode {
 	background-color: var(--color-light);
 	color: var(--color-dark);
+	position: relative; // ✅ permet aux enfants positionnés d’être visibles correctement
+	z-index: 1; // ✅ ne recouvre pas les particules
 }
 
 // .lightMode a {
@@ -25,6 +27,8 @@
 .darkMode {
 	background-color: var(--color-dark);
 	color: var(--color-title);
+	position: relative; // ✅ permet aux enfants positionnés d’être visibles correctement
+	z-index: 1; // ✅ ne recouvre pas les particules
 }
 
 // .darkMode a {

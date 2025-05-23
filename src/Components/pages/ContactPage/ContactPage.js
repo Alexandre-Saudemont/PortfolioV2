@@ -35,7 +35,7 @@ const ContactPage = forwardRef((props, ref) => {
 	}, []);
 
 	return (
-		<div className={`contactPage ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
+		<div className={`contactPage`}>
 			<section ref={ref} className='contactPage'>
 				{/* <img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} /> */}
 				<p> {error && error.message}</p>
@@ -43,7 +43,7 @@ const ContactPage = forwardRef((props, ref) => {
 				<p className='contactPage-text'>{t(`contactPage.text`)}</p>
 				<a
 					className='contactPage-cv'
-					href='https://drive.google.com/file/d/1is708_lJybA_BtGTnXvvGdSbYiyexQxw/view?usp=sharing'
+					href='https://drive.google.com/file/d/1n9JZkgiXljqw2bMW91iNaNGZHKmkXWJS/view?usp=sharing'
 					rel='noreferrer'
 					target='_blank'>
 					{t(`contactPage.CV`)}

@@ -1,13 +1,81 @@
-.p-custom {
-	padding: 0.8rem;
+/* Mobile-first (le sticky s'applique par défaut) */
+.navbar-sticky {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2000;
+	width: 100%;
+	padding: 0.5rem 0;
+	opacity: 1 !important;
 }
-.navbar {
-	z-index: 1000;
-	overflow: auto;
+
+.darkMode.navbar-sticky {
+	box-shadow: 0 -2px 15px rgba(237, 237, 237, 0.5);
+}
+
+.lightMode.navbar-sticky {
+	box-shadow: 0 -2px 15px rgba(50, 50, 52, 0.5);
+}
+
+.nav-list {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav-item {
+	padding: 0.5rem;
 	cursor: pointer;
 }
+
+.nav-link {
+	color: var(--text-color); // Adapte aux couleurs du thème
+	font-size: 0.9rem;
+	white-space: nowrap;
+}
+
+/* Paramètres en haut (langue + dark mode) */
+.navbar-top {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 0.8rem;
+	z-index: 1001;
+}
+
+.navbar-settings {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.dark-mode-toggle {
+	width: 24px;
+	cursor: pointer;
+}
+
+/* Desktop (modification à partir de 768px) */
 @media (min-width: 768px) {
-	.p-custom {
-		padding: 0.5rem;
+	.navbar-sticky {
+		position: static; // Retire le sticky sur desktop
+		box-shadow: none;
+		background: transparent;
+	}
+
+	.darkMode.navbar-sticky {
+		box-shadow: none;
+	}
+	.nav-list {
+		justify-content: center;
+		gap: 2rem;
+		padding-top: 1rem;
+	}
+
+	.nav-link {
+		font-size: 1rem;
 	}
 }
