@@ -1,37 +1,15 @@
 @import url('../../../assets/css/var.scss');
 
-// .homePage {
-// 	min-height: 100vh;
-// 	margin: auto;
-// 	text-align: center;
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-items: center;
-// 	overflow: auto;
-// 	width: 90%;
-// 	border-radius: 1rem;
-// }
 .lightMode {
 	background-color: var(--color-light);
 	color: var(--color-dark);
-	position: relative; // ✅ permet aux enfants positionnés d’être visibles correctement
-	z-index: 1; // ✅ ne recouvre pas les particules
+	position: relative;
+	z-index: 1;
 }
-
-// .lightMode a {
-// 	color: var(--color-dark);
-// 	background-color: var(--color-light);
-// }
 
 .darkMode {
 	background-color: var(--color-dark);
 	color: var(--color-title);
-	position: relative; // ✅ permet aux enfants positionnés d’être visibles correctement
-	z-index: 1; // ✅ ne recouvre pas les particules
+	position: relative;
+	z-index: 1;
 }
-
-// .darkMode a {
-// 	color: var(--color-dark);
-// 	background-color: var(--color-light);
-// }
