@@ -1,6 +1,6 @@
 import React, {useContext, forwardRef} from 'react';
 // import {useNavigate} from 'react-router-dom';
-import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+
 // import house from '../../../assets/img/house.svg';
 // import houseDark from '../../../assets/img/house-dark.svg';
 import {useTranslation} from 'react-i18next';
@@ -8,8 +8,6 @@ import {useTranslation} from 'react-i18next';
 import './AboutPage.scss';
 
 const AboutPage = forwardRef((props, ref) => {
-	const {isDarkMode} = useContext(DarkModeContext);
-	// const navigate = useNavigate();
 	const {t} = useTranslation();
 
 	// function navigateHome() {

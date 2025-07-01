@@ -1,13 +1,11 @@
-import React, {useContext, forwardRef} from 'react';
+import React, {forwardRef} from 'react';
 import taiwan from '../../../assets/img/taiwan.gif';
 import pokedeck from '../../../assets/img/pokemon.gif';
-import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+import hanzi from '../../../assets/img/hanzi.gif';
 import {useTranslation} from 'react-i18next';
 import './ProjectsPage.scss';
 
 const ProjectsPage = forwardRef((props, ref) => {
-	const {isDarkMode} = useContext(DarkModeContext);
-
 	const {t} = useTranslation();
 
 	// I made function for the button instead of "<a>"" because I had trouble with syle on darkmode, after several times looking for a solution
@@ -33,6 +31,14 @@ const ProjectsPage = forwardRef((props, ref) => {
 		window.open('https://pokedeckv2.alexandre-saudemont.fr/', '_blank');
 	}
 
+	function onClickGitHubHanzi() {
+		window.open('https://github.com/Alexandre-Saudemont/LearningHSK', '_blank');
+	}
+
+	function onClickHanzi() {
+		window.open('https://hskmatch.alexandre-saudemont.fr/', '_blank');
+	}
+
 	return (
 		<div className='projectPage-container'>
 			<div className={`projectPage`}>
@@ -41,14 +47,11 @@ const ProjectsPage = forwardRef((props, ref) => {
 						<div className='projectPage-project'>
 							<div className='projectPage-taiwan'>
 								{t('projectsPage.title1')}
-								<img src={taiwan} alt='' className='projectPage-taiwan-img' />
+								<img src={taiwan} alt='taiwan gif' className='projectPage-taiwan-img' />
 								<div className='projectPage-taiwan-button-container'>
-									<button className='projectPage-github-taiwan' onClick={onClickGitHubTaiwan}>
+									<button className='projectPage-button-github' onClick={onClickGitHubTaiwan}>
 										{t('projectsPage.github')}
 									</button>
-									{/* <button className='projectPage-website-taiwan' onClick={onClickTaiwan}>
-										{t('projectsPage.website')}
-									</button> */}
 								</div>
 							</div>
 						</div>
@@ -56,21 +59,35 @@ const ProjectsPage = forwardRef((props, ref) => {
 						<div className='projectPage-project'>
 							<div className='projectPage-pokedeck'>
 								{t('projectsPage.title2')}
-								<img src={pokedeck} alt='' className='projectPage-pokedeck-img' />
+								<img src={pokedeck} alt='pokedeck gif' className='projectPage-pokedeck-img' />
 
 								<div className='projectPage-pokedeck-button-container'>
-									<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckFront}>
+									<button className='projectPage-button-github' onClick={onClickGitHubPokedeckFront}>
 										{t('projectsPage.githubFront')}
 									</button>
-									<button className='projectPage-github-pokedeck' onClick={onClickGitHubPokedeckBack}>
+									<button className='projectPage-button-github' onClick={onClickGitHubPokedeckBack}>
 										{t('projectsPage.githubBack')}
 									</button>
 									<button
-										className='projectPage-website-pokedeck'
+										className='projectPage-button-website'
 										href='google.com'
 										target='_blank'
 										rel='noopener noreferrer'
 										onClick={onClickPokedeck}>
+										{t('projectsPage.website')}
+									</button>
+								</div>
+							</div>
+						</div>
+						<div className='projectPage-project'>
+							<div className='projectPage-hanzi'>
+								{t('projectsPage.title3')}
+								<img src={hanzi} alt='hanzi gif' className='projectPage-hanzi-img' />
+								<div className='projectPage-hanzi-button-container'>
+									<button className='projectPage-button-github' onClick={onClickGitHubHanzi}>
+										{t('projectsPage.github')}
+									</button>
+									<button className='projectPage-button-website' onClick={onClickHanzi}>
 										{t('projectsPage.website')}
 									</button>
 								</div>

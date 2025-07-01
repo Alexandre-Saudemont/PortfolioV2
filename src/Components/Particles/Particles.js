@@ -11,7 +11,7 @@ function ParticlesBackground() {
 	}, []);
 
 	const {backgroundColor, particlesColor} = useContext(DarkModeContext);
-	console.log('coucou', backgroundColor, particlesColor);
+
 	return <Particles id='tsparticles' init={particlesInit} options={getParticlesOptions({backgroundColor, particlesColor})} />;
 }
 
