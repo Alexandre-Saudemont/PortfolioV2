@@ -1,15 +1,34 @@
-Hello !
+# PortfolioV2 — Alexandre Saudemont
 
-I've decided to upgrade my portfolio and make a V2.0.
-I'm a front web developer and like to code with React !
+Bienvenue sur la version 2 de mon **portfolio de développeur web**. Ce projet met en valeur mes compétences, mes projets récents, ainsi que mon parcours en tant que développeur JavaScript FullStack.
 
-Stack :
+Ce portfolio a été développé avec **React.js** et vise à proposer une expérience fluide, responsive et moderne aux visiteurs.
 
--   React
--   Axios
--   Sass
--   Bootstrap
+---
 
-Edit :
+## ✨ Fonctionnalités
 
-Added Bootstrap for some components and made the website SPA.
+- Présentation de mon profil, mon parcours et mes compétences
+- Liste de projets avec descriptions, visuels et liens GitHub/démo
+- Design responsive (desktop / mobile)
+- Animations douces et transitions
+- Navigation fluide entre les sections
+
+---
+
+## 🔧 Technologies utilisées
+
+- **React.js**
+- **React Router DOM** 
+- **SCSS**
+- **Particles.JS**
+
+---
+
+## 🚀 Installation & Lancement
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/Alexandre-Saudemont/PortfolioV2.git
+cd PortfolioV2
