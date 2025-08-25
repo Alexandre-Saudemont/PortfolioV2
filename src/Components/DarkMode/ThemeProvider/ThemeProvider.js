@@ -11,7 +11,7 @@ function ThemeProvider({children}) {
 	const value = {
 		isDarkMode,
 		setDarkMode,
-		backgroundColor: isDarkMode ? '#323234' : '#ededed',
+		backgroundColor: isDarkMode ? '#0a0a0a' : '#ededed',
 		particlesColor: isDarkMode ? '#e5e5e5' : '#323234',
 	};
 	const modeClass = isDarkMode ? 'darkMode' : 'lightMode';

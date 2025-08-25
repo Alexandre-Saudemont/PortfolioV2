@@ -31,7 +31,7 @@ const Skills = forwardRef((props, ref) => {
 
 	return (
 		<div className='skills'>
-			<section ref={ref}>
+			<section ref={ref} id='skills'>
 				<div
 					className={`skills-container d-flex flex-wrap justify-content-center align-items-center mx-auto pt-4 
 					}`}>

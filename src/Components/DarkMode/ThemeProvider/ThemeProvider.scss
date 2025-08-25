@@ -5,6 +5,14 @@
 	color: var(--color-dark);
 	position: relative;
 	z-index: 1;
+
+	/* Light theme tokens override */
+	--bg-primary: #ededed;
+	--bg-secondary: #ffffff;
+	--text-primary: #323234;
+	--text-secondary: #4a4a4a;
+	--accent: #00cc88;
+	--border: #dcdcdc;
 }
 
 .darkMode {
@@ -12,4 +20,12 @@
 	color: var(--color-title);
 	position: relative;
 	z-index: 1;
+
+	/* Dark theme tokens override */
+	--bg-primary: #000000;
+	--bg-secondary: #0a0a0a;
+	--text-primary: #ffffff;
+	--text-secondary: #a0a0a0;
+	--accent: #00ff88;
+	--border: #1a1a1a;
 }

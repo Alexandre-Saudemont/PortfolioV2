@@ -6,7 +6,17 @@
 		"skills": "Skills",
 		"about": "About",
 		"contact": "Contact",
-		"project": "Projects"
+		"project": "Projects",
+		"hero": {
+			"titlePrefix": "Hi, I'm",
+			"subtitle": "Full-stack developer passionate about creating beautiful digital experiences",
+			"cta": "View My Work",
+			"cards": {
+				"frontend": {"title": "Frontend", "desc": "React, Vue, TypeScript"},
+				"backend": {"title": "Backend", "desc": "Node.js, Python, Go"},
+				"devops": {"title": "DevOps", "desc": "Docker, AWS, CI/CD"}
+			}
+		}
 	},
 	"aboutPage": {
 		"title": "Career journey",

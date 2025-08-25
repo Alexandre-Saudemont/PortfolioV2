@@ -74,39 +74,31 @@ const HomePage = forwardRef((props, ref) => {
 
 	return (
 		<div className={`homePage-container`}>
-			<div className='homePage'>
-				<section ref={ref} className='homePage'>
-					{/* <img src={!isDarkMode ? moonDark : lightbulb} alt='Change mod' className='homePage-moon' onClick={toggleDarkMode} /> */}
-
-					<h1 className='homePage-title'>Alexandre Saudemont</h1>
-					<img src={profilePic} alt='profile' className='homePage-profilePic' />
-					<div className='homePage-description-container'>
-						<p className='homePage-description'>{t(`homePage.title`)}</p>
-						<p className='homePage-description-dynamic'>{displayText}</p>
+			<section ref={ref} id='home' className='container hero'>
+				<div className='hero-content'>
+					<h1>
+						{t('homePage.hero.titlePrefix', "Salut, je m'appelle")} <span className='highlight'>Alexandre Saudemont</span>
+					</h1>
+					<p>{t('homePage.hero.subtitle', 'Développeur full-stack passionné par les belles expériences numériques')}</p>
+					<a href='#projects' className='cta-button'>
+						{t('homePage.hero.cta', 'Voir mes projets')}
+					</a>
+				</div>
+				<div className='hero-visual'>
+					<div className='card'>
+						<h3>{t('homePage.hero.cards.frontend.title', 'Frontend')}</h3>
+						<p>{t('homePage.hero.cards.frontend.desc', 'React, Vue, TypeScript')}</p>
 					</div>
-					{/* <div className='homePage-links-container'>
-					<p className={changeText ? 'homePage-links-text-clicked' : 'homePage-links-text'} onClick={toggleModalSkills}>
-						{t(`homePage.skills`)}
-					</p>
-					{showModalSkills && <Skills />}
-
-					<p className='homePage-links-text'>{t(`homePage.about`)}</p>
-					<p className='homePage-links-text'>{t(`homePage.contact`)}</p>
-					<div>
-						<p className='homePage-links-text-project'>{t(`homePage.project`)}</p>
+					<div className='card'>
+						<h3>{t('homePage.hero.cards.backend.title', 'Backend')}</h3>
+						<p>{t('homePage.hero.cards.backend.desc', 'Node.js, Python, Go')}</p>
 					</div>
-				</div> */}
-
-					<ul className='homePage-icon-social-container'>
-						<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
-							<img src={!isDarkMode ? github : githubDark} alt='github icon' className='homePage-github' />
-						</a>
-						<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
-							<img src={!isDarkMode ? linkedin : linkedinDark} alt='linkedin icon' className='homePage-linkedin' />
-						</a>
-					</ul>
-				</section>
-			</div>
+					<div className='card'>
+						<h3>{t('homePage.hero.cards.devops.title', 'DevOps')}</h3>
+						<p>{t('homePage.hero.cards.devops.desc', 'Docker, AWS, CI/CD')}</p>
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 });

@@ -36,7 +36,7 @@ const ContactPage = forwardRef((props, ref) => {
 
 	return (
 		<div className={`contactPage`}>
-			<section ref={ref} className='contactPage'>
+			<section ref={ref} id='contact' className='contactPage'>
 				{/* <img src={!isDarkMode ? house : houseDark} alt='icon house' className='contactPage-iconHome' onClick={navigateHome} /> */}
 				<p> {error && error.message}</p>
 				<h1 className='contactPage-title'>{t(`contactPage.title`)}</h1>

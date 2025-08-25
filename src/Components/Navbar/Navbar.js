@@ -7,7 +7,7 @@ import moonDark from '../../assets/img/moon-dark.svg';
 import lightbulb from '../../assets/img/lightbulb.svg';
 import './Navbar.scss';
 
-function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
+function Navbar({homeRef, aboutRef, contactRef, projectsRef}) {
 	const {t} = useTranslation();
 	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
 
@@ -31,23 +31,58 @@ function Navbar({homeRef, skillsRef, aboutRef, contactRef, projectsRef}) {
 				</div>
 			</div>
 
-			{/* Menu sticky en bas (mobile-first) */}
+			{/* New header with logo and links */}
+			<header className='header-top'>
+				<nav className='container navbar-container'>
+					<div className='logo'>AS</div>
+					<ul className='nav-links'>
+						<li className='nav-item'>
+							<a className='nav-link' href='#home'>
+								{t('homePage.home')}
+							</a>
+						</li>
+						<li className='nav-item'>
+							<a className='nav-link' href='#about'>
+								{t('homePage.about')}
+							</a>
+						</li>
+						<li className='nav-item'>
+							<a className='nav-link' href='#projects'>
+								{t('homePage.project')}
+							</a>
+						</li>
+						<li className='nav-item'>
+							<a className='nav-link' href='#contact'>
+								{t('homePage.contact')}
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			{/* Mobile sticky menu (fallback) */}
 			<nav className={`navbar-sticky ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
 				<ul className='nav-list'>
-					<li className='nav-item' onClick={() => handleScroll(homeRef)}>
-						<span className='nav-link'>{t('homePage.home')}</span>
+					<li className='nav-item'>
+						<a className='nav-link' href='#home'>
+							{t('homePage.home')}
+						</a>
 					</li>
-					<li className='nav-item' onClick={() => handleScroll(skillsRef)}>
-						<span className='nav-link'>{t('homePage.skills')}</span>
+					<li className='nav-item'>{/* Skills removed; flip-cards moved under About */}</li>
+					<li className='nav-item'>
+						<a className='nav-link' href='#about'>
+							{t('homePage.about')}
+						</a>
 					</li>
-					<li className='nav-item' onClick={() => handleScroll(aboutRef)}>
-						<span className='nav-link'>{t('homePage.about')}</span>
+					<li className='nav-item'>
+						<a className='nav-link' href='#projects'>
+							{t('homePage.project')}
+						</a>
 					</li>
-					<li className='nav-item' onClick={() => handleScroll(projectsRef)}>
-						<span className='nav-link'>{t('homePage.project')}</span>
-					</li>
-					<li className='nav-item' onClick={() => handleScroll(contactRef)}>
-						<span className='nav-link'>{t('homePage.contact')}</span>
+					<li className='nav-item'>
+						<a className='nav-link' href='#contact'>
+							{t('homePage.contact')}
+						</a>
 					</li>
 				</ul>
 			</nav>

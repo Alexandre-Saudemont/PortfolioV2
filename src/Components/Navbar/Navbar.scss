@@ -38,6 +38,74 @@
 	white-space: nowrap;
 }
 
+/* New header top styles */
+.header-top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 2rem 0;
+	z-index: 100;
+	transition: all 0.3s ease;
+	background: color-mix(in lch, var(--bg-secondary) 80%, transparent);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid var(--border);
+}
+
+.navbar-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: 700;
+	background: var(--gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.nav-links {
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+}
+
+.nav-links a,
+.nav-links span {
+	color: var(--text-secondary);
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	transition: color 0.3s ease;
+	position: relative;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+	color: var(--accent);
+}
+
+.nav-links a::after,
+.nav-links span::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--gradient);
+	transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links span:hover::after {
+	width: 100%;
+}
+
 /* Paramètres en haut (langue + dark mode) */
 .navbar-top {
 	position: fixed;
@@ -64,6 +132,7 @@
 		position: static; // Retire le sticky sur desktop
 		box-shadow: none !important;
 		background: transparent;
+		display: none;
 	}
 
 	.darkMode.navbar-sticky {

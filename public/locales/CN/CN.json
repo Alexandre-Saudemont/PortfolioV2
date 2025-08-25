@@ -6,7 +6,17 @@
 		"skills": "技能",
 		"about": "关于",
 		"contact": "接触",
-		"project": "项目"
+		"project": "项目",
+		"hero": {
+			"titlePrefix": "你好，我是",
+			"subtitle": "热衷于打造精美数字体验的全栈开发者",
+			"cta": "查看我的项目",
+			"cards": {
+				"frontend": {"title": "前端", "desc": "React, Vue, TypeScript"},
+				"backend": {"title": "后端", "desc": "Node.js, Python, Go"},
+				"devops": {"title": "DevOps", "desc": "Docker, AWS, CI/CD"}
+			}
+		}
 	},
 	"aboutPage": {
 		"title": "我的经历",

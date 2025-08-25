@@ -41,61 +41,47 @@ const ProjectsPage = forwardRef((props, ref) => {
 
 	return (
 		<div className='projectPage-container'>
-			<div className={`projectPage`}>
-				<section ref={ref} className='projectPage'>
-					<div className='projectPage-projects'>
-						<div className='projectPage-project'>
-							<div className='projectPage-taiwan'>
-								{t('projectsPage.title1')}
-								<img src={taiwan} alt='taiwan gif' className='projectPage-taiwan-img' />
-								<div className='projectPage-taiwan-button-container'>
-									<button className='projectPage-button-github' onClick={onClickGitHubTaiwan}>
-										{t('projectsPage.github')}
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div className='projectPage-project'>
-							<div className='projectPage-pokedeck'>
-								{t('projectsPage.title2')}
-								<img src={pokedeck} alt='pokedeck gif' className='projectPage-pokedeck-img' />
-
-								<div className='projectPage-pokedeck-button-container'>
-									<button className='projectPage-button-github' onClick={onClickGitHubPokedeckFront}>
-										{t('projectsPage.githubFront')}
-									</button>
-									<button className='projectPage-button-github' onClick={onClickGitHubPokedeckBack}>
-										{t('projectsPage.githubBack')}
-									</button>
-									<button
-										className='projectPage-button-website'
-										href='google.com'
-										target='_blank'
-										rel='noopener noreferrer'
-										onClick={onClickPokedeck}>
-										{t('projectsPage.website')}
-									</button>
-								</div>
-							</div>
-						</div>
-						<div className='projectPage-project'>
-							<div className='projectPage-hanzi'>
-								{t('projectsPage.title3')}
-								<img src={hanzi} alt='hanzi gif' className='projectPage-hanzi-img' />
-								<div className='projectPage-hanzi-button-container'>
-									<button className='projectPage-button-github' onClick={onClickGitHubHanzi}>
-										{t('projectsPage.github')}
-									</button>
-									<button className='projectPage-button-website' onClick={onClickHanzi}>
-										{t('projectsPage.website')}
-									</button>
-								</div>
+			<section ref={ref} id='projects' className='container'>
+				<h2 style={{textAlign: 'center', fontSize: '2.5rem', marginBottom: '2rem'}}>Featured Projects</h2>
+				<div className='project-grid'>
+					<div className='project-card'>
+						<div className='project-image'></div>
+						<div className='project-content'>
+							<h3 className='project-title'>E-commerce Platform</h3>
+							<p>A modern e-commerce solution built with React and Node.js</p>
+							<div className='project-tech'>
+								<span className='tech-tag'>React</span>
+								<span className='tech-tag'>Node.js</span>
+								<span className='tech-tag'>MongoDB</span>
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
+					<div className='project-card'>
+						<div className='project-image'></div>
+						<div className='project-content'>
+							<h3 className='project-title'>Task Management App</h3>
+							<p>Collaborative task management with real-time updates</p>
+							<div className='project-tech'>
+								<span className='tech-tag'>Vue.js</span>
+								<span className='tech-tag'>Express</span>
+								<span className='tech-tag'>Socket.io</span>
+							</div>
+						</div>
+					</div>
+					<div className='project-card'>
+						<div className='project-image'></div>
+						<div className='project-content'>
+							<h3 className='project-title'>Analytics Dashboard</h3>
+							<p>Data visualization dashboard with interactive charts</p>
+							<div className='project-tech'>
+								<span className='tech-tag'>D3.js</span>
+								<span className='tech-tag'>Python</span>
+								<span className='tech-tag'>FastAPI</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 });
