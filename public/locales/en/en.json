@@ -1,20 +1,19 @@
 {
 	"homePage": {
 		"home": "Home",
-		"title": "I'm a Developper",
+		"title": "Hi, I'm",
 		"typingTexts": ["FullStack JavaScript", "Web", "Front-End"],
 		"skills": "Skills",
 		"about": "About",
 		"contact": "Contact",
-		"project": "Projects",
+		"project": "View My Work",
 		"hero": {
 			"titlePrefix": "Hi, I'm",
 			"subtitle": "Full-stack developer passionate about creating beautiful digital experiences",
-			"cta": "View My Work",
+
 			"cards": {
-				"frontend": {"title": "Frontend", "desc": "React, Vue, TypeScript"},
-				"backend": {"title": "Backend", "desc": "Node.js, Python, Go"},
-				"devops": {"title": "DevOps", "desc": "Docker, AWS, CI/CD"}
+				"frontend": {"title": "Frontend", "desc": "React.js, JavaScript, Responsive Design"},
+				"backend": {"title": "Backend", "desc": "Node.js, Express.js, PostgreSQL"}
 			}
 		}
 	},
@@ -32,9 +31,12 @@
 		"CV": "Download my CV"
 	},
 	"projectsPage": {
-		"title1": "Taiwan Website",
-		"title2": "Pokedeck Website",
+		"title1": "Pokedeck Website",
+		"subtitle1": "A Pokémon card collection app to create, sort, and manage your card deck",
+		"title2": "Taiwan Website",
+		"subtitle2": "Personal travel diary of my journey through Taiwan, sharing culture, food, and memorable places",
 		"title3": "Match HSK Website",
+		"subtitle3": "A fun and interactive game to learn Mandarin characters, organized by HSK levels.",
 		"github": "GitHub",
 		"githubFront": "Front-End",
 		"githubBack": "Back-End",

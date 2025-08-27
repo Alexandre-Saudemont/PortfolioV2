@@ -165,16 +165,20 @@
 }
 
 .hero-visual {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1rem;
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	width: 70%;
+	margin: auto;
 }
 
 .card {
 	background: var(--bg-secondary);
 	border: 1px solid var(--accent);
 	border-radius: 10px;
-	padding: 2rem;
+	padding: 1rem;
 	text-align: center;
 	transition: transform 0.3s ease, border-color 0.3s ease;
 	color: var(--text-primary);
@@ -183,8 +187,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	flex: 1;
 }
 
+.card-title {
+	padding-bottom: 0.5rem;
+	font-size: larger;
+}
 /* Override card background in dark mode to match particles */
 .darkMode .card {
 	background: #1a1a1a;

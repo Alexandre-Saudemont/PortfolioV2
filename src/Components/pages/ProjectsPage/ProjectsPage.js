@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import './ProjectsPage.scss';
 
 const ProjectsPage = forwardRef((props, ref) => {
-	const {t} = useTranslation();
+	const {t, i18n} = useTranslation();
 
 	// I made function for the button instead of "<a>"" because I had trouble with syle on darkmode, after several times looking for a solution
 	// with the "<a>"" and no sucessfull result. I made myself something easier for the style.
@@ -47,36 +47,35 @@ const ProjectsPage = forwardRef((props, ref) => {
 					<div className='project-card'>
 						<div className='project-image'></div>
 						<div className='project-content'>
-							<h3 className='project-title'>E-commerce Platform</h3>
-							<p>A modern e-commerce solution built with React and Node.js</p>
+							<h3 className='project-title'>{t(`projectsPage.title1`)}</h3>
+							<p>{t(`projectsPage.subtitle1`)}</p>
 							<div className='project-tech'>
-								<span className='tech-tag'>React</span>
+								<span className='tech-tag'>React.js</span>
 								<span className='tech-tag'>Node.js</span>
-								<span className='tech-tag'>MongoDB</span>
+								<span className='tech-tag'>postgreSQL</span>
 							</div>
 						</div>
 					</div>
 					<div className='project-card'>
 						<div className='project-image'></div>
 						<div className='project-content'>
-							<h3 className='project-title'>Task Management App</h3>
-							<p>Collaborative task management with real-time updates</p>
+							<h3 className='project-title'>{t(`projectsPage.title2`)}</h3>
+							<p>{t(`projectsPage.subtitle2`)}</p>
 							<div className='project-tech'>
-								<span className='tech-tag'>Vue.js</span>
-								<span className='tech-tag'>Express</span>
-								<span className='tech-tag'>Socket.io</span>
+								<span className='tech-tag'>React.js</span>
+								<span className='tech-tag'>Typescript</span>
+								<span className='tech-tag'>Scss</span>
 							</div>
 						</div>
 					</div>
 					<div className='project-card'>
 						<div className='project-image'></div>
 						<div className='project-content'>
-							<h3 className='project-title'>Analytics Dashboard</h3>
-							<p>Data visualization dashboard with interactive charts</p>
+							<h3 className='project-title'>{t(`projectsPage.title3`)}</h3>
+							<p>{t(`projectsPage.subtitle3`)}</p>
 							<div className='project-tech'>
-								<span className='tech-tag'>D3.js</span>
-								<span className='tech-tag'>Python</span>
-								<span className='tech-tag'>FastAPI</span>
+								<span className='tech-tag'>React.js</span>
+								<span className='tech-tag'>interactive learning</span>
 							</div>
 						</div>
 					</div>

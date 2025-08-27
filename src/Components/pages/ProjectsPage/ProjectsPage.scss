@@ -1,153 +1,6 @@
-/* github button */
-.lightMode .projectPage-button-github {
-	background-color: #ececed;
-	color: #333335;
-	border: 1px solid #333335;
-	&:hover {
-		cursor: pointer;
-		background-color: #47474a;
-		color: #ececed;
-	}
-}
-
-.darkMode .projectPage-button-github {
-	background-color: #47474a;
-	color: #ededed;
-	border: 1px solid #9f9f9f;
-	&:hover {
-		cursor: pointer;
-		background-color: #ececed;
-		color: #333335;
-	}
-}
-
-/* website button */
-.lightMode .projectPage-button-website {
-	background-color: #ececed;
-	color: #333335;
-	border: 1px solid #333335;
-	&:hover {
-		cursor: pointer;
-		background-color: #47474a;
-		color: #ececed;
-	}
-}
-.darkMode .projectPage-button-website {
-	background-color: #47474a;
-	color: #ededed;
-	border: 1px solid #9f9f9f;
-	&:hover {
-		cursor: pointer;
-		background-color: #ececed;
-		color: #333335;
-	}
-}
-
-.projectPage {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	flex-direction: column;
+.projectPage-container {
 	padding-top: 1rem;
 	margin: auto;
-
-	&-button-github {
-		font-size: 1.2rem;
-		text-decoration: none;
-		margin: 0 1rem 1rem 1rem;
-		padding: 2px;
-		border-radius: 5px;
-		width: 6.5rem;
-		height: 2.5rem;
-	}
-
-	&-button-website {
-		font-size: 1.2rem;
-		text-decoration: none;
-		margin: 0 0 1rem 0;
-		padding: 2px;
-		border-radius: 5px;
-		width: 6.5rem;
-		height: 2.5rem;
-	}
-
-	&-taiwan {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		font-size: 1.8rem;
-		margin-top: 2rem;
-		&-img {
-			width: 12rem;
-			height: 10rem;
-			margin: 2rem 0 1rem 0;
-		}
-	}
-
-	&-pokedeck {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		font-size: 1.8rem;
-		&-img {
-			width: 12rem;
-			height: 10rem;
-			margin: 2rem 0 1rem 0;
-		}
-	}
-
-	&-pokedeck-button-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		width: 80%;
-	}
-
-	&-hanzi {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		font-size: 1.8rem;
-		&-img {
-			width: 12rem;
-			height: 10rem;
-			margin: 2rem 0 1rem 0;
-		}
-	}
-	&-hanzi-button-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-	}
-
-	&-github-hanzi {
-		font-size: 1.2rem;
-		text-decoration: none;
-		margin: 0 1rem 1.3rem 1rem;
-		padding: 2px;
-		border-radius: 5px;
-		width: 6.5rem;
-		height: 2.5rem;
-	}
-
-	&-website-hanzi {
-		font-size: 1.2rem;
-		text-decoration: none;
-		margin: 0 0 1.5rem 0;
-		padding: 2px;
-		border-radius: 5px;
-		width: 6.5rem;
-		height: 2.5rem;
-	}
-
-	&-hanzi-img {
-		width: 10rem;
-		height: 7rem;
-		margin: 2rem 0 1rem 0;
-	}
 }
 
 .project-grid {
@@ -162,9 +15,10 @@
 	border: 1px solid var(--border);
 	border-radius: 10px;
 	overflow: hidden;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	position: relative;
 	color: var(--text-primary);
+	transform-style: preserve-3d;
 }
 
 .project-card::before {
@@ -178,15 +32,44 @@
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	z-index: 1;
+	border-radius: 10px;
 }
 
 .project-card:hover {
-	transform: translateY(-10px);
+	transform: perspective(1000px) rotateY(5deg) rotateX(3deg) translateY(-10px);
 	box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
 }
 
 .project-card:hover::before {
 	opacity: 0.1;
+}
+
+.project-card-overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 2;
+	text-align: center;
+}
+
+.project-card:hover .project-card-overlay {
+	opacity: 1;
+}
+
+.project-card-overlay span {
+	background: rgba(255, 255, 255, 0.2);
+	padding: 0.3rem 0.7rem;
+	border-radius: 20px;
+	font-size: 0.9rem;
 }
 
 .project-image {
@@ -230,240 +113,8 @@
 	font-family: var(--font-mono);
 }
 
-@media (min-width: 540px) {
-	.projectPage {
-		&-iconHome {
-			margin: 1.5rem 0 0 0;
-			width: 2rem;
-		}
-		&-taiwan {
-			font-size: 2.5rem;
-
-			&-img {
-				width: 15rem;
-				height: 12rem;
-			}
-			&-button-container {
-				margin: 2rem 0 2rem 0;
-			}
-		}
-
-		&-github-taiwan {
-			border-radius: 5px;
-			width: 5rem;
-			height: 2rem;
-		}
-		&-website-taiwan {
-			border-radius: 5px;
-			width: 6rem;
-			height: 2rem;
-		}
-
-		&-pokedeck {
-			font-size: 2.5rem;
-			&-img {
-				width: 15rem;
-				height: 12rem;
-			}
-			&-button-container {
-				margin: 2rem 0 2rem 0;
-				display: flex;
-				flex-wrap: wrap;
-				width: 60%;
-			}
-		}
-		&-github-pokedeck {
-			border-radius: 5px;
-			width: 6rem;
-			height: 3rem;
-		}
-		&-website-pokedeck {
-			border-radius: 5px;
-			width: 10rem;
-			height: 3rem;
-		}
-		&-hanzi {
-			font-size: 2.5rem;
-
-			&-img {
-				width: 15rem;
-				height: 12rem;
-			}
-
-			&-button-container {
-				margin: 2rem 0 2rem 0;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: center;
-			}
-		}
-	}
-}
-
-@media (min-width: 768px) {
-	.projectPage {
-		&-iconHome {
-			margin: 1.5rem 0 0 0;
-			width: 2rem;
-		}
-		&-taiwan {
-			font-size: 2.5rem;
-
-			&-img {
-				width: 15rem;
-				height: 12rem;
-			}
-			&-button-container {
-				margin: 2rem 0 2rem 0;
-			}
-		}
-
-		&-github-taiwan {
-			border-radius: 5px;
-			width: 5rem;
-			height: 3rem;
-		}
-		&-website-taiwan {
-			border-radius: 5px;
-			width: 6rem;
-			height: 3rem;
-		}
-
-		&-pokedeck {
-			font-size: 2.5rem;
-
-			&-img {
-				width: 15rem;
-				height: 12rem;
-			}
-			&-button-container {
-				margin: 2rem 0 2rem 0;
-				width: 80%;
-			}
-		}
-
-		&-github-pokedeck {
-			border-radius: 5px;
-			width: 6rem;
-			height: 3rem;
-		}
-		&-website-pokedeck {
-			border-radius: 5px;
-			width: 10rem;
-			height: 3rem;
-		}
-		&-hanzi {
-			font-size: 2.5rem;
-
-			&-img {
-				width: 15rem;
-				height: 12rem;
-			}
-
-			&-button-container {
-				margin: 2rem 0 2rem 0;
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
 	.projectPage-container {
 		padding-bottom: 0;
-	}
-	.projectPage {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		flex-direction: column;
-		width: 100%;
-		padding-top: 1rem;
-
-		&-projects {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-		}
-
-		&-project {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 45%;
-		}
-
-		&-iconHome {
-			margin: 1.5rem 0 0 0;
-			cursor: pointer;
-		}
-
-		&-taiwan {
-			&-img {
-				width: 12rem;
-				height: 7rem;
-			}
-
-			&-button-container {
-				margin: 1rem 0 1rem 0;
-			}
-		}
-
-		&-github-taiwan,
-		&-website-taiwan {
-			border-radius: 5px;
-			width: 6rem;
-			height: 2.7rem;
-		}
-
-		&-pokedeck {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 5.9rem;
-
-			&-img {
-				width: 12rem;
-				height: 7.5rem;
-			}
-
-			&-button-container {
-				margin: 1rem 0 1rem 0;
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-			}
-		}
-
-		&-github-pokedeck,
-		&-website-pokedeck {
-			border-radius: 5px;
-			width: 6rem;
-			height: 2.7rem;
-			margin: 0.5rem;
-		}
-
-		&-hanzi {
-			margin-top: 5rem;
-
-			&-img {
-				width: 12rem;
-				height: 10rem;
-			}
-
-			&-button-container {
-				margin: 1rem 0 1rem 0;
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-			}
-			&-button-website {
-				border-radius: 5px;
-				width: 6rem;
-				height: 2.7rem;
-			}
-		}
 	}
 }

@@ -13,7 +13,7 @@ import {useTranslation} from 'react-i18next';
 import './HomePage.scss';
 
 const HomePage = forwardRef((props, ref) => {
-	const {t, i18n} = useTranslation();
+	const {t} = useTranslation();
 	const [textIndex, setTextIndex] = useState(0);
 	const [displayText, setDisplayText] = useState('');
 	const [clearing, setClearing] = useState(false);
@@ -21,7 +21,8 @@ const HomePage = forwardRef((props, ref) => {
 	// const [showModalSkills, setShowModalSkills] = useState(false);
 	// const [changeText, setText] = useState(false);
 	const {isDarkMode} = useContext(DarkModeContext);
-	const texts = t('homePage.typingTexts', {returnObjects: true});
+
+	// const texts = t('homePage.typingTexts', {returnObjects: true});
 
 	// function toggleDarkMode() {
 	// 	setDarkMode(!isDarkMode);
@@ -32,70 +33,68 @@ const HomePage = forwardRef((props, ref) => {
 	// 	setText(!changeText);
 	// }
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsMounted(true);
-		}, 1300);
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => {
+	// 		setIsMounted(true);
+	// 	}, 1300);
 
-		return () => clearTimeout(timer);
-	}, []);
+	// 	return () => clearTimeout(timer);
+	// }, []);
 
-	useEffect(() => {
-		setTextIndex(0);
-		setDisplayText('');
-	}, [i18n.language]);
+	// useEffect(() => {
+	// 	setTextIndex(0);
+	// 	setDisplayText('');
+	// }, [i18n.language]);
 
-	useEffect(() => {
-		if (!isMounted) return;
+	// useEffect(() => {
+	// 	if (!isMounted) return;
 
-		const typeText = () => {
-			if (!clearing) {
-				if (displayText.length < texts[textIndex].length) {
-					setDisplayText((prev) => prev + texts[textIndex][displayText.length]);
-				} else {
-					setClearing(true);
-				}
-			} else {
-				if (displayText.length > 0) {
-					setDisplayText((prev) => prev.slice(0, -1));
-				} else {
-					setClearing(false);
-					setTextIndex((prev) => (prev + 1) % texts.length);
-				}
-			}
-		};
+	// 	const typeText = () => {
+	// 		if (!clearing) {
+	// 			if (displayText.length < texts[textIndex].length) {
+	// 				setDisplayText((prev) => prev + texts[textIndex][displayText.length]);
+	// 			} else {
+	// 				setClearing(true);
+	// 			}
+	// 		} else {
+	// 			if (displayText.length > 0) {
+	// 				setDisplayText((prev) => prev.slice(0, -1));
+	// 			} else {
+	// 				setClearing(false);
+	// 				setTextIndex((prev) => (prev + 1) % texts.length);
+	// 			}
+	// 		}
+	// 	};
 
-		const delay = clearing ? 120 : 180;
-		const timer = setTimeout(typeText, delay);
+	// 	const delay = clearing ? 120 : 180;
+	// 	const timer = setTimeout(typeText, delay);
 
-		return () => clearTimeout(timer);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [clearing, displayText, textIndex, isMounted]);
+	// 	return () => clearTimeout(timer);
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, [clearing, displayText, textIndex, isMounted]);
+
+	console.log(t('homePage.text'));
 
 	return (
 		<div className={`homePage-container`}>
 			<section ref={ref} id='home' className='container hero'>
 				<div className='hero-content'>
 					<h1>
-						{t('homePage.hero.titlePrefix', "Salut, je m'appelle")} <span className='highlight'>Alexandre Saudemont</span>
+						{t(`homePage.title`)} <span className='highlight'>Alexandre Saudemont</span>
 					</h1>
-					<p>{t('homePage.hero.subtitle', 'Développeur full-stack passionné par les belles expériences numériques')}</p>
+					<p>{t('homePage.subtitle')}</p>
 					<a href='#projects' className='cta-button'>
-						{t('homePage.hero.cta', 'Voir mes projets')}
+						{t('homePage.project')}
 					</a>
 				</div>
 				<div className='hero-visual'>
 					<div className='card'>
-						<h3>{t('homePage.hero.cards.frontend.title', 'Frontend')}</h3>
-						<p>{t('homePage.hero.cards.frontend.desc', 'React, Vue, TypeScript')}</p>
+						<h3 className='card-title'>{t('homePage.hero.cards.frontend.title')}</h3>
+						<p>{t('homePage.hero.cards.frontend.desc')}</p>
 					</div>
 					<div className='card'>
-						<h3>{t('homePage.hero.cards.backend.title', 'Backend')}</h3>
-						<p>{t('homePage.hero.cards.backend.desc', 'Node.js, Python, Go')}</p>
-					</div>
-					<div className='card'>
-						<h3>{t('homePage.hero.cards.devops.title', 'DevOps')}</h3>
-						<p>{t('homePage.hero.cards.devops.desc', 'Docker, AWS, CI/CD')}</p>
+						<h3 className='card-title'>{t('homePage.hero.cards.backend.title')}</h3>
+						<p>{t('homePage.hero.cards.backend.desc')}</p>
 					</div>
 				</div>
 			</section>

@@ -7,6 +7,7 @@ import {useTranslation} from 'react-i18next';
 
 import './AboutPage.scss';
 import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+import SkillsGrid from '../SkillsGrid/SkillsGrid.js';
 import reactIcon from '../../../assets/img/react.svg';
 import reactIconDark from '../../../assets/img/react-dark.svg';
 import javascriptIcon from '../../../assets/img/js.svg';
@@ -58,20 +59,7 @@ const AboutPage = forwardRef((props, ref) => {
 						</p>
 					))}
 				</section>
-				<div className='flip-grid'>
-					{flipItems.map((item) => (
-						<div key={item.key} className='flip-card' onClick={() => handleFlip(item.key)}>
-							<div className={`flip-card-inner ${isFlipped[item.key] ? 'flipped' : ''}`}>
-								<div className='flip-card-front'>
-									<img src={isDarkMode ? item.dark : item.light} alt={`${item.label} icon`} className='flip-card-icon' />
-								</div>
-								<div className='flip-card-back'>
-									<span className='flip-card-label'>{item.label}</span>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
+				<SkillsGrid />
 			</section>
 		</div>
 	);

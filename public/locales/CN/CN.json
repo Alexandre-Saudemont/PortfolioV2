@@ -1,7 +1,7 @@
 {
 	"homePage": {
 		"home": "家",
-		"title": "我是开发者",
+		"title": "你好，我是",
 		"typingTexts": ["全栈 JavaScript", "网页", "前端"],
 		"skills": "技能",
 		"about": "关于",
@@ -10,11 +10,10 @@
 		"hero": {
 			"titlePrefix": "你好，我是",
 			"subtitle": "热衷于打造精美数字体验的全栈开发者",
-			"cta": "查看我的项目",
+
 			"cards": {
-				"frontend": {"title": "前端", "desc": "React, Vue, TypeScript"},
-				"backend": {"title": "后端", "desc": "Node.js, Python, Go"},
-				"devops": {"title": "DevOps", "desc": "Docker, AWS, CI/CD"}
+				"frontend": {"title": "Frontend", "desc": "React.js, JavaScript, Responsive Design"},
+				"backend": {"title": "Backend", "desc": "Node.js, Express.js, PostgreSQL"}
 			}
 		}
 	},
@@ -33,9 +32,12 @@
 		"CV": "下载我的简历"
 	},
 	"projectsPage": {
-		"title1": "台湾网站",
-		"title2": "Pokedeck 网站",
+		"title1": "Pokedeck 网站",
+		"subtitle1": "一个宝可梦卡牌收集应用，用于构建、整理和管理你的个人卡组",
+		"title2": "台湾网站",
+		"subtitle2": "我在台湾的个人旅行日记，分享文化、美食和难忘的地方",
 		"title3": "Match HSK 网站",
+		"subtitle3": "一款有趣的互动游戏，通过配对学习汉字，按HSK等级分类",
 		"github": "GitHub",
 		"githubFront": "Front-End",
 		"githubBack": "Back-End",

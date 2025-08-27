@@ -10,6 +10,7 @@ i18n.use(HttpApi)
 		supportedLngs: ['en', 'fr', 'CN'],
 		fallbackLng: 'fr',
 		debug: true,
+
 		interpolation: {
 			escapeValue: false,
 		},
