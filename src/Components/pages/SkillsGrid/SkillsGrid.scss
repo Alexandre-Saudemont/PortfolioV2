@@ -1,9 +1,9 @@
 .skills-grid-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	display: flex;
+	flex-wrap: wrap;
 	gap: 2rem;
-	justify-items: center;
 	margin-top: 5rem;
+	justify-content: center;
 }
 
 .skill-card {
@@ -46,6 +46,9 @@
 }
 
 @media screen and (min-width: 768px) {
+	.skills-grid-container {
+		gap: 3rem;
+	}
 	.skill-card {
 		width: 120px;
 		height: 120px;

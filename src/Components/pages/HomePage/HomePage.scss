@@ -166,11 +166,10 @@
 
 .hero-visual {
 	display: flex;
-
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
-	width: 70%;
+	width: 75%;
 	margin: auto;
 }
 
@@ -240,6 +239,9 @@
 			margin: 5rem 0 2rem 0;
 		}
 	}
+	.header-top {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 390px) {
@@ -286,6 +288,9 @@
 			&-icon-social-container {
 				margin-top: 10rem;
 			}
+		}
+		.hero-visual {
+			width: 60%;
 		}
 	}
 

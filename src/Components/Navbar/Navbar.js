@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import {useTranslation} from 'react-i18next';
 import LanguageSwitch from '../LanguageSwitch/LanguageSwitch.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {DarkModeContext} from '../DarkMode/DarkModeContext/DarkModeContext.js';
 import moonDark from '../../assets/img/moon-dark.svg';
 import lightbulb from '../../assets/img/lightbulb.svg';
@@ -11,19 +10,27 @@ function Navbar({homeRef, aboutRef, contactRef, projectsRef}) {
 	const {t} = useTranslation();
 	const {isDarkMode, setDarkMode} = useContext(DarkModeContext);
 
-	function toggleDarkMode() {
-		setDarkMode(!isDarkMode);
-	}
+	const toggleDarkMode = () => setDarkMode(!isDarkMode);
 
-	const handleScroll = (ref) => {
-		if (ref.current) {
-			ref.current.scrollIntoView({behavior: 'smooth'});
-		}
-	};
+	const navItems = [
+		{label: t('homePage.home'), href: '#home'},
+		{label: t('homePage.about'), href: '#about'},
+		{label: t('homePage.project'), href: '#projects'},
+		{label: t('homePage.contact'), href: '#contact'},
+	];
+
+	const renderNavLinks = () =>
+		navItems.map((item, index) => (
+			<li key={index} className='nav-item'>
+				<a className='nav-link' href={item.href}>
+					{item.label}
+				</a>
+			</li>
+		));
 
 	return (
 		<>
-			{/* Header (langue + dark mode) */}
+			{/* Top bar (language + dark mode) */}
 			<div className='navbar-top'>
 				<div className='navbar-settings'>
 					<LanguageSwitch />
@@ -31,60 +38,17 @@ function Navbar({homeRef, aboutRef, contactRef, projectsRef}) {
 				</div>
 			</div>
 
-			{/* New header with logo and links */}
+			{/* Desktop navbar */}
 			<header className='header-top'>
 				<nav className='container navbar-container'>
 					<div className='logo'>AS</div>
-					<ul className='nav-links'>
-						<li className='nav-item'>
-							<a className='nav-link' href='#home'>
-								{t('homePage.home')}
-							</a>
-						</li>
-						<li className='nav-item'>
-							<a className='nav-link' href='#about'>
-								{t('homePage.about')}
-							</a>
-						</li>
-						<li className='nav-item'>
-							<a className='nav-link' href='#projects'>
-								{t('homePage.project')}
-							</a>
-						</li>
-						<li className='nav-item'>
-							<a className='nav-link' href='#contact'>
-								{t('homePage.contact')}
-							</a>
-						</li>
-					</ul>
+					<ul className='nav-links'>{renderNavLinks()}</ul>
 				</nav>
 			</header>
 
-			{/* Mobile sticky menu (fallback) */}
+			{/* Mobile sticky navbar */}
 			<nav className={`navbar-sticky ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
-				<ul className='nav-list'>
-					<li className='nav-item'>
-						<a className='nav-link' href='#home'>
-							{t('homePage.home')}
-						</a>
-					</li>
-					<li className='nav-item'>{/* Skills removed; flip-cards moved under About */}</li>
-					<li className='nav-item'>
-						<a className='nav-link' href='#about'>
-							{t('homePage.about')}
-						</a>
-					</li>
-					<li className='nav-item'>
-						<a className='nav-link' href='#projects'>
-							{t('homePage.project')}
-						</a>
-					</li>
-					<li className='nav-item'>
-						<a className='nav-link' href='#contact'>
-							{t('homePage.contact')}
-						</a>
-					</li>
-				</ul>
+				<ul className='nav-list'>{renderNavLinks()}</ul>
 			</nav>
 		</>
 	);

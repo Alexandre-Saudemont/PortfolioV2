@@ -2,11 +2,12 @@
 	"homePage": {
 		"home": "Home",
 		"title": "Hi, I'm",
+		"subtitle": "Full-stack developer passionate about creating beautiful digital experiences",
 		"typingTexts": ["FullStack JavaScript", "Web", "Front-End"],
 		"skills": "Skills",
 		"about": "About",
 		"contact": "Contact",
-		"project": "View My Work",
+		"project": "My Work",
 		"hero": {
 			"titlePrefix": "Hi, I'm",
 			"subtitle": "Full-stack developer passionate about creating beautiful digital experiences",

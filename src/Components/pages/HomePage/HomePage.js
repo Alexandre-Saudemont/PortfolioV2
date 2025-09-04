@@ -1,26 +1,26 @@
-import React, {useState, useEffect, useContext, forwardRef} from 'react';
-import profilePic from '../../../assets/img/profile-picV2.jpg';
-import github from '../../../assets/img/github.svg';
-import githubDark from '../../../assets/img/github-dark.svg';
-import linkedin from '../../../assets/img/linkedin.svg';
-import linkedinDark from '../../../assets/img/linkedin-dark.svg';
+import React, {forwardRef} from 'react';
+// import profilePic from '../../../assets/img/profile-picV2.jpg';
+// import github from '../../../assets/img/github.svg';
+// import githubDark from '../../../assets/img/github-dark.svg';
+// import linkedin from '../../../assets/img/linkedin.svg';
+// import linkedinDark from '../../../assets/img/linkedin-dark.svg';
 // import moonDark from '../../../assets/img/moon-dark.svg';
 // import lightbulb from '../../../assets/img/lightbulb.svg';
 // import Skills from '../Skills/Skills.js';
-import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
+// import {DarkModeContext} from '../../DarkMode/DarkModeContext/DarkModeContext';
 import {useTranslation} from 'react-i18next';
 
 import './HomePage.scss';
 
 const HomePage = forwardRef((props, ref) => {
 	const {t} = useTranslation();
-	const [textIndex, setTextIndex] = useState(0);
-	const [displayText, setDisplayText] = useState('');
-	const [clearing, setClearing] = useState(false);
-	const [isMounted, setIsMounted] = useState(false);
+	// const [textIndex, setTextIndex] = useState(0);
+	// const [displayText, setDisplayText] = useState('');
+	// const [clearing, setClearing] = useState(false);
+	// const [isMounted, setIsMounted] = useState(false);
 	// const [showModalSkills, setShowModalSkills] = useState(false);
 	// const [changeText, setText] = useState(false);
-	const {isDarkMode} = useContext(DarkModeContext);
+	// const {isDarkMode} = useContext(DarkModeContext);
 
 	// const texts = t('homePage.typingTexts', {returnObjects: true});
 
@@ -72,8 +72,6 @@ const HomePage = forwardRef((props, ref) => {
 	// 	return () => clearTimeout(timer);
 	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	// }, [clearing, displayText, textIndex, isMounted]);
-
-	console.log(t('homePage.text'));
 
 	return (
 		<div className={`homePage-container`}>

@@ -7,11 +7,10 @@
 		"skills": "Compétences",
 		"about": "A propos",
 		"contact": "Contact",
-		"project": "Voir mes projets",
+		"project": "Mes projets",
 		"hero": {
 			"titlePrefix": "Salut, je m'appelle",
 			"subtitle": "Développeur full-stack passionné par les belles expériences numériques",
-
 			"cards": {
 				"frontend": {"title": "Frontend", "desc": "React.js, JavaScript, Responsive Design"},
 				"backend": {"title": "Backend", "desc": "Node.js, Express.js, PostgreSQL"}

@@ -1,12 +1,13 @@
 {
 	"homePage": {
-		"home": "家",
+		"home": "首页",
 		"title": "你好，我是",
+		"subtitle": "热衷于打造精美数字体验的全栈开发者",
 		"typingTexts": ["全栈 JavaScript", "网页", "前端"],
 		"skills": "技能",
 		"about": "关于",
-		"contact": "接触",
-		"project": "项目",
+		"project": "我的作品",
+		"contact": "联系我",
 		"hero": {
 			"titlePrefix": "你好，我是",
 			"subtitle": "热衷于打造精美数字体验的全栈开发者",
