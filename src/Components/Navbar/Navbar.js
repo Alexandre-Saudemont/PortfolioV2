@@ -47,7 +47,7 @@ function Navbar({homeRef, aboutRef, contactRef, projectsRef}) {
 			</header>
 
 			{/* Mobile sticky navbar */}
-			<nav className={`navbar-sticky ${isDarkMode ? 'darkMode' : 'lightMode'}`}>
+			<nav className={`navbar-sticky ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
 				<ul className='nav-list'>{renderNavLinks()}</ul>
 			</nav>
 		</>
